@@ -1,0 +1,43 @@
+/* Ryan Fung's HTML Template v5.1 CSS (Forms)
+ * Contents:
+ *  - form, fieldset, legend
+ *  - input, buton, select, textarea
+ */
+@charset "utf-8";
+form *, input[type='file']::-webkit-file-upload-button { font: inherit; }
+fieldset {
+    margin: 1em;
+    border: 0.1em solid #000;
+}
+legend {
+    padding: 0.1em 0.2em;
+    border: 0.06em solid #000;
+    font-size: 1.6em;
+}
+input:focus { background: #fed; }
+input[type='button'], button, .button, input[type='file']::-webkit-file-upload-button {
+    padding: 0.2em 0.4em;
+    background: #eee;
+    background: linear-gradient(0deg,#ddd,#fff);
+    border: 0.1em solid #ccc;
+}
+input[type='button']:hover, button:hover, .button:hover, input[type='file']::-webkit-file-upload-button:hover {
+    background: #fc3;
+    background: linear-gradient(0deg,#f93,#fdb);
+}
+input[type='button']:active, button:active, .button:active, input[type='file']::-webkit-file-upload-button:active {
+    background: #f93;
+    background: linear-gradient(0deg,#f93,#f60);
+    color: #fff;
+}
+fieldset, legend, input, select, input[type='button'], button, input[type='file']::-webkit-file-upload-button, textarea {
+	border-top-left-radius:  0.2em;
+	border-top-right-radius: 0.2em;
+}
+input, select, input[type='file']::-webkit-file-upload-button, textarea {
+	border: 0.1em solid #f93;
+	padding: 0.2em;
+}
+input[type='button'], button, input[type='file']::-webkit-file-upload-button { cursor: pointer; }
+input[type='file'] { width: 100%; }
+textarea { padding: 0.2em; }
