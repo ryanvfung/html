@@ -1,9 +1,9 @@
+@charset "utf-8";
 /* Ryan Fung's HTML Template v5.1 CSS (Forms)
  * Contents:
  *  - form, fieldset, legend
  *  - input, buton, select, textarea
  */
-@charset "utf-8";
 form *, input[type='file']::-webkit-file-upload-button { font: inherit; }
 fieldset {
     margin: 1em;

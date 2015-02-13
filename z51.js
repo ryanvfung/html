@@ -2,7 +2,7 @@
 window.onload = function(){
     $('#navbar-title').text( $('#subtitle').text() );
     var a = $('nav#nav a');
-    for( i = 0; i < a.length; i++; ) {
+    for( i = 0; i < a.length; i++ ) {
         if( a[i].text == $('#subtitle').text() ) {
             $(a[i]).addClass('intra nav-this');
         }
@@ -33,7 +33,7 @@ window.onload = function(){
             $.scrollTo($('#'+this.href.split('#')[1]).offset().top - $('#navbar').height() + 'px', 500);
         }
     });
-    $('#content-wrapper').click ( function () {
+    $('#main-wrapper').click ( function () {
         if( $('body').hasClass('nav-active') ) {
             $('body').toggleClass('nav-active');
         }
