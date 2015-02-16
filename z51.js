@@ -1,14 +1,15 @@
 /* Ryan Fung's HTML Template v5.1 JavaScript */
-window.onload = function(){
+window.onload = function () {
     $('#navbar-title').text( $('#subtitle').text() );
     var a = $('nav#nav a');
-    for( i = 0; i < a.length; i++ ) {
+    for ( i = 0; i < a.length; i++ ) {
         if( a[i].text == $('#subtitle').text() ) {
-            $(a[i]).addClass('intra nav-this');
+            $(a[i]).addClass('nav-this');
+            $(a[i]).parent().addClass('intra');
         }
     }
     document.title = $('#subtitle').text() + ' | ' + $('#title').text();
-    if( window.location.hash != '' ) {
+    if( window.location.hash !== '' ) {
         window.setTimeout(
             function () {
                 if ( $('#navbar').height() == 0 ) {
