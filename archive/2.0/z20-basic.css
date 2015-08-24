@@ -1,0 +1,15 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{background:#DDD;font-family:Frutiger,"Myriad Pro","Segoe UI",Corbel,Tahoma,Verdana,sans-serif;font-size:medium}
+code{background:#EEE;font-size:+1}
+h1{color:#F60;font-size:xx-large;margin:0px;font-weight:bold;text-align:center}
+h2{color:#F60;font-size:x-large;margin:0px;font-weight:bold}
+h3{color:#000;font-size:large;margin:0px}
+a:link{color:#F60}
+a:visited{color:#F60}
+a:hover{color:#09F}
+a:active{color:#FF0}
+hr{background-color:#AAA;border:0;margin:5px 0px;height:2px;}
+.desc{border-bottom:1px #000 dotted;cursor:help}
+.jump{color:#F60;font-size:x-large;font-weight:bold;padding-bottom:8px}
