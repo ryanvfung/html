@@ -1,0 +1,300 @@
+@charset "utf-8";
+/* CSS Document - Ryan Fung's CSS Template Version 3.2γ "PyroCarbon" (Jump variant)
+ * Last Updated:  2011-06-26
+
+ * body
+ * a, a:hover, a:active
+ * h1, h2, h3, h4, h5
+ * p
+ * blockquote
+ * code
+ * em
+ * ol, ol ol, ol ol ol
+ * q
+ * strong
+ * ul
+ * #wrap
+ * #header
+ * #hgroup
+ * #jumpgroup, #jumptab, #jump, #jump: a; a:hover; a:active
+ * #jump : table; tbody; tr; td
+ * #jump ul, #jump li, #jump li:hover ul, #jump li: ul; li; li:first-child; li:last-child
+ * #jump .jump li : a; a:hover; a:active
+ * #jump .jump li li : a; a:hover; a:active
+ * .section
+ * #footer
+ * .date, .dateh, .datep
+ * .music
+ * .desc
+ */
+
+body {
+	background: #000;
+	color: #CCC;
+	font-size: 12px;
+	font-family: Frutiger,"Myriad Pro","Segoe UI",Corbel,Tahoma,Verdana,sans-serif;
+	margin: 10px;
+	padding: 0;
+	}
+a {
+	outline: 0;
+	color: #FC3;
+	text-decoration: none;
+	}
+a:hover {
+	color: #FC3;
+	text-decoration: underline;
+	}
+a:active {
+	color: #FF0;
+	}
+h1 {
+	color: #F00;
+	font-size: 48px;
+	margin: 0;
+	margin-top: -10px;
+	font-variant: small-caps;
+	font-weight: bolder;
+	text-align: center;
+	}
+h2 {
+	color: #F60;
+	font-size: 32px;
+	margin: 0;
+	margin-top: -10px;
+	margin-bottom: 3px;
+	font-variant: small-caps;
+	font-weight: bold;
+	text-align: center;
+	}
+h3 {
+	color: #F93;
+	font-size: 24px;
+	margin: 0;
+	margin-top: -5px;
+	font-weight: bold;
+	}
+h4 {
+	color: #FC3;
+	font-size: 16px;
+	margin: 0;
+	margin-bottom: 2px;
+	}
+h5 {
+	color: #FFF;
+	font-size: 12px;
+	margin: 0;
+	font-weight: bold;
+	}
+p {
+	margin: 5px 0;
+	padding: 0;
+	}
+blockquote {
+	background: #000;
+	border-radius: 5px;
+	color: #F60;
+	margin: 10px 5px;
+	padding: 5px 10px;
+	font-style: italic;
+	}
+code {
+	font-size: 12px;
+	}
+em {
+	color: #FC3;
+	}
+ol {
+	margin: 0;
+	margin-left: 20px;
+	padding: 0;
+	}
+ol ol {
+	list-style: lower-latin;
+	}
+ol ol ol {
+	list-style: lower-roman;
+	}
+q {
+	background: #000;
+	border-radius: 5px;
+	color: #F60;
+	font-style: italic;
+	padding: 0 5px;
+	}
+strong {
+	background: #FF0;
+	color: #F00;
+	border-radius: 5px;
+	padding: 0 2px;
+	}
+ul {
+	margin: 0;
+	margin-left: 20px;
+	padding: 0;
+	}
+#wrap {
+	margin: auto;
+	width: 99%;
+	}
+#header {
+	background: #333;
+	border-bottom-left-radius: 500px 60px;
+	border-bottom-right-radius: 500px 60px;
+	margin-bottom: 10px;
+	}
+#hgroup {
+	height: 55px;
+	font-size: 16px;
+	text-align: center;
+	}
+#jumptab {
+	background: #F93;
+	border-top-left-radius: 60px 20px;
+	border-top-right-radius: 60px 20px;
+	color: #666;
+	font-weight: bold;
+	margin: auto;
+	padding-top: 2px;
+	width: 150px;
+	}
+#jump {
+	background: #F93;
+	border-radius: 10px;
+	border-radius: 10px;
+	color: #333;
+	font-size: 16px;
+	margin: auto;
+	padding: 2px;
+	}
+#jump a {
+	border-radius: 10px;
+	color: #333;
+	padding: 0 5px;
+	text-decoration: none;
+	}
+#jump a:hover {
+	background: #F60;
+	}
+#jump a:active {
+	background: #333;
+	color: #F60;
+	}
+#jump table, #jump tbody, #jump tr, #jump td {
+	border: 0;
+	border-spacing: 0;
+	margin: auto;
+	padding: 0;
+	}
+#jump ul {
+	height: 21px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	}
+#jump li {
+	background: #F93;
+	float: left;
+	margin: 0 2px;
+	}
+#jump li ul {
+	display: none;
+	margin: 5px 0 0 -3px;
+	}
+#jump li:hover ul {
+	display: block;
+	position: absolute;
+	}
+#jump li li {
+	background: #FC3;
+	float: none;
+	margin: 0 0 0 3px;
+	padding: 1px 3px 0 5px;
+	text-align: left;
+	}
+#jump li li:first-child {
+	margin-top: -1px;
+	padding-top: 3px;
+	}
+#jump li li:last-child {
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	padding-bottom: 5px;
+	}
+#jump .jump li a {
+	background: #FC3;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	padding: 0 10px 4px;
+	}
+#jump .jump li a:hover {
+	background: #F60;
+	}
+#jump .jump li a:active {
+	background: #333;
+	color: #F60;
+	}
+#jump .jump li li a {
+	border-radius: 10px;
+	color: #666;
+	opacity: 0.5;
+	padding: 0 5px;
+	text-decoration: none;
+	}
+#jump .jump li li a:hover {
+	background: #F60;
+	opacity: 1;
+	}
+#jump .jump li li a:active {
+	background: #666;
+	color: #F60;
+	}
+.section {
+	background: #333;
+	border-radius: 10px;
+	margin: 0 0 10px;
+	padding: 10px 10px 5px;
+	text-align: justify;
+	}
+#footer {
+	color: #F90;
+	font-size: 10px;
+	text-align: center;
+	margin-top: -5px;
+	}
+.date {
+	background: #F93;
+	border-radius: 10px;
+	color: #000;
+	font-weight: bold;
+	padding: 0 5px;
+	text-align: center;
+	width: 105px;
+	}
+.dateh {
+	background: #F93;
+	border-radius: 10px;
+	color: #000;
+	font-weight: bold;
+	float: right;
+	margin: -25px 0 0;
+	padding: 0 5px;
+	text-align: center;
+	}
+.datep {
+	background: #F93;
+	border-radius: 10px;
+	color: #000;
+	font-weight: bold;
+	float: right;
+	margin: 0 0 0 5px;
+	padding: 0 5px;
+	text-align: center;
+	}
+.music {
+	color: #F60;
+	}
+.desc {
+	border-bottom: 1px #F60 dotted;
+	cursor: help;
+	}
