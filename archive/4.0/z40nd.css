@@ -1,0 +1,365 @@
+@charset "utf-8";
+/* CSS Document - Ryan Fung's CSS Template Version 4.0 "PyroCarbon"
+ * Last Updated:  2011-09-30
+ Contents:
+  Structure
+   html; body; #body; #header; h1; h2; h3; h4; h5; h6; p; #footer
+  Custom
+   #sidetab; #sidebevel; #sidebar; #menu; .sgroup; .shead; .stab; .sdate; .sect; .desc; .music; .musicl; .musicr
+  Tags
+   a; strong; em; code; .codeblock; q; blockquote; ol; ul; dl; table; math; hr
+ */
+
+/* Structure start */
+html {
+	background: #000;
+}
+body {
+	background: #000;
+	color: #CCC;
+	font-size: 12px;
+	font-family: "Segoe UI", "Myriad Pro", Calibri, Tahoma, Verdana, sans-serif;
+	margin: 20px 0;
+	padding: 0;
+}
+#body {
+	margin: auto;
+	width: 1000px;
+}
+#header {
+	background: #F60;
+	border-top-left-radius: 50px;
+	border-top-right-radius: 50px;
+	font-variant: small-caps;
+	margin: auto;
+	padding: 10px;
+	text-align: center;
+	width: 980px;
+}
+#header p {
+	color: #333;
+	font-size: 30px;
+	margin: 0;
+	margin-top: -10px;
+}
+h1, h2, h3, h4, h5 {
+	margin: 0;
+}
+h1, h2 {
+	font-variant: small-caps;
+	font-weight: bold;
+	text-align: center;
+}
+h1 {
+	color: #333;
+	font-size: 64px;
+	margin-top: -10px;
+	text-shadow: 0 0 20px #FFF;
+}
+h2 {
+	color: #F60;
+	font-size: 32px;
+}
+h3 {
+	border-bottom: 1px #666 solid;
+	color: #F93;
+	font-size: 24px;
+}
+h4 {
+	color: #FC3;
+	font-size: 16px;
+}
+h5 {
+	color: #FE9;
+	font-size: 12px;
+	font-weight: 900;
+}
+p {
+	margin: 5px 0 10px;
+}
+#footer {
+	color: #F90;
+	font-size: 10px;
+	text-align: center;
+}
+#footer p {
+	margin: 0;
+}
+/* Structure end */
+
+/* Custom start */
+#sidetab, #sideblock, #sidebevel, #sidebar {
+	position: fixed;
+}
+#sidetab {
+	cursor: default;
+	margin-top: -20px;
+	padding: 1px 5px;
+}
+#sideblock {
+	margin-top: -23px;
+	margin-left: -30px;
+	border-top: 15px solid #666;
+	border-bottom: 15px solid #666;
+	border-left: 65px solid #666;
+	border-right: 65px solid #666;
+	display: inline-block;
+	-moz-transition: margin-left 0.2s ease-out;
+	-webkit-transition: margin-left 0.2s ease-out;
+}
+#side:hover #sideblock {
+	margin-left: 0px;
+	-moz-transition: margin-left 0.2s ease-out;
+	-webkit-transition: margin-left 0.2s ease-out;
+}
+#sidebevel {
+	margin-top: -23px;
+	margin-left: 100px;
+	-moz-transition: margin-left 0.2s ease-out;
+	-webkit-transition: margin-left 0.2s ease-out;
+	border-bottom: 30px solid transparent;
+	border-left: 30px solid #666;
+	display: inline-block;
+}
+#side:hover #sidebevel {
+	margin-left: 130px;
+	-moz-transition: margin-left 0.2s ease-out;
+	-webkit-transition: margin-left 0.2s ease-out;
+}
+#sidebar {
+	background: #666;
+	margin-top: 768px;
+	-moz-transition: margin-top 0.2s ease-out;
+	-webkit-transition: margin-top 0.2s ease-out;
+	padding: 0px;
+	width: 130px;
+}
+#side:hover #sidebar {
+	margin-top: 7px;
+	-moz-transition: margin-top 0.2s ease-out;
+	-webkit-transition: margin-top 0.2s ease-out;
+}
+#sidebar a {
+	text-decoration: none;
+}
+#sidebar p {
+	background: #FC3;
+	background: -moz-linear-gradient(top,#FC3,#FA3);
+	background: -webkit-gradient(linear,left top,left bottom,from(#FC3),to(#FA3));
+	background: -o-linear-gradient(top,#FC3,#FA3);
+	color: #666;
+	font-weight: bold;
+	margin: 5px;
+	padding: 2px 4px;
+}
+#sidebar p:hover {
+	background: #FE9;
+	background: -moz-linear-gradient(top,#FE9,#FC3);
+	background: -webkit-gradient(linear,left top,left bottom,from(#FE9),to(#FC3));
+	background: -o-linear-gradient(top,#FE9,#FC3);
+}
+#sidebar p:active {
+	background: #333;
+	background: -moz-linear-gradient(top,#999,#333);
+	background: -webkit-gradient(linear,left top,left bottom,from(#999),to(#333));
+	background: -o-linear-gradient(top,#999,#333);
+	color: #FC3;
+}
+#sidebar hr {
+	margin: 0 5px;
+}
+#menu {
+	background: #F93;
+	box-shadow:
+		0 1px rgba(255,153,51,0.9),
+		0 2px rgba(255,153,51,0.8),
+		0 3px rgba(255,153,51,0.7),
+		0 4px rgba(255,153,51,0.6),
+		0 5px rgba(255,153,51,0.5),
+		0 6px rgba(255,153,51,0.4),
+		0 7px rgba(255,153,51,0.3),
+		0 8px rgba(255,153,51,0.2),
+		0 9px rgba(255,153,51,0.1);
+	color: #333;
+	font-size: 16px;
+	padding: 10px 10px 5px;
+	margin-bottom: 15px;
+	text-align: center;
+}
+#menu a {
+	color: inherit;
+	margin: 2px;
+	padding: 5px;
+	text-decoration: none;
+}
+#menu a:hover {
+	background: #F60;
+	background: -moz-linear-gradient(top,#F82,#F60);
+	background: -webkit-gradient(linear,left top,left bottom,from(#F82),to(#F60));
+	background: -o-linear-gradient(top,#F82,#F60);
+}
+#menu a:active {
+	background: #333;
+	background: -moz-linear-gradient(top,#666,#333);
+	background: -webkit-gradient(linear,left top,left bottom,from(#666),to(#333));
+	background: -o-linear-gradient(top,#666,#333);
+	color: #F93;
+}
+.sgroup {
+	background: #333;
+	padding: 0 5px 2px;
+	margin: 10px 0;
+	width: 990px;
+}
+.stab {
+	text-align: center;
+	width: 1000px;
+}
+.sect {
+	border-top: 2px solid #000;
+	padding: 0 5px;
+	text-align: justify;
+}
+.desc {
+	border-bottom: 1px dotted #F60;
+	cursor: help;
+}
+.music {
+	background: #F93;
+	color: #000;
+	margin: 0;
+}
+.musicl, .musicr {
+	border-top: 8px solid transparent;
+	border-bottom: 9px solid transparent;
+	display: inline-block;
+	vertical-align: text-bottom;
+}
+.musicl {
+	border-right: 10px solid #F93;
+}
+.musicr {
+	border-left: 10px solid #F93;
+}
+/* Custom end */
+
+/* Tags start */
+a {
+	color: #F93;
+	font-weight: bold;
+	outline: 0;
+	text-decoration: none;
+}
+a:hover {
+	text-shadow: 0 0 10px #FC3;
+}
+a:active {
+	text-shadow: 0 0 10px #FFF;
+}
+strong {
+	color: #FFF;
+	font-weight: 900;
+}
+em {
+	color: #FC3;
+}
+code {
+	color: #0F0;
+}
+div.codeblock {
+	background: #F60;
+	padding: 0;
+}
+ol.codeblock {
+	background: #F60;
+	margin-left: 40px;
+	padding: 3px;
+}
+ol.codeblock li {
+	background: #CCC;
+	color: #333;
+	padding: 2px 5px;
+}
+ol.codeblock li:nth-child(odd) {
+	background: #FC9;
+}
+ol.codeblock li:nth-child(even) {
+	background: #FDB;
+}
+q {
+	color: #F60;
+	font-style: italic;
+}
+blockquote {
+	background: #000;
+	color: #F60;
+	margin: 5px 0;
+	padding: 5px 10px;
+}
+ol {
+	list-style: decimal;
+	margin: 0;
+	margin-left: 20px;
+	padding: 0;
+}
+ol ol {
+	list-style: lower-latin;
+}
+ol ol ol {
+	list-style: lower-roman;
+}
+ul {
+	list-style: disc;
+	margin: 0;
+	margin-left: 20px;
+	padding: 0;
+}
+ul ul {
+	list-style: circle;
+}
+ul ul ul {
+	list-style: square;
+}
+dl {
+	border-left: 6px #F60 double;
+	margin: 15px 5px 10px;
+}
+dt {
+	color: #F60;
+	font-weight: bold;
+	margin: -10px 0 10px 5px;
+}
+dd {
+	font-style: italic;
+	margin: -10px 0 10px 25px;
+}
+table, th, td {
+	border: 1px solid #F60;
+}
+table {
+	margin: 10px 0;
+}
+th {
+	background: #F60;
+	color: #333;
+	font-size: 14px;
+}
+table tr {
+	color: #333;
+	background: #FFF;
+}
+table tr:nth-child(even) {
+	background: #FDB;
+}
+table tr:nth-child(odd) {
+	background: #FC9;
+}
+math {
+	font-size: 16px;
+}
+hr {
+	background: #FFF;
+	border: none;
+	height: 1px;
+}
+/* Tags end */
