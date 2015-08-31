@@ -1,0 +1,328 @@
+<!DOCTYPE HTML><!-- Ryan Fung's Template 4.1 --><html><head><meta charset="utf-8"><title>Ryan Fung's Template 4.1</title>
+<style type="text/css">
+/* Semantics start */
+*{font-family:"Open Sans","Segoe UI",Calibri,Tahoma,sans-serif;outline:none}
+::selection,::-moz-selection{background:#F93;color:#FFF;opacity:0.99}
+::-scrollbar,::-webkit-scrollbar{background:#333;background:-webkit-linear-gradient(left,#444,#222);height:10px;width:10px}
+::-scrollbar-thumb,::-webkit-scrollbar-thumb{background:#F60;background:-webkit-linear-gradient(left,#F60,#C30);border:1px solid #333}
+::-scrollbar:horizontal,::-webkit-scrollbar:horizontal{background:#333;background:-webkit-linear-gradient(top,#444,#222)}
+::-scrollbar-thumb:horizontal,::-webkit-scrollbar-thumb:horizontal{background:#F60;background:-webkit-linear-gradient(top,#F60,#C30)}
+::-scrollbar-corner,::-webkit-scrollbar-corner{background:#333;background:-webkit-linear-gradient(right bottom,#444,#222)}
+html{background:#000}
+body{background:#000;color:#CCC;font-size:12px;height:100%;margin:0;min-width:800px;padding:0}
+#body{margin:0;padding:0}
+h1,h2,h3,h4,h5{margin:0}
+h1,h2{font-variant:small-caps;font-weight:bold;text-align:center}
+h1{color:#333;font-size:48px;font-variant:small-caps;margin:-5px 0 -10px;text-shadow:0 0 30px #FFF}
+h2{color:#F60;font-size:32px}
+h3{border-bottom:1px #666 solid;color:#F93;font-size:24px}
+h4{color:#FC3;font-size:16px}
+h5{color:#FE9;font-size:12px;font-weight:900}
+h6{color:#FFC;font-size:inherit;font-style:italic}
+p{margin:5px 0 10px}
+#navblock,#navbevel,#navtabbg,#navtabbevel,#navtab,#navbar{position:fixed}
+#navblock{border-top:15px solid rgba(102,102,102,1);border-bottom:15px solid rgba(102,102,102,1);border-left:65px solid rgba(102,102,102,1);border-right:65px solid rgba(102,102,102,1);display:inline-block;margin:0 -130px;transition:margin-left 0.2s ease-in-out;-moz-transition:margin-left 0.2s ease-in-out;-webkit-transition:margin-left 0.2s ease-in-out}
+#nav:hover #navblock{margin-left:0;transition:margin-left 0.2s ease-in-out;-moz-transition:margin-left 0.2s ease-in-out;-webkit-transition:margin-left 0.2s ease-in-out}
+#navbevel,#navtabbevel{border-bottom:35px solid transparent;border-left:35px solid rgba(102,102,102,0.5);display:inline-block;margin:0 0;transition:margin-left 0.2s ease-in-out,opacity 0.2s ease-in-out;-moz-transition:margin-left 0.2s ease-in-out,opacity 0.2s ease-in-out;-webkit-transition:margin-left 0.2s ease-in-out,opacity 0.2s ease-in-out}
+#navbevel{opacity:0}
+#nav:hover #navbevel{border-left:35px solid #666;margin-left:130px;opacity:1;transition:margin-left 0.2s ease-in-out,opacity 0.2s ease-in-out;-moz-transition:margin-left opacity 0.2s ease-in-out,opacity 0.2s ease-in-out;-webkit-transition:margin-left opacity 0.2s ease-in-out,opacity 0.2s ease-in-out}
+#navtabbg{background:rgba(102,102,102,0.5)}
+#navh{color:#666}
+#navtabbevel{margin-left:100px}
+#navtab,#navtabbg{cursor:default;height:28px;margin:5px 0 0 0;padding:2px 5px 0;width:90px}
+#navtab h4{color:rgba(255,255,255,0.5);transition:color 0.2s ease-in-out;-moz-transition:color 0.2s ease-in-out;-webkit-transition:color 0.2s ease-in-out}
+#nav:hover #navtab h4{color:#FC3;transition:color 0.2s ease-in-out;-moz-transition:color 0.2s ease-in-out;-webkit-transition:color 0.2s ease-in-out}
+#navbar{background:#666;margin:30px -130px;transition:margin-left 0.2s ease-in-out;-moz-transition:margin-left 0.2s ease-in-out;-webkit-transition:margin-left 0.2s ease-in-out;padding:0px;width:130px}
+#nav:hover #navbar{margin:30px 0px;transition:margin-left 0.2s ease-in-out;-moz-transition:margin-left 0.2s ease-in-out;-webkit-transition:margin-left 0.2s ease-in-out}
+#navbar a{text-decoration:none}
+#navbar a:first-child{margin-top:-5px}
+#navbar p{background:#FC3;background:-webkit-linear-gradient(top,#FC3,#FA3);background:-moz-linear-gradient(top,#FC3,#FA3);background:-o-linear-gradient(top,#FC3,#FA3);color:#666;font-weight:bold;margin:5px;padding:2px 4px}
+#navbar p:hover{background:#FE9;background:-webkit-linear-gradient(top,#FE9,#FC3);background:-moz-linear-gradient(top,#FE9,#FC3);background:-o-linear-gradient(top,#FE9,#FC3)}
+#navbar p:active{background:#333;background:-webkit-linear-gradient(top,#999,#333);background:-moz-linear-gradient(top,#999,#333);background:-o-linear-gradient(top,#999,#333);color:#FC3}
+#navbar hr{margin:0 5px}
+header{background:#F60;background:-webkit-linear-gradient(top,#F60,#F93);background:-moz-linear-gradient(top,#F60,#F93);background:-o-linear-gradient(top,#F60,#F93);box-shadow:	0 0 10px 5px #F93;margin:auto auto -15px;min-width:800px;text-align:center;top:0;width:100%;z-index:9}
+header p{color:#333;font-size:24px;margin:-10px 0 -5px}
+header nav{color:#333;font-size:12px;padding:10px 0 8px;text-align:center;width:100%}
+header nav a{background:rgba(255,255,255,0.2);color:inherit;margin:2px 0;padding:2px 5px;text-decoration:none;transition:background 0.2s ease-in-out;-moz-transition:background 0.2s ease-in-out;-webkit-transition:background 0.2s ease-in-out}
+header nav a:hover{background:#F60;background:-webkit-linear-gradient(top,#F60,#F71);background:-moz-linear-gradient(top,#F60,#F71);background:-o-linear-gradient(top,#F60,#F71);transition:background 0.2s ease-in-out;-moz-transition:background 0.2s ease-in-out;-webkit-transition:background 0.2s ease-in-out}
+header nav a:active{background:#333;background:-webkit-linear-gradient(top,#666,#333);background:-moz-linear-gradient(top,#666,#333);background:-o-linear-gradient(top,#666,#333);color:#F60;text-shadow:0 0 10px #F60}
+#content{height:100%;margin:0 auto 0;min-width:800px;width:80%}
+#content p{text-align:justify}
+section{background:#333;box-shadow:0 1px rgba(51,51,51,0.95),0 2px rgba(51,51,51,0.9),0 3px rgba(51,51,51,0.85),0 4px rgba(51,51,51,0.8),0 5px rgba(51,51,51,0.75),0 6px rgba(51,51,51,0.7),0 7px rgba(51,51,51,0.65),0 8px rgba(51,51,51,0.6),0 9px rgba(51,51,51,0.55),0 10px rgba(51,51,51,0.5),0 11px rgba(51,51,51,0.45),0 12px rgba(51,51,51,0.4),0 13px rgba(51,51,51,0.35),0 14px rgba(51,51,51,0.3),0 15px rgba(51,51,51,0.25),0 16px rgba(51,51,51,0.2),0 17px rgba(51,51,51,0.15),0 18px rgba(51,51,51,0.1),0 19px rgba(51,51,51,0.05);margin:30px auto;width:100%}
+section header{background:#666;background:-webkit-linear-gradient(top,#888,#666);background:-moz-linear-gradient(top,#888,#666);background:-o-linear-gradient(top,#888,#666);box-shadow:0 1px rgba(102,102,102,0.9),0 2px rgba(102,102,102,0.8),0 3px rgba(102,102,102,0.7),0 4px rgba(102,102,102,0.6),0 5px rgba(102,102,102,0.5),0 6px rgba(102,102,102,0.4),0 7px rgba(102,102,102,0.3),0 8px rgba(102,102,102,0.2),0 9px rgba(102,102,102,0.1);margin:auto;min-width:800px;padding-bottom:-10px;position:inherit}
+section header h2{margin-left:10px;text-align:left;text-shadow:0 0 20px #333}
+section header p{color:#CCC;float:right;font-size:16px;margin:-25px 0 0;padding:5px;text-align:right}
+section article{padding:10px 10px 0}
+footer{background:#F93;background:-webkit-linear-gradient(top,#F93,#F60);background:-moz-linear-gradient(top,#F60,#F93);background:-o-linear-gradient(top,#F60,#F93);color:#000;font-size:12px;margin:0px 0 0;min-width:800px;padding:3px 0;text-align:center}
+footer p{margin:0;padding:5px 0}
+.pyro,.ft-s,.ft-c,.ft-i,.ft-f,.ft-o{cursor:default;background:#000;background:-webkit-linear-gradient(top,#333,#000);background:-moz-linear-gradient(top,#333,#000);background:-o-linear-gradient(top,#333,#000);transition:color 0.2s ease-in-out,background 0.2s ease-in-out;-moz-transition:color 0.2s ease-in-out,background 0.2s ease-in-out;-webkit-transition:color 0.2s ease-in-out,background 0.2s ease-in-out;border:2px solid #000;border-radius:3px;font-weight:bold;padding:2px 4px;
+}
+.pyro{border:none}
+.pyro-p{color:#F00}
+.pyro-y{color:#F60}
+.pyro-r1{color:#F93}
+.pyro-o1{color:#FC3}
+.pyro-c{color:#FFF}
+.pyro-a{color:#EEE}
+.pyro-r2{color:#DDD}
+.pyro-b{color:#CCC}
+.pyro-o2{color:#BBB}
+.pyro-n{color:#AAA}
+.pyro:hover{background:#000;background:-webkit-linear-gradient(left,#F00,#F60,#F93,#FC3,#FFF,#EEE,#DDD,#CCC,#BBB,#AAA);background:-moz-linear-gradient(left,#F00,#F60,#F93,#FC3,#FFF,#EEE,#DDD,#CCC,#BBB,#AAA);background:-o-linear-gradient(left,#F00,#F60,#F93,#FC3,#FFF,#EEE,#DDD,#CCC,#BBB,#AAA);transition:color 0.2s ease-in-out,background 0.2s ease-in-out;-moz-transition:color 0.2s ease-in-out,background 0.2s ease-in-out;-webkit-transition:color 0.2s ease-in-out,background 0.2s ease-in-out;
+}
+.pyro:hover .pyro-p,.pyro:hover .pyro-y,.pyro:hover .pyro-r1,.pyro:hover .pyro-o1,.pyro:hover .pyro-c,.pyro:hover .pyro-a,.pyro:hover .pyro-r2,.pyro:hover .pyro-b,.pyro:hover .pyro-o2,.pyro:hover .pyro-n{color:#000;transition:color 0.2s ease-in-out,background 0.2s ease-in-out;-moz-transition:color 0.2s ease-in-out,background 0.2s ease-in-out;-webkit-transition:color 0.2s ease-in-out,background 0.2s ease-in-out;
+}
+.ft-s:hover,.ft-c:hover,.ft-i:hover,.ft-f:hover,.ft-f a,.ft-f:hover a,.ft-o:hover{transition:color 0.2s ease-in-out,background 0.2s ease-in-out;-moz-transition:color 0.2s ease-in-out,background 0.2s ease-in-out;-webkit-transition:color 0.2s ease-in-out,background 0.2s ease-in-out;
+}
+.ft-s{background:#32AAD9;color:#000;}
+.ft-s:hover{background:#000;color:#32AAD9}
+.ft-c{background:#EE3932;color:#FFF}
+.ft-c:hover{background:#FFF;color:#EE3932}
+.ft-i{background:#72D6FC;color:#000}
+.ft-i:hover{background:#000;color:#72D6FC}
+.ft-f,.ft-f a{background:#EF6E05;color:#FFF}
+.ft-f:hover,.ft-f:hover a{background:#FFF;color:#EF6E05;text-shadow:none}
+.ft-f:active a{text-shadow:0 0 10px #FC3}
+.ft-o{background:#E31312;color:#FFF}
+.ft-o:hover{background:#FFF;color:#E31312}
+/* Semantics end */ /* Tags start */
+a{color:#F93;font-weight:bold;outline:0;text-decoration:none}
+a:hover{text-shadow:0 0 10px #FC3}
+a:active{cursor:pointer;text-shadow:0 0 10px #FFF}
+strong{color:#FFF;font-weight:900}
+em{color:#FC3}
+ol{list-style:decimal;margin:0;margin-left:20px;padding:0}
+ol ol{list-style:lower-latin}
+ol ol ol{list-style:lower-roman}
+ul{list-style:disc;margin:0;margin-left:20px;padding:0}
+ul ul{list-style:circle}
+ul ul ul{list-style:square}
+dl{border-left:6px #F60 double;margin:15px 5px 10px}
+dt{color:#F60;font-weight:bold;margin:-10px 0 10px 5px}
+dd{font-style:italic;margin:-10px 0 10px 25px}
+table,th,td{border:1px solid #F60}
+table{margin:10px 0}
+th{background:#F93;background:-webkit-linear-gradient(top,#F93,#F60);background:-moz-linear-gradient(top,#F93,#F60);background:-o-linear-gradient(top,#F93,#F60);color:#333;font-size:14px}
+th.top{background:#F60;background:-webkit-linear-gradient(top,#F60,#F30);background:-moz-linear-gradient(top,#F60,#F30);background:-o-linear-gradient(top,#F60,#F30);color:#000}
+table tr{background:#FC9;color:#000}
+table tr:nth-child(odd){background:#FC9;background:-webkit-linear-gradient(top,#FC9,#FB7);background:-moz-linear-gradient(top,#FC9,#FB7);background:-o-linear-gradient(top,#FC9,#FB7)}
+table tr:nth-child(even){background:#FDB;background:-webkit-linear-gradient(top,#FED,#FDB);background:-moz-linear-gradient(top,#FED,#FDB);background:-o-linear-gradient(top,#FED,#FDB)}
+math,math *{font-family:"Times New Roman",serif}
+msup mo:nth-child(even),msup mn:nth-child(even),msup mi:nth-child(even){font-size:8px !important}
+hr{background:#FFF;border:none;height:1px}
+code{font-family:Consolas,"Courier New",Courier,monospace;color:#0F0}
+div.codeblock{background:#F60;background:-webkit-linear-gradient(top,#F60,#F30);background:-moz-linear-gradient(top,#F60,#F30);background:-o-linear-gradient(top,#F60,#F30);padding:0}
+ol.codeblock{background:#F60;background:-webkit-linear-gradient(top,#F60,#F30);background:-moz-linear-gradient(top,#F60,#F30);background:-o-linear-gradient(top,#F60,#F30);margin-left:40px;padding:3px}
+ol.codeblock li{background:#CCC;color:#333;font-family:Consolas,"Courier New",Courier,monospace;padding:2px 5px}
+ol.codeblock li:nth-child(odd){background:#FC9;background:-webkit-linear-gradient(top,#FC9,#FB7);background:-moz-linear-gradient(top,#FC9,#FB7);background:-o-linear-gradient(top,#FC9,#FB7)}
+ol.codeblock li:nth-child(even){background:#FDB;background:-webkit-linear-gradient(top,#FED,#FDB);background:-moz-linear-gradient(top,#FED,#FDB);background:-o-linear-gradient(top,#FED,#FDB);
+
+}
+q{color:#F60;font-style:italic}
+blockquote{background:#000;background:-webkit-linear-gradient(top,#333,#000);background:-moz-linear-gradient(top,#333,#000);background:-o-linear-gradient(top,#333,#000);border:2px solid #F60;border-radius:3px;color:#F60;font-style:italic;margin:5px 0;padding:5px 10px}
+fieldset{background:#333;background:-webkit-linear-gradient(top,#444,#222);background:-moz-linear-gradient(top,#444,#222);background:-o-linear-gradient(top,#444,#222);border:2px solid #F60;margin:10px 0}
+legend{background:#333;background:-webkit-linear-gradient(top,#222,#444);background:-moz-linear-gradient(top,#222,#444);background:-o-linear-gradient(top,#222,#444);border:2px solid #F60;font-size:16px;font-weight:bold;padding:5px 10px}
+input,select,textarea{background:#666;background:-webkit-linear-gradient(top,#333,#666);background:-moz-linear-gradient(top,#333,#666);background:-o-linear-gradient(top,#333,#666);border:1px solid #FFF;border-top-left-radius:3px;border-top-right-radius:3px;color:#FFF;padding:2px;font-family:inherit}
+select{background:#666}
+select:hover{background:#999}
+select:focus{background:#F60}
+input:hover,textarea:hover{background:#999;background:-webkit-linear-gradient(top,#666,#999);background:-moz-linear-gradient(top,#666,#999);background:-o-linear-gradient(top,#666,#999)}
+input:focus,textarea:focus{background:#900;background:-webkit-linear-gradient(top,#900,#F60);background:-moz-linear-gradient(top,#900,#F60);background:-o-linear-gradient(top,#900,#F60);border:1px solid #F60}
+option.selected{background:#900;color:#0F0}
+button,.button{background:#777;background:-webkit-linear-gradient(top,#777,#444);background:-moz-linear-gradient(top,#777,#444);background:-o-linear-gradient(top,#777,#444);border:1px solid #999;border-radius:3px;color:#CCC;cursor:pointer;font-family:inherit;padding:2px 4px}
+button:hover,.button:hover{background:#F60;background:-webkit-linear-gradient(top,#F60,#900);background:-moz-linear-gradient(top,#F60,#900);background:-o-linear-gradient(top,#F60,#900)}
+button:active,.button:active{background:#900;background:-webkit-linear-gradient(top,#900,#F60);background:-moz-linear-gradient(top,#900,#F60);background:-o-linear-gradient(top,#900,#F60);box-shadow:0 0 8px 1px #000 inset}
+/* Tags end */ /* Custom start */
+.desc{border-bottom:1px dotted #F60;cursor:help}
+.music{background:#F93;background:-webkit-linear-gradient(top,#F93,#F60);background:-moz-linear-gradient(top,#F93,#F60);background:-o-linear-gradient(top,#F93,#F60);border-radius:4px;color:#000;margin:0;padding:2px 4px}
+/* Custom end */
+</style>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head><body><nav id="nav"><div id="navblock"></div><div id="navbevel"></div><div id="navtabbg"><h4 id="navh">Navigation</h4></div><div id="navtabbevel"></div><div id="navtab"><h4>Navigation</h4></div><div id="navbar">
+<a href="#"><p>These links are</p></a>
+<a href="#"><p>optimised for</p></a>
+<a href="#"><p>1280px width</p></a>
+<a href="#"><p>screens</p></a>
+<hr />
+<a href="#"><p>(e.g.: MacBook Pros) :D</p></a>
+</div></nav><header id="header"><h1>Ryan Fung's Template 4.1</h1><!--<p>Title Caption</p>--><nav>
+<a href="#">Broken Link</a>
+<a href="#h3">Jump to Header 3</a>
+<a href="#mathml">MathML Demo</a>
+<a href="#svg">SVG Demo</a>
+<a href="#second">Second section box</a>
+</nav></header><div id="body"><div id="content">
+<section><header><h2>Header 2</h2><p>27/04/2012 | 2012-04-27 | April 27<sup>th</sup>, 2012</p></header><article>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<h3 id="h3">Header 3</h3>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<h4>Header 4</h4>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<h5>Header 5</h5>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Click <a href="#">here</a> to go to another website. <a href="#" class="button">Or here</a></p>
+<p>This is <strong>strong</strong> text.</p>
+<p>This is <em>emphasis</em> text.</p>
+<ol><li>Ordered item 1</li>
+	<li>Ordered item 2</li>
+	<ol><li>Ordered item 2.1</li>
+		<li>Ordered item 2.2</li>
+		<ol><li>Ordered item 2.2.1</li>
+			<li>Ordered item 2.2.2</li></ol></ol></ol>
+<ul><li>Unordered item 1</li>
+	<li>Unordered item 2</li><ul>
+		<li>Unordered item 2.1</li>
+		<li>Unordered item 2.2</li><ul>
+			<li>Unordered item 2.2.1</li>
+			<li>Unordered item 2.2.2</li></ul></ul></ul>
+<dl><dt>Definition term 1</dt><dd>Definition 1</dd>
+	<dt>Definition term 2</dt><dd>Definition 2</dd>
+	<dt>Definition term 3</dt><dd>Definition 3</dd></dl>
+<table border="1" cellspacing="0" cellpadding="4"><tr>
+	<th scope="col">Table Header 1</th>
+	<th scope="col">Table Header 2</th>
+	<th scope="col">Table Header 3</th>
+</tr><tr>
+	<td>Table Cell</td>
+	<td>Table Cell</td>
+	<td>Table Cell</td>
+</tr><tr>
+	<td>Table Cell</td>
+	<td>Table Cell</td>
+	<td>Table Cell</td>
+</tr></table>
+<h4 id="mathml">MathML Demo</h4>
+<h5>Quadratic Equation</h5>
+<p>The solution to the equation:
+<math xmlns="http://www.w3.org/1998/Math/MathML" title="ax&sup2;+bx+c=0"><mstyle displaystyle="true">
+<mi>a</mi>
+<msup>
+	<mi>x</mi>
+	<mn>2</mn>
+</msup>
+<mo>+</mo>
+<mi>b</mi>
+<mo>+</mo>
+<mi>c</mi>
+<mo>=</mo>
+<mn>0</mn>
+</mstyle></math>
+is given by the equation:
+<math xmlns="http://www.w3.org/1998/Math/MathML" title="x=(-b&plusmn;&radic;[b&sup2; -4ac]) / (2a)"><mstyle displaystyle="true">
+<mi>x</mi>
+<mo>=</mo>
+<mfrac><mrow>
+	<mo form="prefix">-</mo>
+	<mi>b</mi>
+	<mo>&plusmn;</mo>
+	<msqrt>
+		<msup>
+			<mi>b</mi>
+			<mn>2</mn>
+		</msup>
+		<mo>-</mo>
+		<mn>4</mn>
+		<mi>a</mi>
+		<mi>c</mi>
+	</msqrt>
+</mrow><mrow>
+	<mn>2</mn>
+	<mo>&InvisibleTimes;</mo>
+	<mi>a</mi>
+</mrow></mfrac>
+</mstyle></math></p>
+<h4 id="svg">SVG Demo</h4>
+<p style="font-size:16px"><svg width="200px" height="230px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<circle cx="100" cy="100" r="100" fill="#000" />
+<circle cx="100" cy="100" r="95" fill="#FF0" />
+<circle cx="060" cy="60" r="10" fill="#000" />
+<circle cx="140" cy="60" r="10" fill="#000" />
+<ellipse cx="100" cy="110" rx="40" ry="20" fill="#FCF" stroke="#000" stroke-width="0.5" />
+<circle cx="080" cy="110" r="6" fill="#000" />
+<circle cx="120" cy="110" r="6" fill="#000" />
+<g>
+<path id="smile" stroke="black" stroke-width="5" fill="none" d="M 50,147 s 50,50 100,0" />
+</g>
+<defs>
+	<path id="top" d="M 0,100 s 200,-200 200,200" />
+	<path id="textend" d="M 150,205 L 150,223" />
+</defs>
+<g font-family="Frutiger,'Myriad Pro',Tahoma">
+<text><textPath xlink:href="#smile" startOffset="50%" text-anchor="middle"><tspan dy="-5">M.o.u.s.t.a.c.h.e</tspan></textPath></text>
+<text x="100" y="220" rotate="10" text-anchor="middle"><tspan font-weight="bold" fill="#F60">Ryan</tspan><tspan fill="#CCC">'s Smiley <tspan fill="transparent">:D</tspan></tspan></text>
+<text fill="#000"><textPath xlink:href="#textend" fill="#CCC"><tspan dy="-2">:</tspan><tspan dy="2">D</tspan></textPath></text>
+</g>
+</svg></p>
+<p>Pig-nose on recommendation of a certain anguslordknight</p>
+<h4>Horizontal Rule test</h4>
+<hr />
+<p>This is <code>code</code> text.</p>
+<div class="codeblock"><ol class="codeblock">
+	<li>&lt;div class="codeblock"&gt;&lt;ol class="codeblock"&gt;</li>
+	<li>&lt;li&gt;This is a sample of the code used to code this block&lt;/li&gt;</li>
+	<li>&lt;li&gt;This could lead to an Droste effect:&lt;/li&gt;</li>
+	<li>&lt;/ol&gt;&lt;/div&gt;</li>
+</ol></div>
+<p>This is a <q>quote</q>.</p>
+<blockquote>This is a blockquote: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</blockquote>
+<form id="form"><fieldset>
+<legend>Inputs</legend>
+<p>Input text
+	<br /><input type="text" /></p>
+<p>Input password
+	<br /><input type="password" /></p>
+<p>Input file
+	<br /><input type="file" /></p>
+<p>Input checkboxes
+	<br /><input type="checkbox" id="checkbox" /> Checkbox 1
+	<br /><input type="checkbox" id="checkbox" /> Checkbox 2
+	<br /><input type="checkbox" id="checkbox" /> Checkbox 3</p>
+<p>Input radio
+	<br /><input type="radio" id="radio" name="radio" value="a" /> Radio 1
+	<br /><input type="radio" id="radio" name="radio" value="b" /> Radio 2
+	<br /><input type="radio" id="radio" name="radio" value="c" /> Radio 3</p>
+</fieldset><fieldset>
+<legend>Selects</legend>
+<p>Select
+	<br /><select>
+		<option>Option 1</option>
+		<option>Option 2</option>
+		<option>Option 3</option>
+		<optgroup label="Option Group">
+			<option>Option Group 1</option>
+			<option>Option Group 2</option>
+			<option>Option Group 3</option>
+		</optgroup>
+		</select></p>
+<p>Select multiple
+	<br /><select multiple="multiple">
+		<option>Option 1</option>
+		<option>Option 2</option>
+		<option>Option 3</option></select></p>
+</fieldset><fieldset>
+<legend>Buttons</legend>
+<p>Button (button)
+	<br /><button type="button">Button Button</button></p>
+<p>Button (submit)
+	<br /><button type="submit">Submit Button</button></p>
+<p>Button (reset)
+	<br /><button type="reset">Reset Button</button></p>
+</fieldset><fieldset>
+<legend>Textarea</legend>
+<p>Textarea
+	<br /><textarea>Textarea</textarea></p>
+</fieldset></form>
+<p><span class="music">&#9835; Carpe Noctum | Elements of Life | Tiësto &#9835;</span></p>
+<p><span class="desc" title="Grammar Nazis finding the grammatical error can go into the Inglorious Basterds set">Words in this sentence</span> has a description.</p>
+</article></section>
+<section><header><h2>Header 2</h2><p>27/04/2012 | 2012-04-27 | April 27<sup>th</sup>, 2012</p></header><article>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</article></section>
+</div></div><footer>
+<p>Ryan Fung's (X)HTML Template 4.1
+<span class="pyro"><span class="pyro-p">P</span><span class="pyro-y">y</span><span class="pyro-r1">r</span><span class="pyro-o1">o</span><span class="pyro-c">C</span><span class="pyro-a">a</span><span class="pyro-r2">r</span><span class="pyro-b">b</span><span class="pyro-o2">o</span><span class="pyro-n">n</span></span>
+| Last Updated: 2012-04-27 | Recommended browser: <span class="ft-f"><a href="http://www.mozilla.com/en-US/firefox/all.html">Mozilla Firefox 4+</a></span></p>
+<p>Tested successfully in <span class="ft-s">Apple Safari 5</span> <span class="ft-c">Google Chrome 10+</span> <span class="ft-i">Internet Explorer 9</span> <span class="ft-f">Mozilla Firefox 4+</span> <span class="ft-o">Opera 11+</span></p>
+</footer></body></html>
