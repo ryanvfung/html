@@ -16,6 +16,7 @@
 
 /* PyroCarbon */
 .pyro   { background-color: hsl( 28, 100%,  50%); } /* #ff7300 */
+.pyro5  { background-color: hsl( 28, 100%,62.5%); } /* #ff9940 */
 .pyro5  { background-color: hsl( 28, 100%,  75%); } /* #ffbb80 */
 .pyro1  { background-color: hsl( 28, 100%,87.5%); } /* #ffddbf */
 .pyro1  { background-color: hsl( 28, 100%,92.5%); } /* #ffebd9 */

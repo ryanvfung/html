@@ -1,6 +1,6 @@
 body {
 	position: relative;
-		padding-top: 4rem;
+	padding-top: 3.5rem;
 	background-color: #f2f2f2;
 	font: 16px "Maven Pro", sans-serif;
 }
@@ -41,7 +41,7 @@ header .navbar {
 /* PyroCarbon
 /* -------------------------------------------------- */
 .form-control:focus {
-	border-color: #ffbb80;
+	border-color: #ff9940;
 }
 
 
@@ -49,15 +49,9 @@ header .navbar {
 /* -------------------------------------------------- */
 
 #sidenav {
-	position: relative;
-	line-height: 1.5;
-}
-#sidenav.affix {
 	position: fixed;
-	top: 4rem;
-}
-#sidenav > :first-child {
-	margin-bottom: 0;
+	line-height: 1.5;
+	top: 3.5rem;
 }
 .sidenav ul {
 	list-style-type: none;
@@ -90,47 +84,3 @@ header .navbar {
 .sidenav > li > ul > li > a.active {
 	border-left: 0.15rem solid #f60;
 }
-
-/*
-ul.sidenav > li a {
-	color: inherit;
-}
-ul.sidenav > li a:hover, ul.sidenav > li a:focus {
-	background-color: transparent;
-}
-ul.sidenav > li > a {
-	padding: 5px 10px;
-}
-ul.sidenav > li > ul {
-	display: none;
-}
-#sidenav .nav-link.active + ul {
-	display: block;
-}
-ul.sidenav > li > ul > li > a {
-	padding: 5px 20px;
-}
-
-ul.sidenav > li > a:hover {
-	padding-left: 9px;
-	border-left: 1px solid #f60;
-}
-
-ul.sidenav > li > ul > li > a:hover {
-	padding-left: 19px;
-	border-left: 1px solid #f60;
-}
-
-ul.sidenav > li.active > a {
-	padding-left: 8px;
-	border-left: 2px solid #f60;
-}
-ul.sidenav > li.active > ul {
-	display: block;
-	margin-bottom: 10px;
-}
-ul.sidenav > li.active > ul > li.active > a {
-	padding-left: 18px;
-	border-left: 2px solid #f93;
-}
-*/
