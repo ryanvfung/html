@@ -1,0 +1,136 @@
+body {
+	position: relative;
+		padding-top: 4rem;
+	background-color: #f2f2f2;
+	font: 16px "Maven Pro", sans-serif;
+}
+
+/* == Responsive Layout */
+@media (min-width: 100em) {
+	.container {
+	    max-width: 95rem;
+	}
+}
+
+/* == Centre navbar items */
+header .navbar {
+	box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);
+	background-color: #ff7300;
+	color: #fff;
+}
+@media (min-width: 34em) {
+	header .navbar {
+		background-color: transparent;
+		background-image: linear-gradient(0, rgba(255, 115, 0, 0.9), #ff7300);
+		text-align: center;
+	}
+	.navbar-toggleable-xs {
+		min-height: 2rem;
+		text-align: center;
+	}
+	.navbar-brand, .navbar-nav, .navbar-nav .nav-item {
+		float: none;
+		display: inline-block;
+	}
+}
+.navbar-toggler {
+	padding: .5rem;
+	margin-left: -.5rem;
+}
+
+/* PyroCarbon
+/* -------------------------------------------------- */
+.form-control:focus {
+	border-color: #ffbb80;
+}
+
+
+/* Side navbar
+/* -------------------------------------------------- */
+
+#sidenav {
+	position: relative;
+	line-height: 1.5;
+}
+#sidenav.affix {
+	position: fixed;
+	top: 4rem;
+}
+#sidenav > :first-child {
+	margin-bottom: 0;
+}
+.sidenav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+.sidenav .dropdown-toggle::after {
+	display: none;
+}
+.sidenav a, .sidenav a.active {
+	background-color: inherit;
+	color: inherit;
+}
+.sidenav a:hover {
+	background-color: hsl(  0,   0%,  90%);
+}
+.sidenav > li > a {
+	display: block;
+	padding: 0.15rem 0.5rem;
+	border-left: 0.15rem solid transparent;
+}
+.sidenav > li > a.active {
+	border-left: 0.15rem solid #f00;
+}
+.sidenav > li > ul > li > a {
+	padding: 0.15rem;
+	padding-left: 1.5rem;
+	border-left: 0.15rem solid transparent;
+}
+.sidenav > li > ul > li > a.active {
+	border-left: 0.15rem solid #f60;
+}
+
+/*
+ul.sidenav > li a {
+	color: inherit;
+}
+ul.sidenav > li a:hover, ul.sidenav > li a:focus {
+	background-color: transparent;
+}
+ul.sidenav > li > a {
+	padding: 5px 10px;
+}
+ul.sidenav > li > ul {
+	display: none;
+}
+#sidenav .nav-link.active + ul {
+	display: block;
+}
+ul.sidenav > li > ul > li > a {
+	padding: 5px 20px;
+}
+
+ul.sidenav > li > a:hover {
+	padding-left: 9px;
+	border-left: 1px solid #f60;
+}
+
+ul.sidenav > li > ul > li > a:hover {
+	padding-left: 19px;
+	border-left: 1px solid #f60;
+}
+
+ul.sidenav > li.active > a {
+	padding-left: 8px;
+	border-left: 2px solid #f60;
+}
+ul.sidenav > li.active > ul {
+	display: block;
+	margin-bottom: 10px;
+}
+ul.sidenav > li.active > ul > li.active > a {
+	padding-left: 18px;
+	border-left: 2px solid #f93;
+}
+*/

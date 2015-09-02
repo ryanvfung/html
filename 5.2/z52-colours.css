@@ -1,0 +1,22 @@
+/* Adobe Color CC generated */
+
+/* #f60 shades */
+.base1  { background-color: #f60; }
+.base1a { background-color: #e55cc0; }
+.base1b { background-color: #8f4c00; }
+.base1c { background-color: #7f3300; }
+.base1d { background-color: #401900; }
+
+/* #f60 analogous */
+.base2  { background-color: #f60; }
+.base2a { background-color: #ffac0d; }
+.base2b { background-color: #e8840c; }
+.base2c { background-color: #e8440c; }
+.base2d { background-color: #ff270d; }
+
+/* PyroCarbon */
+.pyro   { background-color: hsl( 28, 100%,  50%); } /* #ff7300 */
+.pyro5  { background-color: hsl( 28, 100%,  75%); } /* #ffbb80 */
+.pyro1  { background-color: hsl( 28, 100%,87.5%); } /* #ffddbf */
+.pyro1  { background-color: hsl( 28, 100%,92.5%); } /* #ffebd9 */
+.carbon { background-color: hsl(  0,   0%,  95%); } /* #f2f2f2 */
