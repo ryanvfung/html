@@ -6,7 +6,7 @@ body {
 }
 
 /* == Responsive Layout */
-@media (min-width: 100em) {
+@media (min-width: 100rem) {
 	.container {
 	    max-width: 95rem;
 	}
@@ -25,17 +25,38 @@ header .navbar {
 		text-align: center;
 	}
 	.navbar-toggleable-xs {
-		min-height: 2rem;
+		height: 2rem !important;
 		text-align: center;
 	}
 	.navbar-brand, .navbar-nav, .navbar-nav .nav-item {
-		float: none;
 		display: inline-block;
+		float: none;
+		vertical-align: top;
 	}
 }
 .navbar-toggler {
 	padding: .5rem;
 	margin-left: -.5rem;
+}
+
+pre {
+	border-radius: 5px 5px 0 0;
+}
+
+pre {
+	padding: 1rem;
+	background-color: #fff;
+	counter-reset: line;
+}
+pre > span, pre > code > span {
+	counter-increment: line
+}
+pre span:before{
+	content: counter(line);
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+	    -ms-user-select: none;
+	        user-select: none;
 }
 
 /* PyroCarbon
@@ -65,22 +86,31 @@ header .navbar {
 	background-color: inherit;
 	color: inherit;
 }
-.sidenav a:hover {
-	background-color: hsl(  0,   0%,  90%);
+.sidenav a:hover, .sidenav a.active:hover, .sidenav a.active:focus {
+	background-color: hsl(  0,   0%,87.5%);
+	color: inherit;
 }
 .sidenav > li > a {
 	display: block;
-	padding: 0.15rem 0.5rem;
-	border-left: 0.15rem solid transparent;
+	padding: 0.2rem 0.5rem;
+	border-left: 0.2rem solid transparent;
 }
-.sidenav > li > a.active {
-	border-left: 0.15rem solid #f00;
+.sidenav > li > a.active, .sidenav > li > a.active + ul li {
+	background: hsl(  0,   0%,92.5%);
 }
 .sidenav > li > ul > li > a {
-	padding: 0.15rem;
+	padding: 0.2rem 0.5rem 0.2rem 1.5rem;
 	padding-left: 1.5rem;
-	border-left: 0.15rem solid transparent;
+	border-left: 0.2rem solid transparent;
 }
 .sidenav > li > ul > li > a.active {
-	border-left: 0.15rem solid #f60;
+	border-left: 0.2rem solid #f60;
+}
+
+h1::before, h2::before, h3::before, h4::before {
+  display: block;
+  content: " ";
+  margin-top: -4rem;
+  height: 4rem;
+  visibility: hidden;
 }
