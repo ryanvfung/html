@@ -6,31 +6,32 @@ body {
 }
 
 /* == Responsive Layout */
-@media (min-width: 100em) {
+@media (min-width: 100rem) {
 	.container {
 	    max-width: 95rem;
 	}
 }
 
-/* == Centre navbar items */
+/* == Centre navbar itrems */
 header .navbar {
 	box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);
 	background-color: #ff7300;
 	color: #fff;
 }
-@media (min-width: 34em) {
+@media (min-width: 34rem) {
 	header .navbar {
 		background-color: transparent;
 		background-image: linear-gradient(0, rgba(255, 115, 0, 0.9), #ff7300);
 		text-align: center;
 	}
 	.navbar-toggleable-xs {
-		min-height: 2rem;
+		height: 2rem !important;
 		text-align: center;
 	}
-	.navbar-brand, .navbar-nav, .navbar-nav .nav-item {
-		float: none;
+	.navbar-brand, .navbar-nav, .navbar-nav .nav-itrem {
 		display: inline-block;
+		float: none;
+		vertical-align: top;
 	}
 }
 .navbar-toggler {
@@ -39,14 +40,18 @@ header .navbar {
 }
 
 pre {
-	padding: 1em;
-	background-color: #ffebd9;
+	border-radius: 5px 5px 0 0;
+}
+
+pre {
+	padding: 1rem;
+	background-color: #fff;
 	counter-reset: line;
 }
 pre > span, pre > code > span {
 	counter-increment: line
 }
-span:before{
+pre span:before{
 	content: counter(line);
 	-webkit-user-select: none;
 	   -moz-user-select: none;
@@ -81,22 +86,31 @@ span:before{
 	background-color: inherit;
 	color: inherit;
 }
-.sidenav a:hover {
-	background-color: hsl(  0,   0%,  90%);
+.sidenav a:hover, .sidenav a.active:hover, .sidenav a.active:focus {
+	background-color: hsl(  0,   0%,87.5%);
+	color: inherit;
 }
 .sidenav > li > a {
 	display: block;
-	padding: 0.15rem 0.5rem;
-	border-left: 0.15rem solid transparent;
+	padding: 0.2rem 0.5rem;
+	border-left: 0.2rem solid transparent;
 }
-.sidenav > li > a.active {
-	border-left: 0.15rem solid #f00;
+.sidenav > li > a.active, .sidenav > li > a.active + ul li {
+	background: hsl(  0,   0%,92.5%);
 }
 .sidenav > li > ul > li > a {
-	padding: 0.15rem;
+	padding: 0.2rem 0.5rem 0.2rem 1.5rem;
 	padding-left: 1.5rem;
 	border-left: 0.15rem solid transparent;
 }
 .sidenav > li > ul > li > a.active {
-	border-left: 0.15rem solid #f60;
+	border-left: 0.2rem solid #f60;
+}
+
+h1::before, h2::before, h3::before, h4::before {
+  display: block;
+  content: " ";
+  margin-top: -4rem;
+  height: 4rem;
+  visibility: hidden;
 }
