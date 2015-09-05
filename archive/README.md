@@ -134,7 +134,8 @@ v1 (2010)
 
 
 
-# Ryan Fung's (X)HTML Template Logs
+(X)HTML Template Logs
+=====================
 
     Versioning
     	Syntax: <major version number>.<minor version number>.<revision version number (optional)> <version status (dev)> <version type>

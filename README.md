@@ -12,7 +12,24 @@ Available for use under the MIT license.
 
 **Created**: 2010
 
-**Last Modified**: 2015-02-12
+**Last Modified**: 2015-09-05
+
+
+Version 5.2 Contents
+--------------------
+
+* **z52.html**
+* **z52.css**
+* **z52.js**
+
+### Upcoming edits
+
+* Style numbered `pre` code blocks
+* Style button elements
+* Fix scrolling
+* Fix header
+* Style footer
+* Test jumbotron and other Bootstrap components
 
 
 Version 5.1 Contents
