@@ -12,7 +12,7 @@ Available for use under the MIT license.
 
 **Created**: 2010
 
-**Last Modified**: 2015-09-05
+**Last Modified**: 2015-09-07
 
 
 Version 5.2 Contents
@@ -26,9 +26,8 @@ Version 5.2 Contents
 
 * Style numbered `pre` code blocks
 * Style button elements
-* Fix scrolling
-* Fix header
 * Style footer
+* Style selection
 * Test jumbotron and other Bootstrap components
 
 
