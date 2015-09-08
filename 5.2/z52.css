@@ -1,8 +1,14 @@
+*::selection {
+	background: rgba(255, 119, 0, 0.8);
+	color: #fff;
+}
+
 body {
 	position: relative;
 	padding-top: 3.5rem;
 	background-color: #f2f2f2;
-	font: 16px "Maven Pro", sans-serif;
+	color: #505050;
+	font: 16px 'Maven Pro', sans-serif;
 }
 
 h1::before, h2::before, h3::before, h4::before {
@@ -57,7 +63,7 @@ header .navbar {
 /* == Code elements */
 
 pre {
-	border-radius: 5px 5px 0 0;
+	border-radius: 0.25em 0.25em 0 0;
 }
 
 pre {
@@ -81,11 +87,11 @@ pre span:before{
 fieldset { margin-bottom: .5rem; }
 select[multiple].form-control { padding: 0; }
 option { padding: .375rem .75rem; }
-::-webkit-file-upload-button {  }
+
 ::-webkit-file-upload-button{
 	display: inline-block;
-	padding: .25rem .75rem;
-	font: 1rem "Maven Pro", sans-serif;
+	padding: .0625rem .25rem;
+	font: 1rem 'Maven Pro', sans-serif;
 	line-height: 1.5;
 	color: #fff;
 	background-color: #ff7300;
@@ -94,7 +100,7 @@ option { padding: .375rem .75rem; }
 	cursor: pointer;
 }
 
-/* PyroCarbon
+/* PyroCarbon: colouring
 /* -------------------------------------------------- */
 header .navbar {
 	background-color: #ff7300;
@@ -106,9 +112,41 @@ header .navbar {
 	}
 }
 
-.form-control:focus {
-	border-color: #ff9940;
+mark { background-color: #ffebd9; }
+code { color: #ff7300; }
+kbd { color: #0f0; }
+
+a { color: #ff7300; }
+a:hover, a:active, a:focus { color: #d96500; }
+a.link {
+	color: inherit;
+	border-bottom: 0.0625rem solid #ff7300;
 }
+a.link:hover, a.link:active, a.link:focus {
+	color: #000;
+	text-decoration: none;
+	border-bottom-width: 0.125rem;
+}
+
+.form-control {
+	border-bottom-left-radius:  0;
+	border-bottom-right-radius: 0;
+}
+
+.form-control:focus { border-color: #ff9940; }
+option:focus, option:checked { color: #ff7300; }
+
+.btn-primary {
+	background-color: #ff7300;
+	border-color: #d96500;
+}
+.btn-primary:hover, .btn-primary:active, .btn-primary:focus {
+	background-color: #d96500;
+	border-color: #b35300;
+}
+
+/* PyroCarbon: other styling
+/* -------------------------------------------------- */
 
 
 /* Side navbar

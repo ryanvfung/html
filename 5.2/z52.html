@@ -65,7 +65,11 @@
 <section>
 	<h2 id="basic-html-tags">Basic HTML Tags</h2>
 	<h3 id="inline-text-elements">Inline Text Elements</h3>
-		<p id="a">Click <a href="#a">here</a> to go to another website. <a class="btn btn-primary" href="#a">Or this button</a></p>
+		<p id="a">
+			Click <a href="#a">here</a> to go to another website.
+			<a class="link" href="#a">Or this link</a>
+			<a class="btn btn-primary" href="#a">Or this button</a>
+		</p>
 		<p id="mark">The <code>mark</code> tag marks up this <mark>highlighted text</mark>.</p>
 		<p id="del">The <code>del</code> tag marks up this <del>deleted text</del>.</p>
 		<p id="s">The <code>s</code> tag marks up this <s>struck out text</s>.</p>
@@ -258,6 +262,7 @@
 				<option>Option 1</option>
 				<option>Option 2</option>
 				<option>Option 3</option>
+					<option selected="selected">Selected Option</option>
 				<optgroup label="Option Group">
 					<option>Option Group 1</option>
 					<option>Option Group 2</option>
@@ -265,10 +270,11 @@
 				</optgroup>
 			</select></p>
 		<p><label>Select multiple</label>
-			<select multiple="multiple" size="3" class="form-control">
+			<select multiple="multiple" size="4" class="form-control">
 				<option>Option 1</option>
 				<option>Option 2</option>
-				<option>Option 3</option></select></p>
+				<option>Option 3</option>
+				<option selected="selected">Selected Option</option></select></p>
 	</fieldset><fieldset>
 		<legend>Buttons</legend>
 		<p><label>Button (button)</label><br>
