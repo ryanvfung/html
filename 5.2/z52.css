@@ -6,12 +6,12 @@
 body {
 	position: relative;
 	padding-top: 3.5rem;
-	background-color: #f2f2f2;
+	background-color: #f9f9f9;
 	color: #505050;
 	font: 16px 'Maven Pro', sans-serif;
 }
 
-h1::before, h2::before, h3::before, h4::before {
+h1::before, h2::before, h3::before, h4::before, .offset-anchor::before {
   display: block;
   content: " ";
   margin-top: -3.5rem;
@@ -63,12 +63,12 @@ header .navbar {
 /* == Code elements */
 
 pre {
-	border-radius: 0.25em 0.25em 0 0;
+	border-radius: 0.25rem 0.25rem 0 0;
 }
 
 pre {
 	padding: 1rem;
-	background-color: #fff;
+	background-color: #f2f2f2;
 	counter-reset: line;
 }
 pre > span, pre > code > span {
@@ -80,6 +80,14 @@ pre span:before{
 	   -moz-user-select: none;
 	    -ms-user-select: none;
 	        user-select: none;
+}
+pre.cmd::before {
+	content: "$";
+	margin: -1.125rem;
+	margin-right: 0.875rem;
+	padding: 1.125rem;
+	padding-right: 0.875rem;
+	background-color: #ececec;
 }
 
 /* == Form elements */
@@ -113,11 +121,14 @@ header .navbar {
 }
 
 mark { background-color: #ffebd9; }
-code { color: #ff7300; }
+code {
+	color: #ff7300;
+	background-color: #f2f2f2;
+}
 kbd { color: #0f0; }
 
-a { color: #ff7300; }
-a:hover, a:active, a:focus { color: #d96500; }
+a, a:hover { color: #ff7300; }
+a:active, a:focus { color: #d96500; }
 a.link {
 	color: inherit;
 	border-bottom: 0.0625rem solid #ff7300;
@@ -170,7 +181,7 @@ option:focus, option:checked { color: #ff7300; }
 	color: inherit;
 }
 .sidenav a:hover, .sidenav a.active:hover, .sidenav a.active:focus {
-	background-color: hsl(  0,   0%,87.5%);
+	background-color: #e6e6e6;
 	color: inherit;
 }
 .sidenav > li > a {
@@ -179,7 +190,7 @@ option:focus, option:checked { color: #ff7300; }
 	border-left: .2rem solid transparent;
 }
 .sidenav > li > a.active, .sidenav > li > a.active + ul li {
-	background: hsl(  0,   0%,92.5%);
+	background: #f2f2f2;
 }
 .sidenav > li > ul > li > a {
 	padding: .2rem .5rem .2rem 1.5rem;
