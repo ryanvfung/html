@@ -1,0 +1,211 @@
+@import "z52-colours";
+
+*::selection {
+	background: rgba(255, 119, 0, 0.8);
+	color: #fff;
+}
+
+body {
+	position: relative;
+	padding-top: 3.5rem;
+	background-color: #f9f9f9;
+	color: #505050;
+	font: 16px 'Maven Pro', sans-serif;
+}
+
+h1, h2, h3, h4, .offset-anchor {
+	&::before {
+		display: block;
+		content: " ";
+		margin-top: -3.5rem;
+		height: 3.5rem;
+		visibility: hidden;
+	}
+}
+
+//== Responsive Layout
+@media (min-width: 100rem) {
+	.container {
+		max-width: 95rem;
+	}
+}
+
+//== Header navbar
+header .navbar {
+	padding: 0rem;
+	box-shadow: 0 0 10px 1px rgba(0, 0, 0, .3);
+	color: #fff;
+	@media (min-width: 34em) {
+		background-color: transparent;
+		text-align: center;
+	}
+}
+.navbar-brand, .navbar-nav, .navbar-nav .nav-item {
+	display: inline-block;
+	float: none;
+	vertical-align: top;
+}
+
+.navbar-brand, .navbar-nav {
+	@media (max-width: 34em) {
+		margin: 0 .5rem .25rem;
+	}
+}
+
+#header-navbar {
+	@media (min-width: 34em) {
+		min-height: 3rem;
+		padding: .5rem;
+		text-align: center;
+	}
+}
+.navbar-toggler {
+	clear: both;
+	padding: .5rem;
+}
+
+//== Code elements
+
+pre {
+	border-radius: 0.25rem 0.25rem 0 0;
+}
+
+pre {
+	padding: 1rem;
+	background-color: #f2f2f2;
+	counter-reset: line;
+	> span, > code > span {
+		counter-increment: line;
+	}
+	span:before{
+		content: counter(line);
+		-webkit-user-select: none;
+		   -moz-user-select: none;
+			-ms-user-select: none;
+				user-select: none;
+	}
+	.cmd::before {
+		content: "$";
+		margin: -1.125rem;
+		margin-right: 0.875rem;
+		padding: 1.125rem;
+		padding-right: 0.875rem;
+		background-color: #ececec;
+	}
+}
+
+
+//== Form elements
+
+fieldset { margin-bottom: .5rem; }
+select[multiple].form-control { padding: 0; }
+option { padding: .375rem .75rem; }
+
+::-webkit-file-upload-button{
+	display: inline-block;
+	padding: .0625rem .25rem;
+	font: 1rem 'Maven Pro', sans-serif;
+	line-height: 1.5;
+	color: #fff;
+	background-color: #ff7300;
+	border: .0625rem solid #ff7300;
+	border-radius: .25rem;
+	cursor: pointer;
+}
+
+// PyroCarbon: colouring
+// --------------------------------------------------
+header .navbar {
+	background-color: #ff7300;
+}
+
+@media (min-width: 34em) {
+	header .navbar {
+		background-image: linear-gradient(0, rgba(255, 115, 0, .9), #ff7300);
+	}
+}
+
+mark { background-color: #ffebd9; }
+code {
+	color: #ff7300;
+	background-color: #f2f2f2;
+}
+kbd { color: #0f0; }
+
+a {
+	&, &:hover { color: #ff7300; }
+	&:active, &:focus { color: #d96500; }
+	&.link {
+		color: inherit;
+		border-bottom: 0.0625rem solid #ff7300;
+		&:hover, &:active, &:focus {
+			color: #000;
+			text-decoration: none;
+			border-bottom-width: 0.125rem;
+		}
+	}
+}
+
+.form-control {
+	border-bottom-left-radius:  0;
+	border-bottom-right-radius: 0;
+	&:focus { border-color: #ff9940; }
+}
+
+option:focus, option:checked { color: #ff7300; }
+
+.btn-primary {
+	background-color: #ff7300;
+	border-color: #d96500;
+	&:hover, &:active, &:focus {
+		background-color: #d96500;
+		border-color: #b35300;
+	}
+}
+
+// PyroCarbon: other styling
+// --------------------------------------------------
+
+
+// Side navbar
+// --------------------------------------------------
+
+#sidenav {
+	position: fixed;
+	line-height: 1.5;
+	top: 3.5rem;
+}
+.sidenav {
+	ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+	}
+	.dropdown-toggle::after {
+		display: none;
+	}
+	a, a.active {
+		background-color: inherit;
+		color: inherit;
+	}
+	a:hover, a.active:hover, a.active:focus {
+		background-color: #e6e6e6;
+		color: inherit;
+	}
+	> li > a {
+		display: block;
+		padding: .2rem .5rem;
+		border-left: .2rem solid transparent;
+	}
+	&.active, &.active + ul li {
+		background: #f2f2f2;
+	}
+	> li > ul > li > a {
+		padding: .2rem .5rem .2rem 1.5rem;
+		padding-left: 1.5rem;
+		border-left: .2rem solid transparent;
+		&.active {
+			border-left: .2rem solid #f60;
+		}
+	}
+}

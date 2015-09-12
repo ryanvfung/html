@@ -1,0 +1,42 @@
+{
+    "name": "html",
+    "version": "5.2.0",
+    "author": "Ryan Fung",
+    "license": "MIT",
+    "description": "HTML Template",
+    "main": "z52.js",
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/ryanvfung/html.git"
+    },
+    "homepage": "https://github.com/ryanvfung/html#readme",
+    "keywords": [
+        "html",
+        "template"
+    ],
+    "bugs": {
+        "url": "https://github.com/ryanvfung/html/issues"
+    },
+    "devDependencies": {
+        "node-sass": "^3.3.2",
+        "minify": "^1.4.20",
+        "jshint": "^2.8.0"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "lint": "jshint z52.js > ../log/z52-jshint.log || true",
+        "scss": "node-sass z52.scss dist/z52.css",
+
+        "minify": "npm run minify:html && npm run minify:css && npm run minify:js",
+        "minify:html": "minify dist/z52.html > dist/z52.min.html",
+        "minify:css":  "minify dist/z52.css  > dist/z52.min.css",
+        "minify:js":   "minify dist/z52.js   > dist/z52.min.js",
+
+        "make": "npm run scss",
+        "postmake": "cp z52.js dist/z52.js && cp z52.html dist/z52.html && npm run minify"
+    },
+    "jshintConfig": {
+        "undef": true,
+        "unused": true
+    }
+}
