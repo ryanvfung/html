@@ -19,21 +19,27 @@
     },
     "devDependencies": {
         "node-sass": "^3.3.2",
+        "jade": "^1.11.0",
         "minify": "^1.4.20",
         "jshint": "^2.8.0"
     },
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "lint": "jshint z52.js > ../log/z52-jshint.log || true",
+
         "scss": "node-sass z52.scss dist/z52.css",
+
+        "jade": "jade z52.jade --pretty",
+        "postjade": "mv z52.html dist/z52.html && npm run minify:html",
+
+        "lint": "jshint z52.js > ../log/z52-jshint.log || true",
 
         "minify": "npm run minify:html && npm run minify:css && npm run minify:js",
         "minify:html": "minify dist/z52.html > dist/z52.min.html",
         "minify:css":  "minify dist/z52.css  > dist/z52.min.css",
         "minify:js":   "minify dist/z52.js   > dist/z52.min.js",
 
-        "make": "npm run scss",
-        "postmake": "cp z52.js dist/z52.js && cp z52.html dist/z52.html && npm run minify"
+        "make": "npm run scss && npm run jade",
+        "postmake": "cp z52.js dist/z52.js && mv z52.html dist/z52.html && npm run minify"
     },
     "jshintConfig": {
         "undef": true,
