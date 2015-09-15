@@ -1,15 +1,15 @@
 @import "z52-colours";
 
 *::selection {
-	background: rgba(255, 119, 0, 0.8);
-	color: #fff;
+	background: transparentize($pyro, 0.2);
+	color: $white;
 }
 
 body {
 	position: relative;
 	padding-top: 3.5rem;
-	background-color: #f9f9f9;
-	color: #505050;
+	background-color: $carbon9;
+	color: $carbon1;
 	font: 16px 'Maven Pro', sans-serif;
 }
 
@@ -34,7 +34,7 @@ h1, h2, h3, h4, .offset-anchor {
 header .navbar {
 	padding: 0rem;
 	box-shadow: 0 0 10px 1px rgba(0, 0, 0, .3);
-	color: #fff;
+	color: $white;
 	@media (min-width: 34em) {
 		background-color: transparent;
 		text-align: center;
@@ -72,7 +72,7 @@ pre {
 
 pre {
 	padding: 1rem;
-	background-color: #f2f2f2;
+	background-color: $carbon8;
 	counter-reset: line;
 	> span, > code > span {
 		counter-increment: line;
@@ -90,7 +90,7 @@ pre {
 		margin-right: 0.875rem;
 		padding: 1.125rem;
 		padding-right: 0.875rem;
-		background-color: #ececec;
+		background-color: $carbon7;
 	}
 }
 
@@ -106,9 +106,9 @@ option { padding: .375rem .75rem; }
 	padding: .0625rem .25rem;
 	font: 1rem 'Maven Pro', sans-serif;
 	line-height: 1.5;
-	color: #fff;
-	background-color: #ff7300;
-	border: .0625rem solid #ff7300;
+	color: $white;
+	background-color: $pyro;
+	border: .0625rem solid $pyro;
 	border-radius: .25rem;
 	cursor: pointer;
 }
@@ -116,30 +116,30 @@ option { padding: .375rem .75rem; }
 // PyroCarbon: colouring
 // --------------------------------------------------
 header .navbar {
-	background-color: #ff7300;
+	background-color: $pyro;
 }
 
 @media (min-width: 34em) {
 	header .navbar {
-		background-image: linear-gradient(0, rgba(255, 115, 0, .9), #ff7300);
+		background-image: linear-gradient(0, transparentize($pyro, 0.1), $pyro);
 	}
 }
 
-mark { background-color: #ffebd9; }
+mark { background-color: $pyro9; }
 code {
-	color: #ff7300;
-	background-color: #f2f2f2;
+	color: $pyro;
+	background-color: $carbon8;
 }
-kbd { color: #0f0; }
+kbd { color: $kbd; }
 
 a {
-	&, &:hover { color: #ff7300; }
-	&:active, &:focus { color: #d96500; }
+	&, &:hover { color: $pyro; }
+	&:active, &:focus { color: $pyro3; }
 	&.link {
 		color: inherit;
-		border-bottom: 0.0625rem solid #ff7300;
+		border-bottom: 0.0625rem solid $pyro;
 		&:hover, &:active, &:focus {
-			color: #000;
+			color: $black;
 			text-decoration: none;
 			border-bottom-width: 0.125rem;
 		}
@@ -149,17 +149,17 @@ a {
 .form-control {
 	border-bottom-left-radius:  0;
 	border-bottom-right-radius: 0;
-	&:focus { border-color: #ff9940; }
+	&:focus { border-color: $pyro5; }
 }
 
-option:focus, option:checked { color: #ff7300; }
+option:focus, option:checked { color: $pyro; }
 
 .btn-primary {
-	background-color: #ff7300;
-	border-color: #d96500;
+	background-color: $pyro;
+	border-color: $pyro3;
 	&:hover, &:active, &:focus {
-		background-color: #d96500;
-		border-color: #b35300;
+		background-color: $pyro3;
+		border-color: $pyro2;
 	}
 }
 
@@ -189,7 +189,7 @@ option:focus, option:checked { color: #ff7300; }
 		color: inherit;
 	}
 	a:hover, a.active:hover, a.active:focus {
-		background-color: #e6e6e6;
+		background-color: $carbon6;
 		color: inherit;
 	}
 	> li > a {
@@ -198,14 +198,14 @@ option:focus, option:checked { color: #ff7300; }
 		border-left: .2rem solid transparent;
 	}
 	&.active, &.active + ul li {
-		background: #f2f2f2;
+		background: $carbon8;
 	}
 	> li > ul > li > a {
 		padding: .2rem .5rem .2rem 1.5rem;
 		padding-left: 1.5rem;
 		border-left: .2rem solid transparent;
 		&.active {
-			border-left: .2rem solid #f60;
+			border-left: .2rem solid $pyro;
 		}
 	}
 }

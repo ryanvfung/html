@@ -29,7 +29,7 @@
         "scss": "node-sass z52.scss dist/z52.css",
 
         "jade": "jade z52.jade --pretty",
-        "postjade": "mv z52.html dist/z52.html && npm run minify:html",
+        "postjade": "mv z52.html dist/z52.html",
 
         "lint": "jshint z52.js > ../log/z52-jshint.log || true",
 
@@ -39,7 +39,7 @@
         "minify:js":   "minify dist/z52.js   > dist/z52.min.js",
 
         "make": "npm run scss && npm run jade",
-        "postmake": "cp z52.js dist/z52.js && mv z52.html dist/z52.html && npm run minify"
+        "postmake": "cp z52.js dist/z52.js && npm run minify"
     },
     "jshintConfig": {
         "undef": true,

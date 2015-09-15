@@ -6,7 +6,7 @@ body {
   position: relative;
   padding-top: 3.5rem;
   background-color: #f9f9f9;
-  color: #505050;
+  color: #606060;
   font: 16px 'Maven Pro', sans-serif; }
 
 h1::before, h2::before, h3::before, h4::before, .offset-anchor::before {
@@ -86,37 +86,37 @@ option {
   font: 1rem 'Maven Pro', sans-serif;
   line-height: 1.5;
   color: #fff;
-  background-color: #ff7300;
-  border: .0625rem solid #ff7300;
+  background-color: #ff7700;
+  border: 0.0625rem solid #ff7700;
   border-radius: .25rem;
   cursor: pointer; }
 
 header .navbar {
-  background-color: #ff7300; }
+  background-color: #ff7700; }
 
 @media (min-width: 34em) {
   header .navbar {
-    background-image: linear-gradient(0, rgba(255, 115, 0, 0.9), #ff7300); } }
+    background-image: linear-gradient(0, rgba(255, 119, 0, 0.9), #ff7700); } }
 
 mark {
   background-color: #ffebd9; }
 
 code {
-  color: #ff7300;
+  color: #ff7700;
   background-color: #f2f2f2; }
 
 kbd {
-  color: #0f0; }
+  color: #00ff77; }
 
 a, a:hover {
-  color: #ff7300; }
+  color: #ff7700; }
 
 a:active, a:focus {
-  color: #d96500; }
+  color: #cc5f00; }
 
 a.link {
   color: inherit;
-  border-bottom: 0.0625rem solid #ff7300; }
+  border-bottom: 0.0625rem solid #ff7700; }
   a.link:hover, a.link:active, a.link:focus {
     color: #000;
     text-decoration: none;
@@ -129,14 +129,14 @@ a.link {
     border-color: #ff9940; }
 
 option:focus, option:checked {
-  color: #ff7300; }
+  color: #ff7700; }
 
 .btn-primary {
-  background-color: #ff7300;
-  border-color: #d96500; }
+  background-color: #ff7700;
+  border-color: #cc5f00; }
   .btn-primary:hover, .btn-primary:active, .btn-primary:focus {
-    background-color: #d96500;
-    border-color: #b35300; }
+    background-color: #cc5f00;
+    border-color: #994700; }
 
 #sidenav {
   position: fixed;
@@ -172,4 +172,6 @@ option:focus, option:checked {
   padding-left: 1.5rem;
   border-left: .2rem solid transparent; }
   .sidenav > li > ul > li > a.active {
-    border-left: .2rem solid #f60; }
+    border-left: 0.2rem solid #ff7700; }
+
+/*# sourceMappingURL=z52.css.map */
