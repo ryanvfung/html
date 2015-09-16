@@ -26,7 +26,7 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
 
-        "scss": "node-sass z52.scss dist/z52.css",
+        "scss": "node-sass z52.scss dist/z52.css --source-map true --linefeed crlf",
 
         "jade": "jade z52.jade --pretty",
         "postjade": "mv z52.html dist/z52.html",
