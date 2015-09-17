@@ -138,10 +138,24 @@ option:focus, option:checked {
     background-color: #cc5f00;
     border-color: #994700; }
 
+.sidenav-container {
+  padding: 0; }
+
 #sidenav {
   position: fixed;
-  line-height: 1.5;
-  top: 3.5rem; }
+  top: 3.5rem;
+  line-height: 1.5; }
+  @media (min-width: 62em) {
+    #sidenav {
+      width: 14.5rem; } }
+  @media (min-width: 75em) {
+    #sidenav {
+      width: 17.5rem; } }
+  @media (min-width: 100em) {
+    #sidenav {
+      width: 23rem; } }
+  #sidenav h2 {
+    margin-bottom: 0; }
 
 .sidenav ul {
   list-style-type: none;
@@ -161,17 +175,19 @@ option:focus, option:checked {
 
 .sidenav > li > a {
   display: block;
-  padding: 0.2rem 0.5rem;
+  padding: 0.25rem 0.5rem;
   border-left: .2rem solid transparent; }
 
 .sidenav.active, .sidenav.active + ul li {
   background: #f2f2f2; }
 
 .sidenav > li > ul > li > a {
-  padding: 0.2rem 0.5rem 0.2rem 1.5rem;
-  padding-left: 1.5rem;
+  padding: 0.25rem 0.5rem 0.25rem 1.5rem;
   border-left: .2rem solid transparent; }
   .sidenav > li > ul > li > a.active {
     border-left: 0.2rem solid #ff7700; }
+
+.sidenav .dropdown-item {
+  white-space: normal; }
 
 /*# sourceMappingURL=z52.css.map */
