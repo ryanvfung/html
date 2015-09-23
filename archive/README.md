@@ -1,7 +1,9 @@
 HTML Templates
 ==============
 
-Version history:
+From version 1 to 3, [semantic versioning](http://semver.org/) was used, with Greek symbols were used for the patch number
+
+### Version history
 * 5.0, 5.1, 5.2
 * 4.0, 4.1
 * 3.0, 3.1, 3.2, 3.3
@@ -11,7 +13,7 @@ Version history:
 v5 (April 2014 - present)
 -------------------------
 
-### [5.2](../5.2/z52.html) (April 29<sup>th</sup> 2015)
+### [5.2](../5.2/dist/z52.html) (April 29<sup>th</sup> 2015)
 
 * Based on [Bootstrap 4](http://getbootstrap.com/)
 

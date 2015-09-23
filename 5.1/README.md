@@ -1,5 +1,5 @@
-HTML Template
-=============
+HTML Template 5.1
+=================
 
 Description
 -----------
@@ -10,40 +10,9 @@ Available for use under the MIT license.
 
 **Author**: Ryan Fung
 
-**Created**: 2010
+**Created**: February 12th 2015 (Version 5.1)
 
-**Last Modified**: 2015-09-07
-
-
-Version 5.2 Contents
---------------------
-
-```
-5.2/
-├── _z52-colorus.scss
-├── z52.jade
-├── z52.js
-├── z52.scss
-│
-├── dist/
-    ├── z52.css
-    ├── z52.css.map
-    ├── z52.html
-    ├── z52.js
-    ├── z52.min.css
-    ├── z52.min.html
-    └── z52.min.js
-
-```
-
-### Upcoming edits
-
-* Style numbered `pre` code blocks
-* Style button elements
-* Style footer
-* Style selection
-* Test jumbotron and other Bootstrap components
-
+**Last Modified**: April 29th 2015 (Version 5.1)
 
 Version 5.1 Contents
 --------------------
