@@ -21,7 +21,8 @@
         "node-sass": "^3.3.2",
         "jade": "^1.11.0",
         "minify": "^1.4.20",
-        "jshint": "^2.8.0"
+        "jshint": "^2.8.0",
+        "csslint": "^0.10.0"
     },
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
@@ -31,7 +32,9 @@
         "jade": "jade z52.jade --pretty",
         "postjade": "mv z52.html dist/z52.html",
 
-        "lint": "jshint z52.js > ../log/z52-jshint.log || true",
+        "lint": "npm run lint:js && npm run lint:css",
+        "lint:js": "jshint z52.js > ../log/z52-jshint.log || true",
+        "lint:css": "csslint dist/z52.css > ../log/z52-csslint.log || true",
 
         "minify": "npm run minify:html && npm run minify:css && npm run minify:js",
         "minify:html": "minify dist/z52.html > dist/z52.min.html",
