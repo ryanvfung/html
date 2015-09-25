@@ -77,7 +77,7 @@ pre {
 	> span, > code > span {
 		counter-increment: line;
 	}
-	span:before{
+	> span:before, > code > span:before{
 		content: counter(line);
 		-webkit-user-select: none;
 		   -moz-user-select: none;
