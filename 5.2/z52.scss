@@ -74,22 +74,29 @@ pre {
 	padding: 1rem;
 	background-color: $carbon8;
 	counter-reset: line;
-	> span, > code > span {
+	&.c-code-block > code > span {
 		counter-increment: line;
 	}
-	> span:before, > code > span:before{
+	&.c-code-block > code > span::before{
 		content: counter(line);
-		-webkit-user-select: none;
-		   -moz-user-select: none;
-			-ms-user-select: none;
-				user-select: none;
+		margin: -1.125em;
+		margin-right: 0.875em;
+		padding: 0.175em 1.125em;
+		padding-right: 0.875em;
+		background-color: $carbon7;
 	}
-	.cmd::before {
+	&.c-code-block > code > span:first-child::before{
+		padding-top: 1.25em;
+	}
+	&.c-code-block > code > span:last-child::before{
+		padding-bottom: 1.25em;
+	}
+	&.c-cmd-block::before {
 		content: "$";
-		margin: -1.125rem;
-		margin-right: 0.875rem;
-		padding: 1.125rem;
-		padding-right: 0.875rem;
+		margin: -1.125em;
+		margin-right: 0.875em;
+		padding: 1.25em 1.125em;
+		padding-right: 0.875em;
 		background-color: $carbon7;
 	}
 }

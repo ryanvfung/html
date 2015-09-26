@@ -43,9 +43,9 @@ Housekeeping
 
 ### Upcoming edits
 
-* Style numbered `pre` code blocks
-* Style button elements
 * Style footer
+* Fix lint errors
+* Convert to namespaced CSS class names
 * Test jumbotron and other Bootstrap components
 
 ### Validation
