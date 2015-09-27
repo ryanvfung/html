@@ -1,173 +1,190 @@
-@import "z52-colours";
+@import 'z52-colours';
 
 *::selection {
-	background: transparentize($pyro, 0.2);
-	color: $white;
+  background: transparentize($pyro, 0.2);
+  color: $white;
 }
 
 body {
-	position: relative;
-	padding-top: 3.5rem;
-	background-color: $carbon9;
-	color: $carbon1;
-	font: 16px 'Maven Pro', sans-serif;
+  position: relative;
+  padding-top: 3.5rem;
+  background-color: $carbon9;
+  color: $carbon1;
+  font: 16px "Maven Pro", sans-serif;
 }
 
-h1, h2, h3, h4, .offset-anchor {
-	&::before {
-		display: block;
-		content: " ";
-		margin-top: -3.5rem;
-		height: 3.5rem;
-		visibility: hidden;
-	}
+h1,
+h2,
+h3,
+h4,
+.offset-anchor {
+  &::before {
+    display: block;
+    height: 3.5rem;
+    margin-top: -3.5rem;
+    visibility: hidden;
+    content: ' ';
+  }
 }
 
 //== Responsive Layout
 @media (min-width: 100rem) {
-	.container {
-		max-width: 95rem;
-	}
+  .container { max-width: 95rem; }
 }
 
 //== Header navbar
 header .navbar {
-	padding: 0rem;
-	box-shadow: 0 0 10px 1px rgba(0, 0, 0, .3);
-	color: $white;
-	@media (min-width: 34em) {
-		background-color: transparent;
-		text-align: center;
-	}
-}
-.navbar-brand, .navbar-nav, .navbar-nav .nav-item {
-	display: inline-block;
-	float: none;
-	vertical-align: top;
+  padding: 0;
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);
+  color: $white;
+  @media (min-width: 34em) {
+    background-color: transparent;
+    text-align: center;
+  }
 }
 
-.navbar-brand, .navbar-nav {
-	@media (max-width: 34em) {
-		margin: 0 .5rem .25rem;
-	}
+.navbar-brand,
+.navbar-nav,
+.navbar-nav .nav-item {
+  float: none;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.navbar-brand,
+.navbar-nav {
+  @media (max-width: 34em) {
+    margin: 0 0.5rem 0.25rem;
+  }
 }
 
 #header-navbar {
-	@media (min-width: 34em) {
-		min-height: 3rem;
-		padding: .5rem;
-		text-align: center;
-	}
+  @media (min-width: 34em) {
+    min-height: 3rem;
+    padding: 0.5rem;
+    text-align: center;
+  }
 }
+
 .navbar-toggler {
-	clear: both;
-	padding: .5rem;
+  clear: both;
+  padding: 0.5rem;
 }
+
 
 //== Code elements
 
 pre {
-	border-radius: 0.25rem 0.25rem 0 0;
+  padding: 1rem;
+  border-radius: 0.25rem 0.25rem 0 0;
+  background-color: $carbon8;
+  counter-reset: line;
+
+  &.c-code-block > code {
+    > span { counter-increment: line; }
+
+    > span::before {
+      margin: -1.125em;
+      margin-right: 0.875em;
+      padding: 0.175em 1.125em;
+      padding-right: 0.875em;
+      background-color: $carbon7;
+      content: counter(line);
+    }
+
+    > span:first-child::before { padding-top: 1.25em; }
+    > span:last-child::before  { padding-bottom: 1.25em; }
+  }
+
+  &.c-cmd-block::before {
+    margin: -1.125em;
+    margin-right: 0.875em;
+    padding: 1.25em 1.125em;
+    padding-right: 0.875em;
+    background-color: $carbon7;
+    content: '$';
+  }
 }
 
-pre {
-	padding: 1rem;
-	background-color: $carbon8;
-	counter-reset: line;
-	&.c-code-block > code > span {
-		counter-increment: line;
-	}
-	&.c-code-block > code > span::before{
-		content: counter(line);
-		margin: -1.125em;
-		margin-right: 0.875em;
-		padding: 0.175em 1.125em;
-		padding-right: 0.875em;
-		background-color: $carbon7;
-	}
-	&.c-code-block > code > span:first-child::before{
-		padding-top: 1.25em;
-	}
-	&.c-code-block > code > span:last-child::before{
-		padding-bottom: 1.25em;
-	}
-	&.c-cmd-block::before {
-		content: "$";
-		margin: -1.125em;
-		margin-right: 0.875em;
-		padding: 1.25em 1.125em;
-		padding-right: 0.875em;
-		background-color: $carbon7;
-	}
-}
 
 
 //== Form elements
 
-fieldset { margin-bottom: .5rem; }
+fieldset { margin-bottom: 0.5rem; }
 select[multiple].form-control { padding: 0; }
-option { padding: .375rem .75rem; }
+option { padding: 0.375rem 0.75rem; }
 
-::-webkit-file-upload-button{
-	display: inline-block;
-	padding: .0625rem .25rem;
-	font: 1rem 'Maven Pro', sans-serif;
-	line-height: 1.5;
-	color: $white;
-	background-color: $pyro;
-	border: .0625rem solid $pyro4;
-	border-radius: .25rem;
-	cursor: pointer;
+::-webkit-file-upload-button {
+  display: inline-block;
+  border: 0.0625rem solid $pyro4;
+  padding: 0.0625rem 0.25rem;
+  border-radius: 0.25rem;
+  background-color: $pyro;
+  color: $white;
+  font: 1rem 'Maven Pro', sans-serif;
+  line-height: 1.5;
+  cursor: pointer;
 }
 
 // PyroCarbon: colouring
 // --------------------------------------------------
-header .navbar {
-	background-color: $pyro;
-}
+header .navbar { background-color: $pyro; }
 
 @media (min-width: 34em) {
-	header .navbar {
-		background-image: linear-gradient(0, transparentize($pyro, 0.1), $pyro);
-	}
+  header .navbar {
+    background-image: linear-gradient(0, transparentize($pyro, 0.1), $pyro);
+  }
 }
 
 mark { background-color: $pyro9; }
+
 code {
-	color: $pyro;
-	background-color: $carbon8;
+  background-color: $carbon8;
+  color: $pyro;
 }
+
 kbd { color: $kbd; }
 
 a {
-	&, &:hover { color: $pyro; }
-	&:active, &:focus { color: $pyro3; }
-	&.link {
-		color: inherit;
-		border-bottom: 0.0625rem solid $pyro;
-		&:hover, &:active, &:focus {
-			color: $black;
-			text-decoration: none;
-			border-bottom-width: 0.125rem;
-		}
-	}
+  &,
+  &:hover { color: $pyro; }
+
+  &:active,
+  &:focus { color: $pyro3; }
+
+  &.link {
+    color: inherit;
+    border-bottom: 0.0625rem solid $pyro;
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: $black;
+      text-decoration: none;
+      border-bottom-width: 0.125rem;
+    }
+  }
 }
 
 .form-control {
-	border-bottom-left-radius:  0;
-	border-bottom-right-radius: 0;
-	&:focus { border-color: $pyro5; }
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius:  0;
+  &:focus { border-color: $pyro5; }
 }
 
-option:focus, option:checked { color: $pyro; }
+option:focus,
+option:checked { color: $pyro; }
 
 .btn-primary {
-	background-color: $pyro;
-	border-color: $pyro3;
-	&:hover, &:active, &:focus {
-		background-color: $pyro3;
-		border-color: $pyro2;
-	}
+  border-color: $pyro3;
+  background-color: $pyro;
+
+  &:hover,
+  &:active,
+  &:focus {
+    border-color: $pyro2;
+    background-color: $pyro3;
+  }
 }
 
 // PyroCarbon: other styling
@@ -177,53 +194,60 @@ option:focus, option:checked { color: $pyro; }
 // Side navbar
 // --------------------------------------------------
 .sidenav-container {
-	padding: 0;
+  padding: 0;
 }
 
 #sidenav { // nav#sidenav
-	position: fixed;
-	top: 3.5rem;
-	line-height: 1.5;
-	@media (min-width: 62em) { width: 14.5rem; }
-	@media (min-width: 75em) { width: 17.5rem; }
-	@media (min-width: 100em) { width: 23rem; }
-	h2 { margin: 0 0 0 0.5rem; }
+  position: fixed;
+  top: 3.5rem;
+  line-height: 1.5;
+  @media (min-width:  62em) { width: 14.5rem; }
+  @media (min-width:  75em) { width: 17.5rem; }
+  @media (min-width: 100em) { width: 23rem; }
+  h2 { margin: 0 0 0 0.5rem; }
 }
 
 .sidenav { // ul.sidenav
-	ul {
-		list-style-type: none;
-		margin: 0;
-		padding: 0;
-	}
-	.dropdown-toggle::after {
-		display: none;
-	}
-	a, a.active {
-		background-color: inherit;
-		color: inherit;
-	}
-	a:hover, a.active:hover, a.active:focus {
-		background-color: $carbon6;
-		color: inherit;
-	}
-	> li > a {
-		display: block;
-		padding: .25rem .5rem;
-		border-left: .2rem solid transparent;
-		&.active {
-			border-left: .2rem solid $pyro;
-		}
-	}
-	&.active, &.active + ul li {
-		background-color: $carbon8;
-	}
-	> li > ul > li > a {
-		padding: .25rem .5rem .25rem 1.5rem;
-		border-left: .2rem solid transparent;
-		&.active {
-			border-left: .2rem solid $pyro5;
-		}
-	}
-	.dropdown-item { white-space: normal; }
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  .dropdown-toggle::after {
+    display: none;
+  }
+
+  a,
+  a.active {
+    background-color: inherit;
+    color: inherit;
+  }
+
+  a:hover,
+  a.active:hover,
+  a.active:focus {
+    background-color: $carbon6;
+    color: inherit;
+  }
+
+  > li > a {
+    display: block;
+    padding: 0.25rem 0.5rem;
+    border-left: 0.2rem solid transparent;
+    &.active { border-left: 0.2rem solid $pyro; }
+  }
+
+  &.active,
+  &.active + ul li {
+    background-color: $carbon8;
+  }
+
+  > li > ul > li > a {
+    padding: 0.25rem 0.5rem 0.25rem 1.5rem;
+    border-left: 0.2rem solid transparent;
+    &.active { border-left: 0.2rem solid $pyro5; }
+  }
+
+  .dropdown-item { white-space: normal; }
 }
