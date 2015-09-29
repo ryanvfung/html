@@ -169,7 +169,7 @@ a {
 
 .form-control {
   border-bottom-right-radius: 0;
-  border-bottom-left-radius:  0;
+  border-bottom-left-radius: 0;
   &:focus { border-color: $pyro5; }
 }
 
@@ -202,13 +202,21 @@ option:checked { color: $pyro; }
 }
 
 #sidenav { // nav#sidenav
-  position: fixed;
-  top: 3.5rem;
   line-height: 1.5;
+
   @media (min-width:  62em) { width: 14.5rem; }
   @media (min-width:  75em) { width: 17.5rem; }
   @media (min-width: 100em) { width: 23rem; }
-  h2 { margin: 0 0 0 0.5rem; }
+
+  &.sticky {
+    position: fixed;
+    top: 3.5rem;
+  }
+
+  h2 {
+    margin: 0 0 0 0.5rem;
+    &::before { content: none; }
+  }
 }
 
 .sidenav { // ul.sidenav

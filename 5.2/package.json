@@ -46,6 +46,10 @@
     },
     "jshintConfig": {
         "undef": true,
-        "unused": true
+        "unused": true,
+        "predef": [
+            "document",
+            "window"
+        ]
     }
 }
