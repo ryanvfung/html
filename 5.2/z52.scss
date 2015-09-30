@@ -2,7 +2,7 @@
 
 $font: 16px "Maven Pro", sans-serif;
 
-*::selection {
+::selection {
   background: transparentize($pyro, 0.2);
   color: $white;
 }
@@ -60,7 +60,7 @@ header .navbar {
   }
 }
 
-#header-navbar {
+.c-navbar {
   @media (min-width: 34em) {
     min-height: 3rem;
     padding: 0.5rem;
@@ -81,31 +81,31 @@ pre {
   border-radius: 0.25rem 0.25rem 0 0;
   background-color: $carbon8;
   counter-reset: line;
+}
 
-  &.c-code-block > code {
-    > span { counter-increment: line; }
+.c-code-block > code {
+  > span { counter-increment: line; }
 
-    > span::before {
-      margin: -1.125em;
-      margin-right: 0.875em;
-      padding: 0.175em 1.125em;
-      padding-right: 0.875em;
-      background-color: $carbon7;
-      content: counter(line);
-    }
-
-    > span:first-child::before { padding-top: 1.25em; }
-    > span:last-child::before  { padding-bottom: 1.25em; }
-  }
-
-  &.c-cmd-block::before {
+  > span::before {
     margin: -1.125em;
     margin-right: 0.875em;
-    padding: 1.25em 1.125em;
+    padding: 0.175em 1.125em;
     padding-right: 0.875em;
     background-color: $carbon7;
-    content: '$';
+    content: counter(line);
   }
+
+  > span:first-child::before { padding-top: 1.25em; }
+  > span:last-child::before  { padding-bottom: 1.25em; }
+}
+
+.c-cmd-block::before {
+  margin: -1.125em;
+  margin-right: 0.875em;
+  padding: 1.25em 1.125em;
+  padding-right: 0.875em;
+  background-color: $carbon7;
+  content: '$';
 }
 
 
@@ -197,29 +197,29 @@ option:checked { color: $pyro; }
 
 // Side navbar
 // --------------------------------------------------
-.sidenav-container {
+.c-sidebar {
   padding: 0;
-}
 
-#sidenav { // nav#sidenav
-  line-height: 1.5;
+  .navbar {
+    line-height: 1.5;
 
-  @media (min-width:  62em) { width: 14.5rem; }
-  @media (min-width:  75em) { width: 17.5rem; }
-  @media (min-width: 100em) { width: 23rem; }
+    @media (min-width:  62em) { width: 14.5rem; }
+    @media (min-width:  75em) { width: 17.5rem; }
+    @media (min-width: 100em) { width: 23rem; }
 
-  &.sticky {
-    position: fixed;
-    top: 3.5rem;
-  }
-
-  h2 {
-    margin: 0 0 0 0.5rem;
-    &::before { content: none; }
+    &.sticky {
+      position: fixed;
+      top: 3.5rem;
+    }
   }
 }
 
-.sidenav { // ul.sidenav
+.c-sidebar__title {
+  margin: 0 0 0 0.5rem;
+  &::before { content: none; }
+}
+
+.c-sidebar__nav { // ul.sidenav
   ul {
     margin: 0;
     padding: 0;

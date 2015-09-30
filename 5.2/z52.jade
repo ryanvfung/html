@@ -34,8 +34,8 @@ html
   body
     header.page-header
       nav.navbar.navbar-fixed-top.navbar-dark.bg-inverse
-        button.navbar-toggler.hidden-sm-up(type="button" data-toggle="collapse" data-target="#header-navbar") &#9776;
-        div#header-navbar.collapse.navbar-toggleable-xs
+        button.navbar-toggler.hidden-sm-up(type="button" data-toggle="collapse" data-target=".c-navbar") &#9776;
+        div.c-navbar.collapse.navbar-toggleable-xs
           a.navbar-brand(href="#") Responsive navbar
           ul.nav.navbar-nav
             li.nav-item.active: a.nav-link(href="#") Home #[span.sr-only (current)]
@@ -300,10 +300,10 @@ html
                 label Textarea
                 br
                 textarea.form-control Textarea
-      aside.hidden-md-down.col-lg-3.sidenav-container
-        nav#sidenav.navbar
-          h2 Contents
-          ul.nav.sidenav
+      aside.hidden-md-down.col-lg-3.c-sidebar
+        nav.navbar
+          h2.c-sidebar__title Contents
+          ul.nav.c-sidebar__nav
             li.nav-item.dropdown
                 a.nav-link.dropdown-toggle(href="#h1") Headings
                 ul
