@@ -12,14 +12,32 @@ Available for use under the MIT license.
 
 **Created**: April 29th 2015
 
-**Last Modified**: September 20th 2015
+**Last Modified**: October 2015
 
 
-### Version 5.2 Contents
+### Contents
 
-* **z52.html**
-* **z52.css**
-* **z52.js**
+```
+5.2/
+├── _z52-colours.scss
+├── z52.jade
+├── z52.js
+├── z52.scss
+├── dist/
+    ├── z52.css
+    ├── z52.css.map
+    ├── z52.html
+    ├── z52.js
+    ├── z52.min.css
+    ├── z52.min.html
+    └── z52.min.js
+```
+
+### Upcoming edits
+
+* Style footer
+* Style selection
+* Test jumbotron and other Bootstrap components
 
 
 Usage
