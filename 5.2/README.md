@@ -15,6 +15,25 @@ Available for use under the MIT license.
 **Last Modified**: October 2015
 
 
+
+Usage
+-----
+
+HTML Template 5.2 is written in Jade, SCSS and JavaScript.
+
+Either modify the source file and compile Jade and SCSS to HTML and CSS respectively, or use the distribution version in the `dist` folder.
+
+Minified versions of the compiled files are also available in the `dist` folder.
+
+As HTML Template 5.2 is based on [Bootstrap 4](http://getbootstrap.com/), all CSS style classes and JavaScript components from Bootstrap can be used.
+
+### Build steps
+
+* To compile all files, run `npm run make`
+* To compile only Jade, run `npm run jade`
+* To compile only SCSS, run `npm run scss`
+* To minify all files, run `npm run minify`
+
 ### Contents
 
 ```
@@ -33,28 +52,7 @@ Available for use under the MIT license.
     └── z52.min.js
 ```
 
-### Upcoming edits
 
-* Style footer
-* Style selection
-* Test jumbotron and other Bootstrap components
-
-
-Usage
------
-
-HTML Template 5.2 is written in Jade, SCSS and JavaScript.
-
-Either modify the source file and compile Jade and SCSS to HTML and CSS respectively, or use the distribution version in the `dist` folder.
-
-Minified versions of the compiled files are also available in the `dist` folder.
-
-### Build steps
-
-* To compile all files, run `npm run make`
-* To compile only Jade, run `npm run jade`
-* To compile only SCSS, run `npm run scss`
-* To minify all files, run `npm run minify`
 
 Housekeeping
 ------------

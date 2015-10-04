@@ -59,46 +59,10 @@ html(lang="en")
           p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         section
           h2#basic-html-tags Basic HTML Tags
-          h3#inline-text-elements Inline Text Elements
           p.offset-anchor#a
             | Click #[a(href="#a") here] to go to another website.
             |  #[a.link(href="#a") Or this link]
             |  #[a.btn.btn-sm.btn-primary(href="#a") Or this button]
-          p#mark   The #[code mark] tag marks up this #[mark highlighted text].
-          p#del    The #[code del] tag marks up this #[del deleted text].
-          p#s      The #[code s] tag marks up this #[s struck out text].
-          p#ins    The #[code ins] tag marks up this #[ins inserted text].
-          p#u      The #[code u] tag marks up this #[u underlined text].
-          p#small  The #[code small] tag marks up this #[small de-emphasised text].
-          p#strong The #[code strong] tag marks up this #[strong strongly emphasised text].
-          p#em     The #[code em] tag marks up this #[em emphasised text].
-          p#b      The #[code b] tag marks up this #[b bold text].
-          p#i      The #[code i] tag marks up this #[i italicised text].
-          p#abbr   The #[code abbr] tag marks up the abbreviation #[abbr(title="abbreviation") abbr]
-          p        The #[code initialism] class reduces the font size of initials such as #[abbr.initialism(title="HyperText Markup Language") HTML] (#[abbr(title="HyperText Markup Language") HTML]).
-
-          h3#alignment-and-transformation-classes Alignment &amp; Transformation Classes
-          p.text-left Left aligned text.
-          p.text-center Center aligned text.
-          p.text-right Right aligned text.
-          p.text-justify Justified text.
-          p.text-nowrap No wrap text.
-          p.text-lowercase Lowercased text.
-          p.text-uppercase Uppercased text.
-          p.text-capitalize Capitalised text.
-
-          h3#addresses-and-blockquotes Addresses &amp; Blockquotes
-          address
-            | 1 Royale Road,<br>
-            | Supremor Avenue,<br>
-            | AZE
-          p The #[code q] tag marks up an #[q inline quote].
-          blockquote.blockquote
-            p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            footer Cicero's #[cite(title="De finibus bonorum et malorum") De finibus bonorum et malorum]
-          blockquote.blockquote-reverse
-            p The #[code blockquote-reverse] class reverses the block quote alignment.
-            footer The #[code blockquote] tag marks up this block quote.
 
           h3#lists Lists
           ul
@@ -130,10 +94,6 @@ html(lang="en")
               ul
                 li Secondary list item 1
                 li Secondary list item 2
-          ul.list-inline
-            li Inline list item 1
-            li Inline list item 2
-            li Inline list item 3
 
           h3#tables Tables
           table.table.table-striped
@@ -157,8 +117,6 @@ html(lang="en")
           p The #[code kbd] tag instructs users to open new tabs with #[kbd #[kbd Ctrl] + #[kbd T]]
           p The #[code pre] tag wraps the following preformatted block of JavaScript:
           pre document.print("Hello World!");
-          p The #[code samp] tag wraps the following sample output: <samp>Hello World!</samp>
-          p The #[code var] tag wraps variables in equations such as #[var E] = <var>m</var><var>c</var><sup>2</sup>
           pre.c-code-block: code
             <span>&lt;!doctype html&gt;</span>
             <span>&lt;<span style="color:#b58900;">html</span>&gt;&lt;<span style="color:#b58900;">head</span>&gt;</span>
@@ -281,25 +239,11 @@ html(lang="en")
                   option Option 3
                   option(selected="selected") Selected Option
             fieldset
-              legend Buttons
-              p
-                label Button (button)
-                br
-                button.btn.btn-primary(type="button") Button
-              p
-                label Button (submit)
-                br
-                button.btn.btn-primary(type="submit") Submit Button
-              p
-                label Button (reset)
-                br
-                button.btn.btn-primary(type="reset") Reset Button
+              legend Button
+              button.btn.btn-primary(type="button") Button
             fieldset
               legend Textarea
-              p
-                label Textarea
-                br
-                textarea.form-control Textarea
+              textarea.form-control Textarea
       aside.hidden-md-down.col-lg-3.c-sidebar
         nav.navbar
           h2.c-sidebar__title Contents
@@ -313,9 +257,6 @@ html(lang="en")
             li.nav-item.dropdown
                 a.nav-link.dropdown-toggle(href="#basic-html-tags") Basic HTML Tags
                 ul
-                  li: a.dropdown-item(href="#inline-text-elements") Inline Text Elements
-                  li: a.dropdown-item(href="#alignment-and-transformation-classes") Alignment &amp; Transformation Classes
-                  li: a.dropdown-item(href="#addresses-and-blockquotes") Addresses &amp; Blockquotes
                   li: a.dropdown-item(href="#lists") Lists
                   li: a.dropdown-item(href="#tables") Tables
                   li: a.dropdown-item(href="#code") Code
@@ -326,5 +267,11 @@ html(lang="en")
                   li: a.dropdown-item(href="#mathml") MathML
             li.nav-item: a.nav-link(href="#forms") Forms
     footer.container.footer
-      p: a.link(href="https://github.com/ryanvfung/html") Ryan Fung's HTML Template 5.2 Hydrazone</a> (Valid HTML5 &amp; CSS3)
+      p
+        a.link(href="https://github.com/ryanvfung/html") Ryan Fung's HTML Template 5.2 Hydrazone
+        |  (Valid 
+        a.link(href="https://validator.nu/?doc=https%3A%2F%2Fryanvfung.github.io%2Fprojects%2Fhtml%2Fz52.html&parser=html5&laxtype=yes") HTML5
+        |  &amp; 
+        a.link(href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fryanvfung.github.io%2Fprojects%2Fhtml%2Fz52.html&profile=css3&usermedium=all&warning=1&vextwarning=&lang=en") CSS3
+        | )
       p Copyright &copy; 2010&ndash;2015 Ryan Fung. All rights reserved.
