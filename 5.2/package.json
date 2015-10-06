@@ -4,7 +4,7 @@
     "author": "Ryan Fung",
     "license": "MIT",
     "description": "HTML Template",
-    "main": "z52.js",
+    "main": "src/z52.js",
     "repository": {
         "type": "git",
         "url": "git+ssh://git@github.com/ryanvfung/html.git"
@@ -27,13 +27,13 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
 
-        "scss": "node-sass z52.scss dist/z52.css --source-map true --linefeed crlf",
+        "scss": "node-sass src/z52.scss dist/z52.css --source-map true --linefeed crlf",
 
-        "jade": "jade z52.jade --pretty",
-        "postjade": "mv z52.html dist/z52.html",
+        "jade": "jade src/z52.jade --pretty",
+        "postjade": "mv src/z52.html dist/z52.html",
 
         "lint": "npm run lint:js && npm run lint:css",
-        "lint:js": "jshint z52.js > ../log/z52-jshint.log || true",
+        "lint:js": "jshint src/z52.js > ../log/z52-jshint.log || true",
         "lint:css": "csslint dist/z52.css > ../log/z52-csslint.log || true",
 
         "minify": "npm run minify:html && npm run minify:css && npm run minify:js",
@@ -42,7 +42,7 @@
         "minify:js":   "minify dist/z52.js   > dist/z52.min.js",
 
         "make": "npm run scss && npm run jade",
-        "postmake": "cp z52.js dist/z52.js && npm run minify"
+        "postmake": "cp src/z52.js dist/z52.js && npm run minify"
     },
     "jshintConfig": {
         "undef": true,
