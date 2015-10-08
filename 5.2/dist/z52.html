@@ -51,56 +51,7 @@
           </section>
           <section>
             <h2 id="basic-html-tags">Basic HTML Tags</h2>
-            <h3 id="inline-text-elements">Inline Text Elements</h3>
             <p id="a" class="offset-anchor">Click <a href="#a">here</a> to go to another website. <a href="#a" class="link">Or this link</a> <a href="#a" class="btn btn-sm btn-primary">Or this button</a></p>
-            <p id="mark">  The <code>mark</code> tag marks up this 
-              <mark>highlighted text</mark>.
-            </p>
-            <p id="del">   The <code>del</code> tag marks up this 
-              <del>deleted text</del>.
-            </p>
-            <p id="s">     The <code>s</code> tag marks up this 
-              <s>struck out text</s>.
-            </p>
-            <p id="ins">   The <code>ins</code> tag marks up this <ins>inserted text</ins>.</p>
-            <p id="u">     The <code>u</code> tag marks up this 
-              <u>underlined text</u>.
-            </p>
-            <p id="small"> The <code>small</code> tag marks up this <small>de-emphasised text</small>.</p>
-            <p id="strong">The <code>strong</code> tag marks up this <strong>strongly emphasised text</strong>.</p>
-            <p id="em">    The <code>em</code> tag marks up this <em>emphasised text</em>.</p>
-            <p id="b">     The <code>b</code> tag marks up this <b>bold text</b>.</p>
-            <p id="i">     The <code>i</code> tag marks up this <i>italicised text</i>.</p>
-            <p id="abbr">  The <code>abbr</code> tag marks up the abbreviation <abbr title="abbreviation">abbr</abbr></p>
-            <p>       The <code>initialism</code> class reduces the font size of initials such as <abbr title="HyperText Markup Language" class="initialism">HTML</abbr> (<abbr title="HyperText Markup Language">HTML</abbr>).</p>
-            <h3 id="alignment-and-transformation-classes">Alignment &amp; Transformation Classes</h3>
-            <p class="text-left">Left aligned text.</p>
-            <p class="text-center">Center aligned text.</p>
-            <p class="text-right">Right aligned text.</p>
-            <p class="text-justify">Justified text.</p>
-            <p class="text-nowrap">No wrap text.</p>
-            <p class="text-lowercase">Lowercased text.</p>
-            <p class="text-uppercase">Uppercased text.</p>
-            <p class="text-capitalize">Capitalised text.</p>
-            <h3 id="addresses-and-blockquotes">Addresses &amp; Blockquotes</h3>
-            <address>
-              1 Royale Road,<br>
-              Supremor Avenue,<br>
-              AZE
-            </address>
-            <p>The <code>q</code> tag marks up an 
-              <q>inline quote</q>.
-            </p>
-            <blockquote class="blockquote">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              <footer>Cicero's 
-                <cite title="De finibus bonorum et malorum">De finibus bonorum et malorum</cite>
-              </footer>
-            </blockquote>
-            <blockquote class="blockquote-reverse">
-              <p>The <code>blockquote-reverse</code> class reverses the block quote alignment.</p>
-              <footer>The <code>blockquote</code> tag marks up this block quote.</footer>
-            </blockquote>
             <h3 id="lists">Lists</h3>
             <ul>
               <li>Unordered item 1</li>
@@ -149,11 +100,6 @@
                 </ul>
               </li>
             </ul>
-            <ul class="list-inline">
-              <li>Inline list item 1</li>
-              <li>Inline list item 2</li>
-              <li>Inline list item 3</li>
-            </ul>
             <h3 id="tables">Tables</h3>
             <table class="table table-striped">
               <thead>
@@ -181,10 +127,6 @@
             <p>The <code>kbd</code> tag instructs users to open new tabs with <kbd><kbd>Ctrl</kbd> + <kbd>T</kbd></kbd></p>
             <p>The <code>pre</code> tag wraps the following preformatted block of JavaScript:</p>
             <pre>document.print("Hello World!");</pre>
-            <p>The <code>samp</code> tag wraps the following sample output: <samp>Hello World!</samp></p>
-            <p>The <code>var</code> tag wraps variables in equations such as 
-              <var>E</var> = <var>m</var><var>c</var><sup>2</sup>
-            </p>
             <pre class="c-code-block"><code><span>&lt;!doctype html&gt;</span>
 <span>&lt;<span style="color:#b58900;">html</span>&gt;&lt;<span style="color:#b58900;">head</span>&gt;</span>
 <span>&lt;/<span style="color:#b58900;">head</span>&gt;&lt;<span style="color:#b58900;">body</span>&gt;</span>
@@ -274,81 +216,90 @@
           </section>
           <section>
             <h2 id="forms">Forms</h2>
-            <form id="form">
-              <fieldset>
-                <legend>Inputs</legend>
-                <p>
-                  <label>Input text</label><br>
-                  <input type="text" class="form-control">
-                </p>
-                <p>
-                  <label>Input password</label>
-                  <input type="password" class="form-control">
-                </p>
-                <p>
-                  <label>Input file</label>
-                  <input type="file" class="form-control">
-                </p>
-                <p>
-                  <label>Input checkboxes</label><br>
-                  <input id="checkbox1" type="checkbox"> Checkbox 1<br>
-                  <input id="checkbox2" type="checkbox"> Checkbox 2<br>
-                  <input id="checkbox3" type="checkbox"> Checkbox 3
-                </p>
-                <p>
-                  <label>Input radio</label><br>
-                  <input id="radio1" type="radio" name="radio" value="a"> Radio 1<br>
-                  <input id="radio2" type="radio" name="radio" value="b"> Radio 2<br>
-                  <input id="radio3" type="radio" name="radio" value="c"> Radio 3
-                </p>
+            <h3 id="inputs">Inputs</h3>
+            <form>
+              <fieldset class="form-group">
+                <label for="input-text">Input text</label>
+                <input id="input-text" type="text" class="form-control">
               </fieldset>
-              <fieldset>
-                <legend>Selects</legend>
-                <p>
-                  <label>Select</label><br>
-                  <select class="form-control">
-                    <option>Option 1</option>
-                    <option>Option 2</option>
-                    <option>Option 3</option>
-                    <option selected="selected">Selected Option</option>
-                    <optgroup label="Option Group">
-                      <option>Option Group 1</option>
-                      <option>Option Group 2</option>
-                      <option>Option Group 3</option>
-                    </optgroup>
-                  </select>
-                </p>
-                <p>
-                  <label>Select multiple</label>
-                  <select multiple="multiple" size="4" class="form-control">
-                    <option>Option 1</option>
-                    <option>Option 2</option>
-                    <option>Option 3</option>
-                    <option selected="selected">Selected Option</option>
-                  </select>
-                </p>
+              <fieldset class="form-group">
+                <label for="input-password">Input password</label>
+                <input id="input-password" type="password" class="form-control">
               </fieldset>
-              <fieldset>
-                <legend>Buttons</legend>
-                <p>
-                  <label>Button (button)</label><br>
-                  <button type="button" class="btn btn-primary">Button</button>
-                </p>
-                <p>
-                  <label>Button (submit)</label><br>
-                  <button type="submit" class="btn btn-primary">Submit Button</button>
-                </p>
-                <p>
-                  <label>Button (reset)</label><br>
-                  <button type="reset" class="btn btn-primary">Reset Button</button>
-                </p>
+              <fieldset class="form-group">
+                <label>Input file</label>
+                <input type="file" class="form-control">
               </fieldset>
-              <fieldset>
-                <legend>Textarea</legend>
-                <p>
-                  <label>Textarea</label><br>
-                  <textarea class="form-control">Textarea</textarea>
-                </p>
+              <fieldset class="form-group">
+                <div class="checkbox">
+                  <label>
+                    <input id="checkbox1" type="checkbox"> Checkbox 1
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input id="checkbox2" type="checkbox"> Checkbox 2
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input id="checkbox3" type="checkbox"> Checkbox 3
+                  </label>
+                </div>
+              </fieldset>
+              <fieldset class="form-group">
+                <div class="radio">
+                  <label>
+                    <input id="radio1" type="radio" name="radio" value="a"> Radio 1
+                  </label>
+                </div>
+                <div class="radio">
+                  <label>
+                    <input id="radio2" type="radio" name="radio" value="b"> Radio 2
+                  </label>
+                </div>
+                <div class="radio">
+                  <label>
+                    <input id="radio3" type="radio" name="radio" value="c"> Radio 3
+                  </label>
+                </div>
+              </fieldset>
+            </form>
+            <h3 id="selects">Selects</h3>
+            <form>
+              <fieldset class="form-group">
+                <label for="select">Select</label>
+                <select id="select" class="form-control">
+                  <option>Option 1</option>
+                  <option>Option 2</option>
+                  <option>Option 3</option>
+                  <option selected="selected">Selected Option</option>
+                  <optgroup label="Option Group">
+                    <option>Option Group 1</option>
+                    <option>Option Group 2</option>
+                    <option>Option Group 3</option>
+                  </optgroup>
+                </select>
+              </fieldset>
+              <fieldset class="form-group">
+                <label for="select-multiple">Select multiple</label>
+                <select id="select-multiple" multiple="multiple" size="4" class="form-control">
+                  <option>Option 1</option>
+                  <option>Option 2</option>
+                  <option>Option 3</option>
+                  <option selected="selected">Selected Option</option>
+                </select>
+              </fieldset>
+            </form>
+            <h3 id="forms-others">Other Form Elements</h3>
+            <form>
+              <fieldset class="form-group">
+                <label>Button</label>
+                <button id="btn" type="button" class="btn btn-primary">Button</button>
+              </fieldset>
+              <fieldset class="form-group">
+                <label for="textarea">Textarea</label>
+                <textarea id="textarea" class="form-control">Textarea</textarea>
               </fieldset>
             </form>
           </section>
@@ -366,9 +317,6 @@
               </li>
               <li class="nav-item dropdown"><a href="#basic-html-tags" class="nav-link dropdown-toggle">Basic HTML Tags</a>
                 <ul>
-                  <li><a href="#inline-text-elements" class="dropdown-item">Inline Text Elements</a></li>
-                  <li><a href="#alignment-and-transformation-classes" class="dropdown-item">Alignment &amp; Transformation Classes</a></li>
-                  <li><a href="#addresses-and-blockquotes" class="dropdown-item">Addresses &amp; Blockquotes</a></li>
                   <li><a href="#lists" class="dropdown-item">Lists</a></li>
                   <li><a href="#tables" class="dropdown-item">Tables</a></li>
                   <li><a href="#code" class="dropdown-item">Code</a></li>
@@ -380,14 +328,20 @@
                   <li><a href="#mathml" class="dropdown-item">MathML</a></li>
                 </ul>
               </li>
-              <li class="nav-item"><a href="#forms" class="nav-link">Forms</a></li>
+              <li class="nav-item dropdown"><a href="#forms" class="nav-link dropdown-toggle">Forms</a>
+                <ul>
+                  <li><a href="#inputs" class="dropdown-item">Inputs</a></li>
+                  <li><a href="#selects" class="dropdown-item">Selects</a></li>
+                  <li><a href="#forms-others" class="dropdown-item">Other Form Elements</a></li>
+                </ul>
+              </li>
             </ul>
           </nav>
         </aside>
       </div>
     </div>
     <footer class="container footer">
-      <p><a href="https://github.com/ryanvfung/html" class="link">Ryan Fung's HTML Template 5.2 Hydrazone</a> (Valid HTML5 &amp; CSS3)</a></p>
+      <p><a href="https://github.com/ryanvfung/html" class="link">Ryan Fung's HTML Template 5.2 Hydrazone</a> (Valid <a href="https://validator.nu/?doc=https%3A%2F%2Fryanvfung.github.io%2Fprojects%2Fhtml%2Fz52.html&amp;parser=html5&amp;laxtype=yes" class="link">HTML5</a> &amp; <a href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fryanvfung.github.io%2Fprojects%2Fhtml%2Fz52.html&amp;profile=css3&amp;usermedium=all&amp;warning=1&amp;vextwarning=&amp;lang=en" class="link">CSS3</a>)</p>
       <p>Copyright &copy; 2010&ndash;2015 Ryan Fung. All rights reserved.</p>
     </footer>
   </body>
