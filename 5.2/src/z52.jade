@@ -121,12 +121,14 @@ html(lang='en')
           p The #[code kbd] tag instructs users to open new tabs with #[kbd #[kbd Ctrl] + #[kbd T]]
           p The #[code pre] tag wraps the following preformatted block of JavaScript:
           pre document.print('Hello World!');
-          pre.c-code-block: code
+          p The #[code o-code-block] class adds line numbers to the following #[code pre] block, provided each line is wrapped with a span tag:
+          pre.o-code-block: code
             <span>&lt;!doctype html&gt;</span>
             <span>&lt;<span style='color:#b58900;'>html</span>&gt;&lt;<span style='color:#b58900;'>head</span>&gt;</span>
             <span>&lt;/<span style='color:#b58900;'>head</span>&gt;&lt;<span style='color:#b58900;'>body</span>&gt;</span>
             <span>&lt;/<span style='color:#b58900;'>body</span>&gt;&lt;/<span style='color:#b58900;'>html</span>&gt;</span>
-          pre.c-cmd-block git clone git@github.com:ryanvfung/html.git
+          p The #[code o-cmd-block] class adds the command line indicator #[mark $] to the following #[code pre] block:
+          pre.o-cmd-block git clone git@github.com:ryanvfung/html.git
         section
           h2#other-w3c-elements Other W3C Elements
           h3#svg SVG Demo

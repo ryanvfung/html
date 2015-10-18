@@ -26,8 +26,8 @@
 //   * Sectioning and structuring elements
 //   * Phrasing elements
 //   * Form elements
-// * HTML Template custom components
-//   * Code components
+// * HTML Template custom objects and components
+//   * Code objects
 //   * Side navbar components
 
 
@@ -255,14 +255,14 @@ option:checked { color: $pyro; }
 
 
 // ==================================================
-// HTML Template custom components
+// HTML Template custom objects and components
 // ==================================================
 
 
-// Code components
+// Code objects
 // --------------------------------------------------
 
-.c-code-block > code {
+.o-code-block > code {
   > span { counter-increment: line; }
 
   > span::before {
@@ -278,7 +278,7 @@ option:checked { color: $pyro; }
   > span:last-child::before  { padding-bottom: 1.25em; }
 }
 
-.c-cmd-block::before {
+.o-cmd-block::before {
   margin: -1.125em;
   margin-right: 0.875em;
   padding: 1.25em 1.125em;
