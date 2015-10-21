@@ -189,69 +189,73 @@ html(lang='en')
         section
           h2#forms Forms
           form
-            fieldset.form-group#inputs
+            fieldset#inputs
               legend Inputs
-              label(for='input-text') Input text
-              input#input-text(type='text' class='form-control')
-              label(for='input-password') Input password
-              input#input-password(type='password' class='form-control')
-              label Input file
-              input(type='file' class='form-control')
-            fieldset.form-group
-              legend Checkboxes
-              .checkbox
-                label
-                  input#checkbox1(type='checkbox')
-                  |  Checkbox 1
-              .checkbox
-                label
-                  input#checkbox2(type='checkbox')
-                  |  Checkbox 2
-              .checkbox
-                label
-                  input#checkbox3(type='checkbox')
-                  |  Checkbox 3
-            fieldset.form-group
-              legend Radio buttons
-              .radio
-                label
-                  input#radio1(type='radio' name='radio' value='a')
-                  |  Radio 1
-              .radio
-                label
-                  input#radio2(type='radio' name='radio' value='b')
-                  |  Radio 2
-              .radio
-                label
-                  input#radio3(type='radio' name='radio' value='c')
-                  |  Radio 3
+              .form-group
+                label(for='input-text') Input text
+                input#input-text(type='text' class='form-control')
+              .form-group
+                label(for='input-password') Input password
+                input#input-password(type='password' class='form-control')
+              .form-group
+                label Input file
+                input(type='file' class='form-control')
+              .form-group
+                .checkbox
+                  label
+                    input#checkbox1(type='checkbox')
+                    |  Checkbox 1
+                .checkbox
+                  label
+                    input#checkbox2(type='checkbox')
+                    |  Checkbox 2
+                .checkbox
+                  label
+                    input#checkbox3(type='checkbox')
+                    |  Checkbox 3
+              .form-group
+                .radio
+                  label
+                    input#radio1(type='radio' name='radio' value='a')
+                    |  Radio 1
+                .radio
+                  label
+                    input#radio2(type='radio' name='radio' value='b')
+                    |  Radio 2
+                .radio
+                  label
+                    input#radio3(type='radio' name='radio' value='c')
+                    |  Radio 3
           form
-            fieldset.form-group
+            fieldset
               legend#selects Selects
-              label(for='select') Select
-              select#select.form-control
-                option Option 1
-                option Option 2
-                option Option 3
-                option(selected='selected') Selected Option
-                optgroup(label='Option Group')
-                  option Option Group 1
-                  option Option Group 2
-                  option Option Group 3
-              label(for='select-multiple') Select multiple
-              select#select-multiple.form-control(multiple='multiple' size='4')
-                option Option 1
-                option Option 2
-                option Option 3
-                option(selected='selected') Selected Option
+              .form-group
+                label(for='select') Select
+                select#select.form-control
+                  option Option 1
+                  option Option 2
+                  option Option 3
+                  option(selected='selected') Selected Option
+                  optgroup(label='Option Group')
+                    option Option Group 1
+                    option Option Group 2
+                    option Option Group 3
+              .form-group
+                label(for='select-multiple') Select multiple
+                select#select-multiple.form-control(multiple='multiple' size='4')
+                  option Option 1
+                  option Option 2
+                  option Option 3
+                  option(selected='selected') Selected Option
           form
-            fieldset.form-group
+            fieldset
               legend#forms-others Other Form Elements
-              p
+              .form-group
                 label Button
                 button#btn.btn.btn-primary(type='button') Button
-              label(for='textarea') Textarea
-              textarea#textarea.form-control Textarea
+              .form-group
+                label(for='textarea') Textarea
+                textarea#textarea.form-control Textarea
       aside.hidden-md-down.col-lg-3.c-sidebar
         nav.navbar
           h2.c-sidebar__title Contents
