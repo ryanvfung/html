@@ -277,14 +277,17 @@ option:checked { color: $pyro; }
   > span:last-child::before  { padding-bottom: 1.25em; }
 }
 
+.o-cli-block::before,
 .o-cmd-block::before {
   margin: -1.125em;
   margin-right: 0.875em;
   padding: 1.25em 1.125em;
   padding-right: 0.875em;
   background-color: $carbon7;
-  content: '$';
 }
+
+.o-cli-block::before { content: '$'; }
+.o-cmd-block::before { content: '>'; }
 
 
 // Side navbar component
