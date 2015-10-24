@@ -29,6 +29,7 @@
 // * HTML Template custom objects and components
 //   * Code objects
 //   * Side navbar components
+//   * Footer component
 
 
 
@@ -358,4 +359,16 @@ option:checked { color: $pyro; }
   }
 
   .dropdown-item { white-space: normal; }
+}
+
+
+// Footer component
+// --------------------------------------------------
+
+.c-footer {
+  padding: 0.5rem 0;
+  background-color: $carbon7;
+  text-align: center;
+
+  p { margin: 0.5rem 0; }
 }
