@@ -1,0 +1,26 @@
+{
+    "name": "html",
+    "version": "5.1.0",
+    "author": "Ryan Fung",
+    "license": "MIT",
+    "description": "HTML Template",
+    "main": "z51.js",
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/ryanvfung/html.git"
+    },
+    "homepage": "https://github.com/ryanvfung/html#readme",
+    "keywords": [
+        "html",
+        "template"
+    ],
+    "bugs": {
+        "url": "https://github.com/ryanvfung/html/issues"
+    },
+    "devDependencies": {
+        "jade": "^1.11.0"
+    },
+    "scripts": {
+        "jade": "jade z51-jade.jade"
+    }
+}

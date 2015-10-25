@@ -1,0 +1,249 @@
+//- Title: Ryan Fung's HTML Template v5.1 Jade port
+//- Author: Ryan Fung (ryanvfung)
+//- License: MIT
+
+mixin meta(n, c)
+  meta(name=n content=c)
+mixin css(url)
+  link(rel='stylesheet' type='text/css' href=url)
+
+doctype html
+// Ryan Fung's HTML Template v5.1
+
+html(lang='en')
+  head
+    title HTML Template 5.1 Hydrazine
+    +css('https://fonts.googleapis.com/css?family=Maven+Pro:400,700')
+    +css('z51.css')
+    +css('z51-forms.css')
+    +css('z51-html-ext.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/1.4.14/jquery.scrollTo.min.js')
+    script(src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML')
+    script(src='z51.js')
+    +meta('author', 'Ryan Fung')
+
+  body
+    div#header-wrapper
+      header
+        div#title HTML Template
+        div#subtitle 5.1 Hydrazine
+    nav#navbar
+      span#navbar-button
+      span#navbar-title Introduction
+    nav#nav
+      p#nav-title Contents
+      ul.intra
+        li
+          a(href='#h1') Header 1
+          ul
+            li
+              a(href='#h2') Header 2
+              ul
+                li
+                  a(href='#h3') Header 3
+                  ul
+                    li
+                      a(href='#h4') Header 4
+        li: a(href='#basic-html-tags') Basic HTML Tags
+        li: a(href='#mathml') MathML
+        li: a(href='#svg') SVG
+        li: a(href='#forms') Forms
+    div#main-wrapper: main(role='main')
+      section
+        h1#h1 Heading 1
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        h2#h2 Heading 2
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        h3#h3 Heading 3
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        h4#h4 Heading 4
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      section
+        h2#basic-html-tags Basic HTML Tags
+        p
+          | Click #[a(href='#a') here] to go to another website.
+          |  #[a.link(href='#a') Or here]
+        p This is #[strong strong] text.
+        p This is #[em emphasis] text.
+        ol
+          li Ordered item 1
+            li Ordered item 2
+            li(style='list-style-item:none'): ol
+              li Ordered item 2.1
+              li Ordered item 2.2
+              li(style='list-style-item:none'): ol
+                li Ordered item 2.2.1
+                li Ordered item 2.2.2
+        ul
+          li Unordered item 1
+            li Unordered item 2
+            li(style='list-style-item:none'): ul
+              li Unordered item 2.1
+              li Unordered item 2.2
+              li(style='list-style-item:none'): ul
+                li Unordered item 2.2.1
+                li Unordered item 2.2.2
+        dl
+          dt Definition term 1
+          dd Definition 1
+          dt Definition term 2
+          dd Definition 2
+          dt Definition term 3
+          dd Definition 3
+        table
+          tr
+            th(scope='col') Table Header 1
+            th(scope='col') Table Header 2
+            th(scope='col') Table Header 3
+          tr
+            td Table Cell
+            td Table Cell
+            td Table Cell
+          tr
+            td Table Cell
+            td Table Cell
+            td Table Cell
+        h2#svg SVG Demo
+        p: svg(width='200px' height='230px' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink')
+          g#smiley-face
+            //- circle/(cx='100' cy='100' r='100' fill='#000')
+            //- circle/(cx='100' cy='100' r='95' fill='#ff0')
+            //- circle/(cx=' 60' cy=' 60' r='10' fill='#000')
+            //- circle/(cx='140' cy=' 60' r='10' fill='#000')
+            //- ellipse/(cx='100'cy='110' rx='40' ry='20' fill='#fcf' stroke='#000' stroke-width='0.5')
+            //- circle/(cx='080' cy='110' r=' 6' fill='#000')
+            //- circle/(cx='120' cy='110' r=' 6' fill='#000')
+            <circle cx='100' cy='100' r='100' fill='#000' />
+            <circle cx='100' cy='100' r='95' fill='#ff0' />
+            <circle cx='060' cy='60' r='10' fill='#000' />
+            <circle cx='140' cy='60' r='10' fill='#000' />
+            <ellipse cx='100' cy='110' rx='40' ry='20' fill='#fcf' stroke='#000' stroke-width='0.5' />
+            <circle cx='080' cy='110' r='6' fill='#000' />
+            <circle cx='120' cy='110' r='6' fill='#000' />
+          g
+            //- path/#smile(stroke='black' stroke-width='5' fill='none' d='M 50,147 s 50,50 100,0')
+            <path id='smile' stroke='black' stroke-width='5' fill='none' d='M 50,147 s 50,50 100,0' />
+          defs
+            //- path/#top(d='M 0,100 s 200,-200 200,200')
+            //- path/#textend(d='M 150,205 L 150,223')
+            <path id='top' d='M 0,100 s 200,-200 200,200' />
+            <path id='textend' d='M 150,205 L 150,223' />
+          g
+            text: textPath(xlink:href='#smile' startOffset='50%' text-anchor='middle'): tspan(dy='-5') M.o.u.s.t.a.c.h.e
+            text(x='100' y='220' rotate='10' text-anchor='middle')
+              | <tspan font-weight='bold' fill='#f60'>Ryan</tspan><tspan fill='#ccc'>&#39;s Smiley</tspan><tspan fill='transparent'>:D</tspan>
+            text(fill='#000')
+              textPath(xlink:href='#textend' fill='#ccc')
+                | <tspan dy='-2' dx='3'>:</tspan><tspan dy='2'>D</tspan>
+        h2#mathml MathML Demo
+        h3 Quadratic Equation
+        p The solution to the equation: 
+          math(xmlns='http://www.w3.org/1998/Math/MathML' alttext='ax&sup2;+bx+c=0'): mstyle(displaystyle='true')
+            mi a
+            | #[msup: #[mi x] #[mn 2]]
+            | #[mo +] #[mi b] #[mo +] #[mi c] #[mo =] #[mn 0]
+          |  is given by the equation: 
+          math(xmlns='http://www.w3.org/1998/Math/MathML' alttext='x=(-b&plusmn;&radic;[b&sup2; -4ac]) / (2a)'): mstyle(displaystyle='true')
+            | #[mi x] #[mo =]
+            mfrac
+              mrow
+                | #[mo(form='prefix') -] #[mi b] #[mo &plusmn;]
+                msqrt
+                  | #[msup: #[mi b] #[mn 2]]
+                  | #[mo -] #[mn 4] #[mi a] #[mi c]
+              mrow
+                | #[mn 2] #[mo &InvisibleTimes;] #[mi a]
+
+        h4 Horizontal Rule test
+        hr
+        p This is #[code &lt;code&gt;] text.
+        p This is a #[q quote].
+        blockquote This is a blockquote: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      section
+        h1#forms Forms
+        form#form
+          fieldset#inputs
+            legend Inputs
+            label(for='input-text') Input text
+            br
+            input#input-text(type='text')
+            br
+            br
+            label(for='input-password') Input password
+            br
+            input#input-password(type='password')
+            br
+            br
+            label Input file
+            br
+            input(type='file')
+            br
+            br
+            label Input checkboxes
+            br
+            label
+              input#checkbox1(type='checkbox')
+              |  Checkbox 1
+            br
+            label
+              input#checkbox2(type='checkbox')
+              |  Checkbox 2
+            br
+            label
+              input#checkbox3(type='checkbox')
+              |  Checkbox 3
+            br
+            br
+            label Input radio
+            br
+            label
+              input#radio1(type='radio' name='radio' value='a')
+              |  Radio 1
+            br
+            label
+              input#radio2(type='radio' name='radio' value='b')
+              |  Radio 2
+            br
+            label
+              input#radio3(type='radio' name='radio' value='c')
+              |  Radio 3
+        form
+          fieldset
+            legend#selects Selects
+            label(for='select') Select
+            br
+            select#select
+              option Option 1
+              option Option 2
+              option Option 3
+              option(selected='selected') Selected Option
+              optgroup(label='Option Group')
+                option Option Group 1
+                option Option Group 2
+                option Option Group 3
+            br
+            br
+            label(for='select-multiple') Select multiple
+            br
+            select#select-multiple(multiple='multiple' size='4')
+              option Option 1
+              option Option 2
+              option Option 3
+              option(selected='selected') Selected Option
+        form
+          fieldset
+            legend#forms-others Other Form Elements
+            label Button
+            br
+            button#btn.btn.btn-primary(type='button') Button
+            br
+            br
+            label(for='textarea') Textarea
+            br
+            textarea#textarea.form-control Textarea
+    div#footer-wrapper: footer
+      p
+        a.link(href='https://github.com/ryanvfung/html') Ryan Fung's HTML Template 5.1 Hydrazine
+        |  (Valid HTML5 &amp; CSS3)
+      p Copyright &copy; 2010&ndash;2015 Ryan Fung. All rights reserved.
