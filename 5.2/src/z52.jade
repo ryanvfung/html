@@ -168,12 +168,12 @@ html(lang='en')
 
           h3#mathml MathML Demo
           h4 Quadratic Equation
-          p The solution to the equation:
+          p The solution to the equation: 
             math(xmlns='http://www.w3.org/1998/Math/MathML' alttext='ax&sup2;+bx+c=0'): mstyle(displaystyle='true')
               mi a
               | #[msup: #[mi x] #[mn 2]]
               | #[mo +] #[mi b] #[mo +] #[mi c] #[mo =] #[mn 0]
-            | is given by the equation:
+            |  is given by the equation: 
             math(xmlns='http://www.w3.org/1998/Math/MathML' alttext='x=(-b&plusmn;&radic;[b&sup2; -4ac]) / (2a)'): mstyle(displaystyle='true')
               | #[mi x] #[mo =]
               mfrac
@@ -195,13 +195,13 @@ html(lang='en')
               legend Inputs
               .form-group
                 label(for='input-text') Input text
-                input#input-text(type='text' class='form-control')
+                input#input-text.form-control(type='text')
               .form-group
                 label(for='input-password') Input password
-                input#input-password(type='password' class='form-control')
+                input#input-password.form-control(type='password')
               .form-group
                 label Input file
-                input(type='file' class='form-control')
+                input.form-control(type='file')
               .form-group
                 .checkbox
                   label
