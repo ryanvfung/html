@@ -8,7 +8,7 @@ window.onload = function () {
             $(a[i]).parent().addClass('intra');
         }
     }
-    document.title = $('#subtitle').text() + ' | ' + $('#title').text();
+    document.title = $('#subtitle').text() + ' \xb7 ' + $('#title').text();
     if( window.location.hash !== '' ) {
         window.setTimeout(
             function () {
@@ -41,7 +41,7 @@ window.onload = function () {
     });
 }
 $(window).scroll( function () {
-    if( $('body').scrollTop() > $('#header-wrapper').css('paddingTop').split('px')[0] ) { 
+    if( $('body').scrollTop() > $('#header-wrapper').css('paddingTop').split('px')[0] ) {
         $('body').addClass('obscured');
     } else {
         $('body').removeClass('obscured');
