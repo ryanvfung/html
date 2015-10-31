@@ -197,9 +197,6 @@ nav#nav ul {
 nav#nav ul li {
     background: #fff;
 }
-nav#nav ul li:nth-child(even) {
-    background: #f3f3f3;
-}
 nav#nav ul li a {
     display: block;
     padding: 0.385em 0.769em;
@@ -346,7 +343,7 @@ main p {
         padding: 0em 7.8125em 0.35em 1.11em;
     }
 }
-@media all and (min-width: 1250px) {
+@media all and (min-width: 1500px) {
     main, header, footer {
         width: 75em;
     }
