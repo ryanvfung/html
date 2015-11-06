@@ -238,8 +238,15 @@ nav#nav .nav-this:hover {
     background: #ddd;
 }
 
-main p {
+main p,
+main ul,
+main ol {
     margin: 0 1em 0.5em;
+}
+
+main ul,
+main ol {
+    padding-left: 2em;
 }
 
 @media all and (min-width: 500px) {
