@@ -7,7 +7,7 @@ body {
   padding-top: 3.5rem;
   background-color: #f9f9f9;
   color: #606060;
-  font: 16px "Maven Pro", sans-serif; }
+  font: 16px "Maven Pro", "Segoe UI", "Lucida Grande", "Droid Sans", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif; }
 
 h1::before,
 h2::before,
@@ -38,7 +38,7 @@ option {
   padding: 0.0625rem 0.25rem;
   border-radius: 0.25rem;
   color: #fff;
-  font: 16px "Maven Pro", sans-serif;
+  font: 16px "Maven Pro", "Segoe UI", "Lucida Grande", "Droid Sans", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   line-height: 1.5;
   cursor: pointer; }
 
