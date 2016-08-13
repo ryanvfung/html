@@ -376,4 +376,7 @@ main ol {
   footer {
     width: 75em;
   }
+  body.obscured header {
+    padding: 0 0 0 3em;
+  }
 }
