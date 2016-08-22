@@ -30,6 +30,7 @@
 //   * Code objects
 //   * Side navbar components
 //   * Footer component
+//   * Page scroll progress bar
 
 
 
@@ -371,4 +372,23 @@ option:checked { color: $pyro; }
   text-align: center;
 
   p { margin: 0.5rem 0; }
+}
+
+
+// Page scroll progress bar
+// --------------------------------------------------
+
+#scroll-progress-bar {
+    position: fixed;
+    z-index: 1031; /* 1 more than navbar */
+    top: 0;
+    right: 100%;
+
+    width: 120%;
+    height: .125rem;
+
+    transition: right .3s ease;
+
+    background-color: #fff;
+    box-shadow: 0 0 20px 1px #fff;
 }
