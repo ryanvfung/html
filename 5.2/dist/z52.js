@@ -12,4 +12,11 @@ $(function(){
       $('.c-sidebar .navbar').removeClass('sticky');
     }
   });
+
+  /* page scroll progress bar */
+  $(document).scroll(function(){
+    $("#scroll-progress-bar").css("right",
+      100 * (1 - $("body").scrollTop() / ($("body").height() - window.innerHeight)) + "%"
+    );
+  });
 });
