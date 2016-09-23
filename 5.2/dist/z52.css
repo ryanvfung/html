@@ -77,6 +77,9 @@ header .navbar {
   clear: both;
   padding: 0.5rem; }
 
+.popover, .tooltip {
+  font: 16px "Maven Pro", "Segoe UI", "Lucida Grande", "Droid Sans", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif; }
+
 header .navbar {
   background-color: #ff7700; }
 
