@@ -29,8 +29,9 @@
 
         "scss": "node-sass src/z52.scss dist/z52.css --source-map true --linefeed crlf",
 
-        "jade": "jade src/z52.jade --pretty",
-        "postjade": "mv src/z52.html dist/z52.html",
+        "jade": "npm run jade1 && npm run jade2",
+        "jade1": "jade --pretty --obj \"{'local':true}\" < src/z52.jade > dist/z52local.html",
+        "jade2": "jade --pretty < src/z52.jade > dist/z52.html",
 
         "lint": "npm run lint:js && npm run lint:css",
         "lint:js": "jshint src/z52.js > ../log/z52-jshint.log || true",
