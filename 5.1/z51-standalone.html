@@ -1,0 +1,741 @@
+<!doctype html>
+<!-- Ryan Fung's HTML Template v5.1 -->
+<html><head>
+    <title>HTML Template 5.1 Hydrazine</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Maven+Pro:400,700">
+    <style>
+/* Ryan Fung's HTML Template v5.1 CSS (Core)
+ * Contents:
+ *  - form, fieldset, legend
+ *  - input, buton, select, textarea
+ */
+* { transition: ease .3s all; }
+*::selection {
+  background: rgba(255,102,0,.6);
+  color: #fff;
+}
+
+body {
+  margin: 0;
+  background: #f8f8f8;
+  font: 100% "Maven Pro";
+  font-family: "Maven Pro", sans-serif;
+}
+
+h1 {
+  margin: 0 0 .2em;
+  border-bottom: 1px solid #ccc;
+  padding: .2em .5em;
+  background: #eee;
+  color: #f60;
+  font-size: 2em;
+  font-weight: normal;
+}
+
+h2 {
+  margin: .4em .625em .25em;
+  border-bottom: .1em solid #f60;
+  padding: .2em 0 0;
+  font-size: 1.6em;
+  font-weight: normal;
+}
+
+h3 {
+  margin: .4em .769em .25em;
+  padding: .2em 0 0;
+  font-size: 1.3em;
+}
+
+h4 {
+  margin: .25em 1em;
+  padding: .2em 0 0;
+  font-size: 1em;
+}
+
+p { margin: 0; }
+
+section::after {
+  display: block;
+  height: .1em;
+  content: "";
+}
+
+a { color: #f60; }
+a:hover,
+a:visited:hover {
+  color: #f00;
+}
+a:visited { color: #c50; }
+a.link {
+  border-bottom: .07em solid #f60;
+  padding: .05em .15em;
+  color: #666;
+  text-decoration: none;
+}
+a.link:visited {
+  color: #333;
+  border-bottom-color: #c50;
+}
+a.link:hover,
+a.link:visited:hover {
+  border-bottom-width: .15em;
+  color: #000;
+}
+a.link:active,
+a.link:visited:active {
+  border-bottom-color: #f93;
+  border-bottom-right-radius: .3em;
+  border-bottom-left-radius: .3em;
+  background: #f60;
+  background: linear-gradient(0deg,#f93,#f60);
+  color: #fff;
+}
+
+ol { list-style: decimal; }
+ol ol { list-style: lower-latin; }
+ol ol ol { list-style: lower-roman; }
+
+table {
+  margin: 1em;
+  border-spacing: 0;
+  border-radius: .2em;
+}
+table,
+th,
+td {
+  border: .1em solid #333;
+}
+th {
+  background: #f60;
+  color: #fff;
+}
+tr:nth-child(odd) {
+  background: #eee;
+}
+th,
+td {
+  padding: 5px;
+}
+
+
+#header-wrapper {
+  padding: 3.5em .5em .5em;
+  background: #f93;
+  color: #fff;
+}
+
+header {
+  padding: 0;
+  text-align: center;
+}
+
+#title {
+  padding-bottom: .1em;
+  font-size: 2.4em;
+  font-weight: bold;
+  font-variant: small-caps;
+  line-height: 1em;
+}
+#subtitle {
+  padding-bottom: .1em;
+  font-size: 2em;
+  line-height: 1em;
+}
+
+#footer-wrapper {
+  border-top: .1em solid #ddd;
+  padding: .5em 0 .6em;
+  background: #f93;
+  background: linear-gradient(0deg,#f60,#f93);
+  color: #000;
+  text-align: center;
+}
+
+nav#navbar {
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 3em;
+  background: #f60;
+  background: rgba(255,102,0,.9);
+  text-overflow: ellipsis;
+}
+nav#navbar span#navbar-button {
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 3em;
+  height: 3em;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc0OHB4JyBoZWlnaHQ9JzQ4cHgnIHZpZXdCb3g9JzAgMCA0OCA0OCc+PGcgZmlsbD0nI2ZmZic+PHJlY3QgeD0nMTInIHk9JzE0JyB3aWR0aD0nMjQnIGhlaWdodD0nNCcgLz48cmVjdCB4PScxMicgeT0nMjInIHdpZHRoPScyNCcgaGVpZ2h0PSc0JyAvPjxyZWN0IHg9JzEyJyB5PSczMCcgd2lkdGg9JzI0JyBoZWlnaHQ9JzQnIC8+PC9nPjwvc3ZnPg==");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  line-height: 1em;
+  cursor: pointer;
+}
+body.nav-active nav#navbar span#navbar-button { background-color: #f93; }
+nav#navbar span#navbar-title {
+  position: absolute;
+  z-index: 4;
+  top: 0;
+  left: 0;
+  display: block;
+  overflow: hidden;
+  width: auto;
+  height: 1em;
+  padding: .35em 0 .35em 2.1em;
+  color: #fff;
+  font-size: 1.6em;
+  text-overflow: ellipsis;
+}
+
+nav#nav {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: -100%;
+  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,.95);
+  background: #f93;
+  background: linear-gradient(0deg,#fff,#fdb,#f60);
+}
+body.nav-active nav#nav { left: 0; }
+nav#nav #nav-title {
+  margin: 1.875em 0 0;
+  padding: .3125em .625em;
+  background: #f93;
+  color: #fff;
+  font-size: 1.6em;
+}
+nav#nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav#nav ul li { background: #fff; }
+nav#nav ul li a {
+  display: block;
+  padding: .385em .769em;
+  color: #f60;
+  font-size: 1.3em;
+  text-decoration: none;
+}
+nav#nav ul li a:hover { background: #e8e8e8; }
+nav#nav > ul > li > a { font-weight: bold; }
+nav#nav ul ul li a {
+  padding: .417em 1.667em;
+  color: #f00;
+  font-size: 1.2em;
+}
+nav#nav ul ul ul li a {
+  padding: .5em 3em;
+  color: #666;
+  font-size: 1em;
+}
+nav#nav ul ul ul ul li a {
+  padding: .5em 4em;
+  color: #999;
+}
+nav#nav ul ul ul ul ul li a {
+  padding: .5em 5em;
+  color: #999;
+}
+nav#nav .nav-this {
+  border-left: .2em solid #f60;
+  padding-left: .569em;
+  background: #ddd;
+  color: #333;
+}
+nav#nav .nav-this:hover { background: #ddd; }
+
+main p,
+main ul,
+main ol {
+  margin: 0 1em .5em;
+}
+
+main ul,
+main ol {
+  padding-left: 2em;
+}
+
+@media all and (min-width: 500px) {
+  nav#navbar { background: #f60; }
+  nav#nav {
+    left: -15.625em;
+    width: 15.625em;
+  }
+  #main-wrapper::before {
+    position: fixed;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.5);
+    content: "";
+    cursor: alias;
+  }
+  body.nav-active #main-wrapper::before { display: block; }
+}
+@media all and (min-width: 750px) {
+  #header-wrapper { padding: 3.5em 0 .5em; }
+
+  main,
+  header,
+  footer {
+    width: 45em;
+    margin: 0 auto;
+  }
+
+  #title { padding-left: .5em; }
+  #subtitle { padding-left: .556em; }
+}
+
+@media all and (min-width: 900px) {
+  main,
+  header,
+  footer {
+    width: 80%;
+    margin: 0 auto;
+  }
+  header {
+    padding-top: 1em;
+    text-align: left;
+  }
+}
+@media all and (min-width: 1000px) {
+  main,
+  header,
+  footer {
+    width: 50em;
+  }
+}
+@media all and (min-width: 1200px) {
+  nav#navbar {
+    display: none;
+    height: 0;
+  }
+  nav#nav {
+    left: 0;
+    display: block;
+    border-right: .1em solid #ccc;
+  }
+  nav#nav #nav-title {
+    margin: 0;
+    background: #f60;
+  }
+
+  body.nav-active #main-wrapper::before { display: none; }
+  #header-wrapper { height: 6em; }
+  header {
+    margin: 0 auto;
+    text-align: left;
+  }
+  #header-wrapper,
+  #main-wrapper,
+  #footer-wrapper {
+    margin-left: 15.625em;
+  }
+  #header-wrapper,
+  header,
+  #title,
+  #subtitle {
+    transition: none;
+  }
+
+  body.obscured header {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0 0 0 15.625em;
+    box-shadow: 0 0 1em .1em rgba(0,0,0,.3);
+    background: #f93;
+    background: rgba(255,153,51,.9);
+  }
+  body.obscured #title {
+    width: 20.833em;
+    margin: 0 auto;
+    padding: .2em 6.51em .1em 1em;
+  }
+  body.obscured #subtitle {
+    width: 25em;
+    margin: 0 auto;
+    padding: 0 7.8125em .35em 1.11em;
+  }
+}
+@media all and (min-width: 1500px) {
+  main,
+  header,
+  footer {
+    width: 75em;
+  }
+  body.obscured header {
+    padding: 0 0 0 3em;
+  }
+}
+/* Ryan Fung's HTML Template v5.1 CSS (Forms)
+ * Contents:
+ *  - form, fieldset, legend
+ *  - input, buton, select, textarea
+ */
+form *, input[type="file"]::-webkit-file-upload-button { font: inherit; }
+fieldset {
+    margin: 1em;
+    border: 0.1em solid #000;
+}
+legend {
+    padding: 0.1em 0.2em;
+    border: 0.06em solid #000;
+    font-size: 1.6em;
+}
+input:focus { background: #fed; }
+input[type="button"], button, .button, input[type="file"]::-webkit-file-upload-button {
+    padding: 0.2em 0.4em;
+    background: #eee;
+    background: linear-gradient(0deg,#ddd,#fff);
+    border: 0.1em solid #ccc;
+}
+input[type="button"]:hover, button:hover, .button:hover, input[type="file"]::-webkit-file-upload-button:hover {
+    background: #fc3;
+    background: linear-gradient(0deg,#f93,#fdb);
+}
+input[type="button"]:active, button:active, .button:active, input[type="file"]::-webkit-file-upload-button:active {
+    background: #f93;
+    background: linear-gradient(0deg,#f93,#f60);
+    color: #fff;
+}
+fieldset, legend, input, select, input[type="button"], button, input[type="file"]::-webkit-file-upload-button, textarea {
+	border-top-left-radius:  0.2em;
+	border-top-right-radius: 0.2em;
+}
+input, select, input[type="file"]::-webkit-file-upload-button, textarea {
+	border: 0.1em solid #f93;
+	padding: 0.2em;
+}
+input[type="button"], button, input[type="file"]::-webkit-file-upload-button { cursor: pointer; }
+input[type="file"] { width: 100%; }
+textarea { padding: 0.2em; }
+/* Ryan Fung's HTML Template v5.1 CSS (HTML extension)
+ * Contents:
+ *  - blockquote, code, dl, dt, dd, hr
+ */
+blockquote {
+    margin: 1em 2em;
+	padding: 0.5em;
+	background: #fff;
+	border-top-left-radius:  0.3em;
+	border-top-right-radius: 0.3em;
+	text-align: justify;
+	color: #f60;
+}
+blockquote:before, blockquote:after {
+    font-size: 2em;
+    line-height: 0.5em;
+    vertical-align: -0.3em;
+}
+blockquote:before { content: "“"; }
+blockquote:after  { content: "”"; }
+code { color: #0c6; }
+dl {
+	border-left: 0.2em solid #f60;
+	margin-left: 1em;
+	padding-left: 1em;
+}
+dt { font-weight: bold; }
+dd { font-style: italic; }
+hr {
+	background: #f60;
+	border: none;
+	height: 0.1em;
+	margin: 0.5em;
+}
+    </style>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/1.4.14/jquery.scrollTo.min.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript">
+/* Ryan Fung's HTML Template v5.1 JavaScript */
+window.onload = function () {
+    $("#navbar-title").text( $("#subtitle").text() );
+    var a = $("nav#nav a");
+    for ( i = 0; i < a.length; i++ ) {
+        if( a[i].text == $("#subtitle").text() ) {
+            $(a[i]).addClass("nav-this");
+            $(a[i]).parent().addClass("intra");
+        }
+    }
+    document.title = $("#subtitle").text() + " \xb7 " + $("#title").text();
+    if( window.location.hash !== "" ) {
+        window.setTimeout(
+            function () {
+                if ( $("#navbar").height() == 0 ) {
+                    $.scrollTo($(window.location.hash).offset().top - $("header").height() - 1*$("header").css("paddingTop").split("px")[0] + "px", 500);
+                } else {
+                    $.scrollTo($(window.location.hash).offset().top - $("#navbar").height() + "px", 500);
+                }
+            },
+            1000
+        );
+    }
+    $("#navbar-button").click( function () {
+        $("body").toggleClass("nav-active");
+    });
+    $("nav#nav > ul > li a").click( function () {
+        $("body").toggleClass("nav-active");
+    });
+    $("nav#nav .intra a").click( function () {
+        if ( $("#navbar").height() == 0 ) {
+            $.scrollTo($("#"+this.href.split("#")[1]).offset().top - $("header").height() - 1*$("header").css("paddingTop").split("px")[0] + "px", 500);
+        } else {
+            $.scrollTo($("#"+this.href.split("#")[1]).offset().top - $("#navbar").height() + "px", 500);
+        }
+    });
+    $("#main-wrapper").click ( function () {
+        if( $("body").hasClass("nav-active") ) {
+            $("body").toggleClass("nav-active");
+        }
+    });
+}
+$(window).scroll( function () {
+    if( $("body").scrollTop() > $("#header-wrapper").css("paddingTop").split("px")[0] ) {
+        $("body").addClass("obscured");
+    } else {
+        $("body").removeClass("obscured");
+    }
+});
+    </script>
+    <meta name="author" content="Ryan Fung" />
+</head><body>
+<div id="header-wrapper">
+    <header>
+        <div id="title">HTML Template</div>
+        <div id="subtitle">5.1 Hydrazine</div>
+    </header>
+</div>
+<nav id="navbar">
+    <span id="navbar-button"></span>
+    <span id="navbar-title">Introduction</span>
+</nav>
+<nav id="nav">
+    <p id="nav-title">Contents</p>
+    <ul class="intra">
+        <li>
+            <a href="#h1">Header 1</a>
+            <ul>
+                <li>
+                    <a href="#h2">Header 2</a>
+                    <ul>
+                        <li>
+                            <a href="#h3">Header 3</a>
+                            <ul>
+                                <li><a href="#h4">Header 4</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><a href="#basic-html-tags">Basic HTML Tags</a></li>
+        <li><a href="#mathml">MathML</a></li>
+        <li><a href="#svg">SVG</a></li>
+        <li><a href="#forms">Forms</a></li>
+    </ul>
+</nav>
+<div id="main-wrapper"><main role="main">
+<section>
+    <h1 id="h1">Header 1</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <h2 id="h2">Header 2</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <h3 id="h3">Header 3</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <h4 id="h4">Header 4</h4>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</section>
+<section>
+    <h2 id="basic-html-tags">Basic HTML Tags</h2>
+    <p>Click <a href="#">here</a> to go to another website. <a class="link" href="#">Or here</a></p>
+    <p>This is <strong>strong</strong> text.</p>
+    <p>This is <em>emphasis</em> text.</p>
+    <ol><li>Ordered item 1</li>
+        <li>Ordered item 2</li>
+        <li style="list-style-item:none"><ol><li>Ordered item 2.1</li>
+            <li>Ordered item 2.2</li>
+            <li style="list-style-item:none"><ol><li>Ordered item 2.2.1</li>
+                <li>Ordered item 2.2.2</li></ol></li></ol></li></ol>
+    <ul><li>Unordered item 1</li>
+        <li>Unordered item 2</li>
+        <li style="list-style-item:none"><ul><li>Unordered item 2.1</li>
+            <li>Unordered item 2.2</li>
+            <li style="list-style-item:none"><ul><li>Unordered item 2.2.1</li>
+                <li>Unordered item 2.2.2</li></ul></li></ul></li></ul>
+    <dl><dt>Definition term 1</dt><dd>Definition 1</dd>
+        <dt>Definition term 2</dt><dd>Definition 2</dd>
+        <dt>Definition term 3</dt><dd>Definition 3</dd></dl>
+    <table><tr>
+        <th scope="col">Table Header 1</th>
+        <th scope="col">Table Header 2</th>
+        <th scope="col">Table Header 3</th>
+    </tr><tr>
+        <td>Table Cell</td>
+        <td>Table Cell</td>
+        <td>Table Cell</td>
+    </tr><tr>
+        <td>Table Cell</td>
+        <td>Table Cell</td>
+        <td>Table Cell</td>
+    </tr></table>
+    <h2 id="svg">SVG Demo</h2>
+    <p style="font-size:16px"><svg width="200px" height="230px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <circle cx="100" cy="100" r="100" fill="#000" />
+    <circle cx="100" cy="100" r="95" fill="#FF0" />
+    <circle cx="060" cy="60" r="10" fill="#000" />
+    <circle cx="140" cy="60" r="10" fill="#000" />
+    <ellipse cx="100" cy="110" rx="40" ry="20" fill="#FCF" stroke="#000" stroke-width="0.5" />
+    <circle cx="080" cy="110" r="6" fill="#000" />
+    <circle cx="120" cy="110" r="6" fill="#000" />
+    <g>
+    <path id="smile" stroke="black" stroke-width="5" fill="none" d="M 50,147 s 50,50 100,0" />
+    </g>
+    <defs>
+        <path id="top" d="M 0,100 s 200,-200 200,200" />
+        <path id="textend" d="M 150,205 L 150,223" />
+    </defs>
+    <g font-family=""Myriad Pro"">
+    <text><textPath xlink:href="#smile" startOffset="50%" text-anchor="middle"><tspan dy="-5">M.o.u.s.t.a.c.h.e</tspan></textPath></text>
+    <text x="100" y="220" rotate="10" text-anchor="middle"><tspan font-weight="bold" fill="#F60">Ryan</tspan><tspan fill="#CCC">'s Smiley <tspan fill="transparent">:D</tspan></tspan></text>
+    <text fill="#000"><textPath xlink:href="#textend" fill="#CCC"><tspan dy="-2" dx="3">:</tspan><tspan dy="2">D</tspan></textPath></text>
+    </g>
+    </svg></p>
+    <h2 id="mathml">MathML Demo</h2>
+    <h3>Quadratic Equation</h3>
+    <p>The solution to the equation:
+    <math xmlns="http://www.w3.org/1998/Math/MathML" alttext="ax&sup2;+bx+c=0"><mstyle displaystyle="true">
+    <mi>a</mi>
+    <msup>
+        <mi>x</mi>
+        <mn>2</mn>
+    </msup>
+    <mo>+</mo>
+    <mi>b</mi>
+    <mo>+</mo>
+    <mi>c</mi>
+    <mo>=</mo>
+    <mn>0</mn>
+    </mstyle></math>
+    is given by the equation:
+    <math xmlns="http://www.w3.org/1998/Math/MathML" alttext="x=(-b&plusmn;&radic;[b&sup2; -4ac]) / (2a)"><mstyle displaystyle="true">
+    <mi>x</mi>
+    <mo>=</mo>
+    <mfrac><mrow>
+        <mo form="prefix">-</mo>
+        <mi>b</mi>
+        <mo>&plusmn;</mo>
+        <msqrt>
+            <msup>
+                <mi>b</mi>
+                <mn>2</mn>
+            </msup>
+            <mo>-</mo>
+            <mn>4</mn>
+            <mi>a</mi>
+            <mi>c</mi>
+        </msqrt>
+    </mrow><mrow>
+        <mn>2</mn>
+        <mo>&InvisibleTimes;</mo>
+        <mi>a</mi>
+    </mrow></mfrac>
+    </mstyle></math></p>
+    <h4>Horizontal Rule test</h4>
+    <hr />
+    <p>This is <code>&lt;code&gt;</code> text.</p>
+    <!--
+    <div class="codeblock"><ol class="codeblock">
+        <li>&lt;div class="codeblock"&gt;&lt;ol class="codeblock"&gt;</li>
+        <li>&lt;li&gt;This is a sample of the code used to code this block&lt;/li&gt;</li>
+        <li>&lt;li&gt;This could lead to an Droste effect:&lt;/li&gt;</li>
+        <li>&lt;/ol&gt;&lt;/div&gt;</li>
+    </ol></div>
+    -->
+    <p>This is a <q>quote</q>.</p>
+    <blockquote>This is a blockquote: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</blockquote>
+</section>
+<section>
+    <h1 id="forms">Forms</h1>
+    <form id="form"><fieldset>
+    <legend>Inputs</legend>
+    <label>Input text</label><br />
+        <input type="text" /><br />
+    <br />
+    <label>Input password</label><br />
+        <input type="password" /><br />
+    <br />
+    <label>Input file</label><br />
+        <input type="file" /><br />
+        <br />
+    <label>Input checkboxes</label><br />
+        <input type="checkbox" id="checkbox1" /> Checkbox 1<br />
+        <input type="checkbox" id="checkbox2" /> Checkbox 2<br />
+        <input type="checkbox" id="checkbox3" /> Checkbox 3<br />
+    <br />
+    <label>Input radio</label><br />
+        <input type="radio" id="radio1" name="radio" value="a" /> Radio 1<br />
+        <input type="radio" id="radio2" name="radio" value="b" /> Radio 2<br />
+        <input type="radio" id="radio3" name="radio" value="c" /> Radio 3
+    </fieldset><fieldset>
+    <legend>Selects</legend>
+    <label>Select</label><br />
+        <select>
+            <option>Option 1</option>
+            <option>Option 2</option>
+            <option>Option 3</option>
+            <optgroup label="Option Group">
+                <option>Option Group 1</option>
+                <option>Option Group 2</option>
+                <option>Option Group 3</option>
+            </optgroup>
+            </select>
+    <br /><br />
+    <label>Select multiple</label>
+        <br /><select multiple="multiple">
+            <option>Option 1</option>
+            <option>Option 2</option>
+            <option>Option 3</option></select>
+    </fieldset><fieldset>
+    <legend>Buttons</legend>
+    <label>Button (button)</label><br />
+        <button type="button">Button</button>
+    <br /><br />
+    <label>Button (submit)</label><br />
+        <button type="submit">Submit Button</button>
+    <br /><br />
+    <label>Button (reset)</label><br />
+        <button type="reset">Reset Button</button>
+    </fieldset><fieldset>
+    <legend>Textarea</legend>
+    <label>Textarea</label><br />
+        <textarea>Textarea</textarea>
+    </fieldset></form>
+</section>
+</main></div>
+<div id="footer-wrapper"><footer>
+    <p><a class="link" href="https://github.com/ryanvfung/html">Ryan Fung's HTML Template 5.1 Hydrazine</a> (Valid HTML5 &amp; CSS3)</p>
+    <p>Copyright &copy; 2010&ndash;2015 Ryan Fung. All rights reserved.</p>
+</footer></div>
+</body></html>
