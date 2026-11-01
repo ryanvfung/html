@@ -1,0 +1,8 @@
+{
+  "agentConfig": {
+    "hooks": {
+      "UserPromptSubmit": "{{REPO_DIR}}/.hooks/propose-guard.js",
+      "PreToolUse": "{{REPO_DIR}}/.hooks/propose-guard.js"
+    }
+  }
+}

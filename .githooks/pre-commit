@@ -1,0 +1,99 @@
+#!/bin/sh
+# pre-commit — workspace guard (generic template).
+# Layers: (1) credential guard  (2) renormalize  (3) shadow-drift audit
+#         (4) project-specific slots [edit below].
+# post-commit auto-pushes every commit, so a `git add .` that sweeps up a
+# cookie export or .env would publish secrets within seconds — layer 1 is the
+# last line of defense. It guards the commit itself, independent of push.
+
+# --- (1) credential guard: refuse to commit secret files -------------------
+# Allowlist: documented trackable practice (.env.example/.sample/.template).
+BLOCKED=$(git diff --cached --name-only | grep -vE '\.env\.(example|sample|template)$' | grep -E '(^|/)(cookie_[^/]*\.txt|\.env(\.[^/]+)?|[A-Za-z0-9_.-]*token\.json)$')
+if [ -n "$BLOCKED" ]; then
+    echo "[pre-commit] BLOCKED: credential files staged:" >&2
+    printf '%s\n' "$BLOCKED" >&2
+    echo "  Unstage (git restore --staged <file>) and keep them local." >&2
+    exit 1
+fi
+
+# --- (2) renormalize staged files to index line-endings --------------------
+# NUL-delimited so filenames with spaces survive; -r skips deletion-only commits.
+git diff --cached --name-only -z --diff-filter=ACM | xargs -0 -r git add --renormalize
+
+# --- (3) shadow-copy audit: .root/ is SSoT ---------------------------------
+# Block if any tracked file under this checkout's .root/ (except the sync
+# script itself) is missing its workspace-root mirror or differs from it.
+# Mirror set = every file under .root/ minus copy-to-root.ps1 — derived,
+# never hardcoded. Git runs hooks with cwd = checkout top. The WORKTREE's
+# own .root is audited, so branch-staged SSoT changes are compared, not the
+# main checkout's. The workspace root is located by walking up until a
+# directory containing a child with a real .git directory is found
+# (handles <ws>/.worktrees/<branch> at any nesting depth — branch names
+# with slashes).
+SRC_DIR=".root"
+DST_PREFIX=""
+if [ -d "$SRC_DIR" ]; then
+    p=".."
+    i=0
+    while [ "$i" -lt 5 ]; do
+        # Workspace root = a directory whose immediate child is a real git repo
+        # (a directory named .git). Worktrees are excluded because their .git
+        # is a file, not a directory. This resolves the repo dir dynamically
+        # instead of hardcoding "app/".
+        repo_found=""
+        for child in "$p"/*; do
+            [ -d "$child/.git" ] || continue
+            repo_found="$child"
+            break
+        done
+        if [ -n "$repo_found" ]; then DST_PREFIX="$p"; break; fi
+        p="$p/.."
+        i=$((i+1))
+    done
+fi
+if [ -z "$DST_PREFIX" ]; then
+    # no .root/ in this checkout, or repo not inside a workspace (e.g., narrow
+    # sparse cone without .root) — skip (fail-open): a blocking false positive
+    # is worse than a missed drift.
+    echo "pre-commit: workspace root not found or no .root/, skipping shadow audit"
+    exit 0
+fi
+
+tmpfile=$(mktemp)
+find "$SRC_DIR" -type f ! -name copy-to-root.ps1 > "$tmpfile"
+drift=0
+while IFS= read -r rel; do
+    rel="${rel#$SRC_DIR/}"
+    # Same exclusion set as copy-to-root.ps1: excluded files under .root/
+    # are never mirrored (the sync warns to remove them), so they can't
+    # have a mirror — don't trap the commit on them.
+    # Additionally: .opencode/opencode.json is intentionally *transformed* at
+    # sync time ({{REPO_DIR}} -> the actual repo-dir basename), so its
+    # workspace-root copy deliberately differs from its .root/ source. Exclude
+    # it from the drift audit rather than blocking every commit.
+    case "$rel" in
+        .env|cookie_*.txt|*_token.json|*.tmp|tmp_*|.opencode/opencode.json) continue ;;
+    esac
+    src="$SRC_DIR/$rel"
+    dst="$DST_PREFIX/$rel"
+    if [ ! -f "$dst" ]; then
+        echo "SHADOW MISSING: $rel (no workspace-root mirror — run copy-to-root.ps1)"
+        drift=1
+    elif ! diff -q --strip-trailing-cr "$src" "$dst" >/dev/null 2>&1; then
+        echo "SHADOW DRIFT: $rel (edit .root/$rel, then run copy-to-root.ps1)"
+        drift=1
+    fi
+done < "$tmpfile"
+rm -f "$tmpfile"
+if [ "$drift" -ne 0 ]; then
+    exit 1
+fi
+
+# --- (4) project-specific checks [EDIT SLOTS — enable per project] ----------
+# exit 0
+# STAGED_PY=$(git diff --cached --name-only --diff-filter=ACM | grep '\.py$' || true)
+# if [ -n "$STAGED_PY" ]; then
+#     echo "$STAGED_PY" | xargs python -m ruff check --fix || { echo "ruff: fix lint errors before committing"; exit 1; }
+#     python -m pytest tests/ -q --tb=short -x || { echo "tests failed — fix before committing"; exit 1; }
+# fi
+exit 0

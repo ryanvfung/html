@@ -1,0 +1,49 @@
+#!/bin/sh
+# post-commit: best-effort auto-push to remote after every commit. ONE attempt,
+# NEVER forced, NEVER fails the commit (always exit 0).
+# Skip: GIT_AUTOPUSH=0. Human log: <git-common-dir>/push-log.txt.
+# Agent log: <git-common-dir>/~pushlog.jsonl (one JSON line per attempt).
+
+[ "${GIT_AUTOPUSH:-1}" = "0" ] && exit 0
+git symbolic-ref -q HEAD >/dev/null 2>&1 || exit 0        # detached HEAD: skip
+BRANCH=$(git symbolic-ref --short -q HEAD)
+[ -n "$BRANCH" ] || exit 0
+
+REMOTE=origin
+git remote get-url origin >/dev/null 2>&1 || REMOTE=$(git remote 2>/dev/null | head -n 1)
+[ -n "$REMOTE" ] || exit 0                                 # no remote: skip
+
+COMMON_DIR=$(cd "$(git rev-parse --git-common-dir)" 2>/dev/null && pwd) || exit 0
+TS=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+HEAD_SHA=$(git rev-parse --short HEAD)
+
+ERRF="$COMMON_DIR/.autopush-err.$$"
+GIT_SSH_COMMAND="ssh -o ConnectTimeout=15 -o ServerAliveInterval=15 -o ServerAliveCountMax=3" \
+  git push -u "$REMOTE" HEAD 2>"$ERRF"
+RC=$?
+PUSH_OUT=$(cat "$ERRF" 2>/dev/null)
+rm -f "$ERRF"
+
+if [ "$RC" -eq 0 ]; then
+    echo "[autopush] ok: $REMOTE/$BRANCH @ $HEAD_SHA"
+    echo "$TS branch=$BRANCH head=$HEAD_SHA result=ok detail=-" >> "$COMMON_DIR/push-log.txt"
+    echo "{\"ts\":\"$TS\",\"result\":\"ok\",\"branch\":\"$BRANCH\",\"head\":\"$HEAD_SHA\",\"remote\":\"$REMOTE\"}" >> "$COMMON_DIR/~pushlog.jsonl"
+    exit 0
+fi
+
+case "$PUSH_OUT" in
+    *"non-fast-forward"*|*"[rejected]"*|*"fetch first"*)
+        REASON=diverged
+        HINT="remote has commits you don't have - pull or rebase; auto-push never forces" ;;
+    *"Permission denied"*|*"Authentication failed"*|*"403"*)
+        REASON=auth
+        HINT="check SSH key / GitHub access for remote '$REMOTE'" ;;
+    *)
+        REASON=offline
+        HINT="network problem or timeout - will retry on next commit" ;;
+esac
+
+echo "[autopush] FAILED: $REASON - $HINT - commit is safe locally; run the push manually if needed - details: $COMMON_DIR/push-log.txt"
+echo "$TS branch=$BRANCH head=$HEAD_SHA result=failed reason=$REASON detail=$(printf '%s\n' "$PUSH_OUT" | head -n 1)" >> "$COMMON_DIR/push-log.txt"
+echo "{\"ts\":\"$TS\",\"result\":\"failed\",\"reason\":\"$REASON\",\"branch\":\"$BRANCH\",\"head\":\"$HEAD_SHA\",\"remote\":\"$REMOTE\"}" >> "$COMMON_DIR/~pushlog.jsonl"
+exit 0

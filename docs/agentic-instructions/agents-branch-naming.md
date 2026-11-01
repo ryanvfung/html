@@ -1,0 +1,13 @@
+# agents-branch-naming.md — branch naming convention
+- Format: `<type>/YYYYMMDD-<slug>` — date is the branch-creation date; slug is short, kebab-case, and matches the plan slug when a plan exists.
+- Common types (extend per project):
+  - `feat/` — new feature or behavior (`feat/20261018-add-login`)
+  - `fix/` — bug fix (`fix/20261018-null-check-uploads`)
+  - `chore/` — maintenance, dependencies, tooling, cleanup (`chore/20261018-bump-eslint`)
+  - `docs/` — documentation only (`docs/20261018-agentic-instructions-review`)
+  - `refactor/` — code change with no behavior change (`refactor/20261018-extract-auth-helper`)
+  - `test/` — test-only changes (`test/20261018-cover-todo-move-order`)
+  - `hotfix/` — urgent fix, branched from the deployed commit (`hotfix/20261018-session-leak`)
+- If the project uses task IDs, insert the todo ID after the date — e.g. `feat/20261018-T099-add-login`. `T###` is only an example shape; use whatever ID format the project's `todo.md` already uses (e.g. `T99`, `TASK-12`).
+- Branch name uses the plan slug so branch ↔ plan ↔ todo stay aligned.
+- Mixed intents: pick the dominant type (a `fix` that also touches tests stays `fix/`); don't stack multiple areas into one slug.

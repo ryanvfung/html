@@ -1,3 +1,44 @@
 log
 *.log
 node_modules
+
+# Temporary artifacts (project-level, never tracked)
+tmp/
+*.tmp
+tmp_*.txt
+
+# One-off / temporary scripts (must go here, never at repo root)
+tmp_scripts/
+
+# Worktree directories (workspace, not source)
+.worktrees/
+
+# Environment / secrets (also blocked by the pre-commit credential guard)
+.env
+.env.local
+.env.*.local
+cookie_*.txt
+*token.json
+
+# Build outputs
+__pycache__/
+*.pyc
+*.pyo
+build/
+
+# iOS / mobile build artifacts
+*.xcuserdata/
+DerivedData/
+Pods/
+
+# Editor / OS
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Note: `.root/` and `docs/` must stay tracked. Anything at the workspace root
+# that should be git-tracked must live under app/.root/ (synced by
+# copy-to-root.ps1); scratch goes in tmp/ or tmp_scripts/ (untracked).
