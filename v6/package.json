@@ -10,16 +10,18 @@
     "build": "vite build",
     "postbuild": "node scripts/build-pages.mjs",
     "preview": "vite preview --port 4173",
+    "lint:ts": "tsc --noEmit",
     "lint:css": "stylelint \"src/**/*.scss\"",
     "lint:html": "html-validate \"dist/*.html\"",
     "lint:pug": "pug-lint src/pug/boilerplate.pug src/pug/showcase.pug src/pug/spec.pug src/pug/_generated.pug",
-    "lint": "npm run lint:css && npm run lint:html && npm run lint:pug",
+    "lint": "npm run lint:ts && npm run lint:css && npm run lint:html && npm run lint:pug",
     "test": "playwright test",
     "verify": "npm run build && npm run lint && npm test"
   },
   "devDependencies": {
     "@playwright/test": "1.65.0",
     "@tailwindcss/cli": "4.3.5",
+    "@types/node": "24.19.2",
     "html-validate": "11.19.0",
     "postcss-scss": "4.0.9",
     "pug": "3.0.4",
@@ -27,6 +29,7 @@
     "sass": "1.108.1",
     "stylelint": "18.0.0",
     "tailwindcss": "4.3.5",
+    "typescript": "7.0.2",
     "vite": "8.3.6"
   }
 }
