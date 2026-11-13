@@ -10,7 +10,7 @@ Three tiers in `src/tokens/_tokens.scss`: primitives (fixed values, every theme/
 `#f60` (`--orange-60`) and `#f93` (`--orange-93`) are documented swatches only. Never use them in component CSS.
 
 ## Matrix
-Themes: light, dark. Densities: compact, default, comfortable. Six combinations. `dist/spec.html` is the visual truth; `_tokens.scss` is the value truth.
+Themes: light, dark. Densities: compact, default, comfortable. Six combinations. `dist/spec.html` is the visual truth; `_tokens.scss` is the value truth. With JS enabled and empty storage, a dark-OS first visit paints light, then flips dark when the deferred script applies `data-theme`; zero-JS always renders light.
 
 ## Composition
 - Body measure comes from `--measure-body`; rhythm comes from `--space-*` only.

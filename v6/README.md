@@ -3,7 +3,7 @@
 PyroCarbon is a private, framework-free HTML/CSS/JS design system. One token source produces two outputs: a standalone `dist/` you can drop into any page, and a Tailwind v4 `@theme` block for app work. It is not published to npm and is not a component framework.
 
 ## Structure
-`src/tokens/` canonical values · `src/styles/` reset, base, components · `src/pug/` pages · `src/js/` toggles · `scripts/` generators · `dist/` built output (tracked, never hand-edited). See `DESIGN.md` for the persistent design contract.
+`src/tokens/` canonical values · `src/styles/` reset, base, components · `src/pug/` pages · `src/js/` toggles · `scripts/` generators · `dist/` built output (tracked, never hand-edited). `dist/spec.html` is the token/matrix inspection page (the visual truth), not a full-page template — start new pages from `boilerplate.html`. See `DESIGN.md` for the persistent design contract.
 
 ## Commands
 - `npm install`
@@ -11,7 +11,7 @@ PyroCarbon is a private, framework-free HTML/CSS/JS design system. One token sou
 - `npm run dev` — Vite dev server for CSS/JS only (pages are not served)
 - `npm run build` — token sections, Vite build, then page render
 - `npm run preview` — serve the built pages from `dist/`
-- `npm run lint` — stylelint + html-validate + pug-lint
+- `npm run lint` — typecheck + stylelint + html-validate + pug-lint
 - `npm run verify` — build + lint + Playwright
 
 ## Windows notes
