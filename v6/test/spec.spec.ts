@@ -1,6 +1,4 @@
 import { test, expect } from '@playwright/test';
-import { execSync } from 'node:child_process';
-import { readFileSync } from 'node:fs';
 
 const pages = ['/boilerplate.html', '/showcase.html', '/spec.html'];
 const widths = [320, 768, 1440];
@@ -221,11 +219,4 @@ test('each nav toggle controls only its own list', async ({ page }) => {
   await expect(secondList).toHaveAttribute('data-open', 'true');
   await expect(secondToggle).toHaveAttribute('aria-expanded', 'true');
   await expect(firstList).toHaveAttribute('data-open', 'false');
-});
-
-test('gen-spec ignores commented-out tokens', () => {
-  const out = execSync('node scripts/gen-spec.mjs', { encoding: 'utf8' });
-  expect(out).toContain('94 tokens');
-  expect(readFileSync('src/pug/_generated.pug', 'utf8')).not.toContain('phantom-token');
-  expect(readFileSync('src/pug/_generated.pug', 'utf8')).toContain('light theme values');
 });

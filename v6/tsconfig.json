@@ -7,7 +7,9 @@
     "types": ["node"],
     "strict": true,
     "noEmit": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "allowJs": true,
+    "checkJs": true
   },
-  "include": ["vite.config.ts", "playwright.config.ts", "test/**/*.ts"]
+  "include": ["vite.config.ts", "playwright.config.ts", "test/**/*.ts", "src/js/**/*.js", "src/types/**/*.d.ts"]
 }

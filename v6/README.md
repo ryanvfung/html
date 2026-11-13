@@ -12,7 +12,10 @@ PyroCarbon is a private, framework-free HTML/CSS/JS design system. One token sou
 - `npm run build` — token sections, Vite build, then page render
 - `npm run preview` — serve the built pages from `dist/`
 - `npm run lint` — typecheck + stylelint + html-validate + pug-lint
-- `npm run verify` — build + lint + Playwright
+- `npm run test:unit` — generator unit tests (`node --test`)
+- `npm run check:dist` — fails when committed `dist/` or generated files are stale
+- `npm run check:tailwind` — probes the `@theme` track against `@tailwindcss/cli`
+- `npm run verify` — build + artifact checks + lint + unit + Playwright
 
 ## Windows notes
 PowerShell-first. LF endings are enforced by `.gitattributes`. Imports must match file case exactly (no configured lint enforces this; Windows is case-insensitive, Linux is not). `npm run dev` does not run `prebuild`, so run `node scripts/gen-spec.mjs` manually if `_generated.pug` goes stale.
@@ -21,7 +24,7 @@ PowerShell-first. LF endings are enforced by `.gitattributes`. Imports must matc
 Copy `dist/`, link `pyrocarbon.css`, include `pyrocarbon.js`, and set `data-theme` and `data-density` on `<html>`. No build step and no framework are required.
 
 ## Tailwind v4 use
-Import `src/tokens/_tailwind-theme.css` together with the compiled token CSS (`dist/pyrocarbon.css`, or a tokens-only CSS emitted alongside). The theme track maps utilities to the token custom properties but does not define them; without the token CSS, `--color-*`/`--spacing-*` resolve to nothing and unmapped `--text-*`/`--font-*`/`--radius-*` names fall back to Tailwind defaults. Then use utilities such as `bg-surface-canvas`, `text-text-primary`, and `p-4`. Theme and density switch through the same HTML attributes; no `dark:` or `compact:` variants.
+Import `src/tokens/_tailwind-theme.css` together with the compiled token CSS (`dist/pyrocarbon.css`, or a tokens-only CSS emitted alongside). The theme track maps utilities to the token custom properties but does not define them; without the token CSS, `--color-*`/`--spacing-*` resolve to nothing and unmapped `--text-*`/`--font-*`/`--radius-*` names fall back to Tailwind defaults. Then use utilities such as `bg-surface-canvas`, `text-text-primary`, and `p-4`. Theme and density switch through the same HTML attributes; no `dark:` or `compact:` variants. `npm run check:tailwind` compiles a probe through `@tailwindcss/cli` and asserts the mappings still resolve.
 
 ## Versioning
 One folder per major (`/v6/`); minor iterations overwrite within the folder; previous majors are never touched (`/5.2/` retained).

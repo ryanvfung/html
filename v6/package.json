@@ -15,8 +15,11 @@
     "lint:html": "html-validate \"dist/*.html\"",
     "lint:pug": "pug-lint src/pug/boilerplate.pug src/pug/showcase.pug src/pug/spec.pug src/pug/_generated.pug",
     "lint": "npm run lint:ts && npm run lint:css && npm run lint:html && npm run lint:pug",
-    "test": "playwright test",
-    "verify": "npm run build && npm run lint && npm test"
+    "check:dist": "node scripts/check-dist.mjs",
+    "check:tailwind": "node scripts/check-tailwind.mjs",
+    "test:unit": "node --test test/unit/gen-spec.test.mjs",
+    "test": "npm run test:unit && playwright test",
+    "verify": "npm run build && npm run check:dist && npm run check:tailwind && npm run lint && npm test"
   },
   "devDependencies": {
     "@playwright/test": "1.65.0",

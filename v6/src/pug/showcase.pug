@@ -28,6 +28,7 @@ html(lang="en")
             ul.c-sidebar__nav
               li: a(href="#layout-doc" aria-current="page") Documentation
               li: a(href="#layout-form") Form
+              li: a(href="#layout-variants") Variants
           div.doc-content
             pre.o-code-block: code
               span &lt;#[span.syntax-tag section]&gt;
@@ -43,6 +44,22 @@ html(lang="en")
             input#showcase-terms(type="checkbox")
             label(for="showcase-terms") I accept the terms
           button.btn(type="submit") Save
+      section#layout-variants
+        h2 Component variants
+        p Secondary, ghost, and small buttons plus shell prompts exercise the full shipped surface.
+        p
+          button.btn(type="button") Primary
+          button.btn.btn--secondary(type="button") Secondary
+          button.btn.btn--ghost(type="button") Ghost
+          button.btn.btn--sm(type="button") Small
+        pre.o-cli-block: code npm run verify
+        pre.o-cmd-block: code npm run build
+        pre: code
+          span.syntax-keyword const
+          |  value = 
+          span.syntax-string "hello"
+          |  
+          span.syntax-comment // comment
       section
         h2 Editorial layout
         p A single-column essay using the body measure, built from typography alone.

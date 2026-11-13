@@ -1,4 +1,4 @@
 @layer components {
 .c-footer { padding-block: var(--space-4); border-block-start: var(--border-hairline) solid var(--border-default); background: var(--surface-sunken); color: var(--text-secondary); text-align: center; }
-.c-footer p { margin-block: var(--space-2); }
+.c-footer p { margin-block: var(--space-2); margin-inline: auto; }
 }
