@@ -41,3 +41,34 @@
   --space-15: clamp(7rem, 6.35rem + 3.25vw, 9.5rem); --space-16: clamp(8rem, 7.25rem + 3.75vw, 11rem);
 }
 }
+
+@layer tokens {
+:root, [data-theme="light"] {
+  --surface-canvas: var(--neutral-9); --surface-raised: var(--neutral-10);
+  --surface-sunken: var(--neutral-8); --surface-overlay: rgba(22,20,19,0.55);
+  --text-primary: var(--neutral-1); --text-secondary: var(--neutral-3); --text-tertiary: var(--neutral-4);
+  --text-inverse: var(--neutral-10); --text-accent: #994700; --text-code: #8a3f00; --text-on-brand: var(--neutral-10); --text-on-nav: var(--neutral-0);
+  --border-default: var(--neutral-7); --border-strong: var(--neutral-5); --border-accent: var(--orange-5);
+  --accent: #b34f00; --accent-hover: #994700; --accent-active: #803c00;
+  --accent-subtle: var(--orange-8); --surface-brand: var(--orange-5);
+  --selection-bg: var(--orange-8); --selection-fg: var(--neutral-1); --focus-ring: #b34f00;
+  --elevation-strategy: shadow; --shadow-nav: 0 0 10px 1px rgba(22,20,19,0.3);
+  --shadow-card: 0 1px 2px rgba(22,20,19,0.08);
+  --syntax-tag: #8a3f00; --syntax-string: #8a3f00; --syntax-comment: var(--neutral-3); --syntax-keyword: #803c00;
+}
+}
+
+@layer tokens {
+[data-theme="dark"] {
+  --surface-canvas: var(--neutral-0); --surface-raised: var(--neutral-1); --surface-sunken: #0f0d0c;
+  --surface-overlay: rgba(10,9,8,0.65);
+  --text-primary: var(--neutral-9); --text-secondary: var(--neutral-7); --text-tertiary: var(--neutral-5);
+  --text-inverse: var(--neutral-0); --text-accent: var(--orange-6); --text-code: var(--orange-7); --text-on-brand: var(--neutral-0); --text-on-nav: var(--neutral-0);
+  --border-default: var(--neutral-2); --border-strong: var(--neutral-3); --border-accent: var(--orange-6);
+  --accent: var(--orange-5); --accent-hover: var(--orange-6); --accent-active: var(--orange-4);
+  --accent-subtle: var(--neutral-2); --surface-brand: var(--orange-5);
+  --selection-bg: var(--orange-4); --selection-fg: var(--neutral-0); --focus-ring: var(--orange-6);
+  --elevation-strategy: shadow; --shadow-nav: 0 0 10px 1px rgba(10,9,8,0.7); --shadow-card: 0 1px 2px rgba(10,9,8,0.6);
+  --syntax-tag: #d9a441; --syntax-string: var(--orange-6); --syntax-comment: var(--neutral-5); --syntax-keyword: var(--orange-5);
+}
+}
