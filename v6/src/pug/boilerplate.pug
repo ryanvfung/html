@@ -1,0 +1,38 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    title PyroCarbon
+    link(rel="stylesheet" href="./pyrocarbon.css")
+  body
+    a.skip-link(href="#main") Skip to content
+    header.site-header
+      nav.site-nav(aria-label="Primary")
+        a(href="./boilerplate.html" aria-current="page") PyroCarbon
+        button.site-nav__toggle(type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav-list") Menu
+        ul#site-nav-list.site-nav__list
+          li: a(href="./boilerplate.html" aria-current="page") Home
+          li: a(href="./showcase.html") Showcase
+          li: a(href="./spec.html") Spec
+        button.btn(type="button" data-theme-toggle aria-pressed="false") Theme
+        button.btn(type="button" data-density-toggle) Density: Default
+        span.visually-hidden(data-density-status aria-live="polite")
+    main#main
+      h1 PyroCarbon v6
+      p A dependency-free starting point for a single page.
+      h2 Typography
+      h3 Heading level 3
+      h4 Heading level 4
+      h5 Heading level 5
+      h6 Heading level 6
+      p Body copy with a #[a(href="#main") link] and #[code inline code].
+      h2 Buttons
+      p
+        button.btn(type="button") Primary
+        button.btn.btn--secondary(type="button") Secondary
+      h2 Code
+      pre: code: span.syntax-tag &lt;html&gt;
+    footer.c-footer
+      p PyroCarbon v6
+    script(src="./pyrocarbon.js" defer)
