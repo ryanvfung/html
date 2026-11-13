@@ -117,7 +117,10 @@ test('boilerplate renders in all six theme/density combos', async ({ page }) => 
 });
 
 test('AA contrast for rendered text pairs in both themes', async ({ page }) => {
-  const parse = (value: string) => value.match(/[\d.]+/g)!.slice(0, 3).map(Number);
+  const parse = (value: string) => {
+    expect(value, 'computed color format').toMatch(/^rgb\(/);
+    return value.match(/[\d.]+/g)!.slice(0, 3).map(Number);
+  };
   const luminance = (rgb: number[]) => rgb
     .map((v) => { const c = v / 255; return c <= 0.04045 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4; })
     .reduce((sum, c, i) => sum + c * [0.2126, 0.7152, 0.0722][i], 0);
@@ -200,4 +203,5 @@ test('gen-spec ignores commented-out tokens', () => {
   const out = execSync('node scripts/gen-spec.mjs', { encoding: 'utf8' });
   expect(out).toContain('94 tokens');
   expect(readFileSync('src/pug/_generated.pug', 'utf8')).not.toContain('phantom-token');
+  expect(readFileSync('src/pug/_generated.pug', 'utf8')).toContain('light theme values');
 });
