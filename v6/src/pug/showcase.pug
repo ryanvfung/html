@@ -1,0 +1,53 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    title PyroCarbon showcase
+    link(rel="stylesheet" href="./pyrocarbon.css")
+  body
+    a.skip-link(href="#main") Skip to content
+    header.site-header
+      nav.site-nav(aria-label="Primary")
+        a(href="./showcase.html" aria-current="page") PyroCarbon
+        button.site-nav__toggle(type="button" data-nav-toggle aria-expanded="false" aria-controls="showcase-nav") Menu
+        ul#showcase-nav.site-nav__list
+          li: a(href="./boilerplate.html") Boilerplate
+          li: a(href="./spec.html") Spec
+        button.btn(type="button" data-theme-toggle aria-pressed="false") Theme
+        button.btn(type="button" data-density-toggle) Density: Default
+        span.visually-hidden(data-density-status aria-live="polite")
+    main#main
+      h1 Showcase
+      section#layout-doc
+        h2 Documentation layout
+        p A two-column reading layout with a sticky contents rail.
+        .doc-layout
+          nav.c-sidebar(aria-label="Contents")
+            h3.c-sidebar__title Contents
+            ul.c-sidebar__nav
+              li: a(href="#layout-doc" aria-current="page") Documentation
+              li: a(href="#layout-form") Form
+          div.doc-content
+            pre.o-code-block: code
+              span &lt;#[span.syntax-tag section]&gt;
+              span &lt;/#[span.syntax-tag section]&gt;
+      section#layout-form
+        h2 Form layout
+        form
+          .form-group
+            label(for="showcase-email") Email
+            input#showcase-email.form-control(type="email" aria-describedby="showcase-email-error" aria-invalid="true")
+            p#showcase-email-error.form-error Enter a valid address.
+          .form-check
+            input#showcase-terms(type="checkbox")
+            label(for="showcase-terms") I accept the terms
+          button.btn(type="submit") Save
+      section
+        h2 Editorial layout
+        p A single-column essay using the body measure, built from typography alone.
+        p Try #[code a-very-long-unbreakable-token-name-that-must-wrap-across-lines-without-scrolling].
+        blockquote: p Type is the interface.
+    footer.c-footer
+      p PyroCarbon showcase
+    script(src="./pyrocarbon.js" defer)
