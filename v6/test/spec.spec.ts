@@ -4,6 +4,17 @@ import { readFileSync } from 'node:fs';
 
 const pages = ['/boilerplate.html', '/showcase.html', '/spec.html'];
 const widths = [320, 768, 1440];
+const parseColor = (value: string) => {
+  expect(value, 'computed color format').toMatch(/^rgb\(/);
+  return value.match(/[\d.]+/g)!.slice(0, 3).map(Number);
+};
+const luminance = (rgb: number[]) => rgb
+  .map((v) => { const c = v / 255; return c <= 0.04045 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4; })
+  .reduce((sum, c, i) => sum + c * [0.2126, 0.7152, 0.0722][i], 0);
+const contrast = (a: number[], b: number[]) => {
+  const [hi, lo] = [luminance(a), luminance(b)].sort((x, y) => y - x);
+  return (hi + 0.05) / (lo + 0.05);
+};
 
 for (const path of pages) {
   for (const width of widths) {
@@ -117,23 +128,12 @@ test('boilerplate renders in all six theme/density combos', async ({ page }) => 
 });
 
 test('AA contrast for rendered text pairs in both themes', async ({ page }) => {
-  const parse = (value: string) => {
-    expect(value, 'computed color format').toMatch(/^rgb\(/);
-    return value.match(/[\d.]+/g)!.slice(0, 3).map(Number);
-  };
-  const luminance = (rgb: number[]) => rgb
-    .map((v) => { const c = v / 255; return c <= 0.04045 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4; })
-    .reduce((sum, c, i) => sum + c * [0.2126, 0.7152, 0.0722][i], 0);
-  const contrast = (a: number[], b: number[]) => {
-    const [hi, lo] = [luminance(a), luminance(b)].sort((x, y) => y - x);
-    return (hi + 0.05) / (lo + 0.05);
-  };
   const check = async (fgSel: string, bgSel: string) => {
     const [fg, bg] = await page.evaluate(([f, b]) => [
       getComputedStyle(document.querySelector(f)!).color,
       getComputedStyle(document.querySelector(b)!).backgroundColor,
     ], [fgSel, bgSel]);
-    expect(contrast(parse(fg), parse(bg)), `${fgSel} on ${bgSel}`).toBeGreaterThanOrEqual(4.5);
+    expect(contrast(parseColor(fg), parseColor(bg)), `${fgSel} on ${bgSel}`).toBeGreaterThanOrEqual(4.5);
   };
 
   for (const theme of ['light', 'dark']) {
@@ -147,6 +147,30 @@ test('AA contrast for rendered text pairs in both themes', async ({ page }) => {
     await check('code', 'code');
     await check('.syntax-tag', 'pre');
   }
+});
+
+test('code line numbers meet AA contrast in both themes', async ({ page }) => {
+  for (const theme of ['light', 'dark']) {
+    await page.goto('/showcase.html');
+    await page.evaluate((value) => { document.documentElement.dataset.theme = value; }, theme);
+    const [fg, bg] = await page.evaluate(() => [
+      getComputedStyle(document.querySelector('.o-code-block > code > span')!, '::before').color,
+      getComputedStyle(document.querySelector('.o-code-block')!).backgroundColor,
+    ]);
+    expect(contrast(parseColor(fg), parseColor(bg)), `line numbers on pre (${theme})`).toBeGreaterThanOrEqual(4.5);
+  }
+});
+
+test('author-set theme and density attributes are preserved on load', async ({ page }) => {
+  await page.route('**/boilerplate.html', async (route) => {
+    const response = await route.fetch();
+    const html = await response.text();
+    await route.fulfill({ response, body: html.replace('<html lang="en">', '<html lang="en" data-theme="dark" data-density="compact">') });
+  });
+  await page.goto('/boilerplate.html');
+  expect(await page.evaluate(() => document.documentElement.dataset.theme)).toBe('dark');
+  expect(await page.evaluate(() => document.documentElement.dataset.density)).toBe('compact');
+  expect(await page.evaluate(() => getComputedStyle(document.body).backgroundColor)).toBe('rgb(22, 20, 19)');
 });
 
 test('theme control exposes the current value', async ({ page }) => {

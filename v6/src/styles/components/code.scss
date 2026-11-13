@@ -6,8 +6,8 @@ pre { overflow-x: auto; padding: var(--space-4); border-radius: var(--radius-car
 pre code { padding: 0; background: transparent; color: inherit; font-size: inherit; }
 .o-code-block { counter-reset: line; }
 .o-code-block > code > span { display: block; counter-increment: line; }
-.o-code-block > code > span::before { content: counter(line); display: inline-block; min-inline-size: 2.5em; margin-inline-end: var(--space-3); color: var(--text-tertiary); text-align: end; }
-.o-cli-block::before, .o-cmd-block::before { margin-inline-end: var(--space-2); color: var(--text-tertiary); }
+.o-code-block > code > span::before { content: counter(line); display: inline-block; min-inline-size: 2.5em; margin-inline-end: var(--space-3); color: var(--text-secondary); text-align: end; }
+.o-cli-block::before, .o-cmd-block::before { margin-inline-end: var(--space-2); color: var(--text-secondary); }
 .o-cli-block::before { content: '$'; }
 .o-cmd-block::before { content: '>'; }
 .syntax-tag { color: var(--syntax-tag); } .syntax-string { color: var(--syntax-string); }

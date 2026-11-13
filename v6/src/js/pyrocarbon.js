@@ -22,9 +22,11 @@ const applyDensity = (density) => {
   if (status) status.textContent = `Density: ${label}`;
 };
 
-applyTheme(storage.get('pc-theme') ?? (darkQuery.matches ? 'dark' : 'light'));
-applyDensity(storage.get('pc-density') ?? 'default');
-darkQuery.addEventListener('change', (event) => { if (!storage.get('pc-theme')) applyTheme(event.matches ? 'dark' : 'light'); });
+const initialTheme = root.dataset.theme || null;
+const initialDensity = root.dataset.density || null;
+applyTheme(initialTheme || storage.get('pc-theme') || (darkQuery.matches ? 'dark' : 'light'));
+applyDensity(initialDensity || storage.get('pc-density') || 'default');
+darkQuery.addEventListener('change', (event) => { if (!initialTheme && !storage.get('pc-theme')) applyTheme(event.matches ? 'dark' : 'light'); });
 themeButtons.forEach((button) => button.addEventListener('click', () => { const next = root.dataset.theme === 'dark' ? 'light' : 'dark'; applyTheme(next); storage.set('pc-theme', next); }));
 densityButtons.forEach((button) => button.addEventListener('click', () => { const next = densityOrder[(densityOrder.indexOf(root.dataset.density) + 1) % densityOrder.length]; applyDensity(next); storage.set('pc-density', next); }));
 
