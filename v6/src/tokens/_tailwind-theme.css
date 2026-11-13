@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@theme {
+  --color-surface-canvas: var(--surface-canvas);
+  --color-surface-raised: var(--surface-raised);
+  --color-surface-sunken: var(--surface-sunken);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-accent: var(--text-accent);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-subtle: var(--accent-subtle);
+  --color-border-default: var(--border-default);
+  --spacing-1: var(--space-1);
+  --spacing-2: var(--space-2);
+  --spacing-4: var(--space-4);
+  --spacing-8: var(--space-8);
+}
+
+/* This track maps names to token custom properties; it does not define them.
+   Consumers must also load the compiled token CSS (dist/pyrocarbon.css) or a
+   tokens-only CSS emitted alongside. Without it, --color-* and --spacing-*
+   resolve to nothing, and unmapped --text-*, --font-* and --radius-* names
+   fall back to Tailwind's default theme values (e.g. text-sm = 14px, not the
+   fluid clamp). */
