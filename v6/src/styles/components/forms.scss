@@ -1,0 +1,18 @@
+@layer components {
+.form-group { display: flex; flex-direction: column; gap: var(--space-1); margin-block-end: var(--space-4); }
+.form-group > label, .form-check { font-size: var(--text-sm); color: var(--text-secondary); }
+.form-control {
+  min-height: var(--control-height); padding: var(--control-padding-y) var(--control-padding-x);
+  border: var(--border-hairline) solid var(--border-default); border-radius: var(--radius-input);
+  background: var(--surface-raised); color: var(--text-primary); font-size: var(--text-base);
+}
+.form-control:focus-visible { outline: var(--border-width-strong) solid var(--focus-ring); outline-offset: 0.125rem; border-color: var(--border-accent); }
+.form-control[aria-invalid="true"] { border-color: var(--text-accent); border-width: var(--border-width-strong); }
+.form-check { display: flex; align-items: center; gap: var(--space-2); min-height: var(--control-height); }
+.form-check input { inline-size: 1.25rem; block-size: 1.25rem; accent-color: var(--accent); }
+.form-error { color: var(--text-accent); font-size: var(--text-sm); }
+.form-error::before { content: '\26A0\00A0'; }
+input[type="file"] { padding: var(--space-2); }
+textarea.form-control { min-height: calc(var(--control-height) * 3); resize: vertical; }
+select.form-control { cursor: pointer; }
+}
