@@ -9,6 +9,7 @@
   --orange-9: #ffebd9;
   /* Reserved swatches: documented only, never used in component CSS. */
   --orange-60: #f60; --orange-93: #f93;
+  // Parser regression trap: --phantom-token: #123456; inside this comment must never be emitted by gen-spec.
   /* Neutral ramp: hsl(28deg 8% L) — tinted toward the anchor hue. */
   --neutral-0: #161413; --neutral-1: #292623; --neutral-2: #3d3834;
   --neutral-3: #534c46; --neutral-4: #696059; --neutral-5: #8a7f75;
