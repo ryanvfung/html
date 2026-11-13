@@ -20,6 +20,7 @@ html(lang="en")
               p
                 button.btn(type="button") Primary
                 button.btn.btn--secondary(type="button") Secondary
-              label(for=`field-${theme}-${density}`) Label
-              input.form-control(id=`field-${theme}-${density}` type="text")
+              .form-group
+                label(for=`field-${theme}-${density}`) Label
+                input.form-control(id=`field-${theme}-${density}` type="text" name=`field-${theme}-${density}`)
     script(src="./pyrocarbon.js" defer)

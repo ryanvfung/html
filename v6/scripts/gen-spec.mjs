@@ -2,7 +2,7 @@ import { readFileSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 
 const root = resolve(import.meta.dirname, '..');
-const source = readFileSync(resolve(root, 'src/tokens/_tokens.scss'), 'utf8');
+const source = readFileSync(resolve(root, 'src/tokens/_tokens.scss'), 'utf8').replace(/\/\*[\s\S]*?\*\//g, '').split('\n').map((line) => line.replace(/(^|\s)\/\/.*$/, '$1')).join('\n');
 const tokens = [...source.matchAll(/(--[a-z0-9-]+):\s*([^;]+);/g)]
   .map(([, name, value]) => ({ name, value: value.trim() }))
   .filter((token, index, all) => all.findIndex((other) => other.name === token.name) === index);
