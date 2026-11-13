@@ -20,3 +20,24 @@
   --font-mono: 'Cascadia Code', Consolas, 'SFMono-Regular', Menlo, monospace;
 }
 }
+
+// Tier 1 (continued) — fluid type, structural constants, fluid spacing.
+@layer tokens {
+:root {
+  --text-xs: clamp(0.75rem, 0.72rem + 0.15vw, 0.8125rem); --text-sm: clamp(0.875rem, 0.84rem + 0.18vw, 0.9375rem);
+  --text-base: clamp(1rem, 0.96rem + 0.2vw, 1.0625rem); --text-lg: clamp(1.125rem, 1.06rem + 0.3vw, 1.25rem);
+  --text-xl: clamp(1.25rem, 1.15rem + 0.45vw, 1.5rem); --text-2xl: clamp(1.5rem, 1.33rem + 0.75vw, 2rem);
+  --text-3xl: clamp(1.875rem, 1.6rem + 1.2vw, 2.5rem); --text-4xl: clamp(2.25rem, 1.85rem + 1.8vw, 3.25rem);
+  --nav-height: 3.5rem; --radius-sm: 0.25rem;
+  --radius-card: 0.25rem 0.25rem 0 0; --radius-input: 0.25rem 0.25rem 0 0;
+  --border-hairline: 0.0625rem; --border-width-strong: 0.125rem;
+  --space-1: 0.25rem; --space-2: clamp(0.5rem, 0.48rem + 0.1vw, 0.5625rem);
+  --space-3: clamp(0.75rem, 0.72rem + 0.15vw, 0.875rem); --space-4: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
+  --space-5: clamp(1.25rem, 1.19rem + 0.3vw, 1.5rem); --space-6: clamp(1.5rem, 1.42rem + 0.4vw, 1.75rem);
+  --space-7: clamp(1.75rem, 1.65rem + 0.5vw, 2.125rem); --space-8: clamp(2rem, 1.87rem + 0.65vw, 2.5rem);
+  --space-9: clamp(2.5rem, 2.3rem + 1vw, 3.25rem); --space-10: clamp(3rem, 2.75rem + 1.25vw, 4rem);
+  --space-11: clamp(3.5rem, 3.2rem + 1.5vw, 4.75rem); --space-12: clamp(4rem, 3.65rem + 1.75vw, 5.5rem);
+  --space-13: clamp(5rem, 4.55rem + 2.25vw, 6.75rem); --space-14: clamp(6rem, 5.45rem + 2.75vw, 8rem);
+  --space-15: clamp(7rem, 6.35rem + 3.25vw, 9.5rem); --space-16: clamp(8rem, 7.25rem + 3.75vw, 11rem);
+}
+}
