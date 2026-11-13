@@ -1,0 +1,22 @@
+@layer theme, tokens, reset, base, components, utilities;
+// Tier 1 — primitives. Identical across themes and densities.
+@layer tokens {
+:root {
+  /* Orange ramp derived from the #f70 anchor (--orange-5). */
+  --orange-0: #331800; --orange-1: #663000; --orange-2: #994700;
+  --orange-3: #cc5f00; --orange-4: #e66b00; --orange-5: #ff7700;
+  --orange-6: #ff9940; --orange-7: #ffcca0; --orange-8: #ffddbf;
+  --orange-9: #ffebd9;
+  /* Reserved swatches: documented only, never used in component CSS. */
+  --orange-60: #f60; --orange-93: #f93;
+  /* Neutral ramp: hsl(28deg 8% L) — tinted toward the anchor hue. */
+  --neutral-0: #161413; --neutral-1: #292623; --neutral-2: #3d3834;
+  --neutral-3: #534c46; --neutral-4: #696059; --neutral-5: #8a7f75;
+  --neutral-6: #a69e96; --neutral-7: #c2bcb7; --neutral-8: #d9d6d3;
+  --neutral-9: #eceae9; --neutral-10: #f8f7f7;
+  /* Role split is deliberate even when both resolve to one family. */
+  --font-display: 'Maven Pro', 'Segoe UI', 'Lucida Grande', 'Droid Sans', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+  --font-body: var(--font-display);
+  --font-mono: 'Cascadia Code', Consolas, 'SFMono-Regular', Menlo, monospace;
+}
+}
