@@ -72,3 +72,18 @@
   --syntax-tag: #d9a441; --syntax-string: var(--orange-6); --syntax-comment: var(--neutral-5); --syntax-keyword: var(--orange-5);
 }
 }
+
+@layer tokens {
+:root, [data-density="default"] {
+  --control-height: 2.75rem; --control-padding-x: 0.75rem; --control-padding-y: 0.4375rem;
+  --pad-card: 1.25rem; --gap-grid: 1rem; --leading-body: 1.6; --leading-tight: 1.25; --measure-body: 65ch;
+}
+[data-density="compact"] {
+  --control-height: 2.25rem; --control-padding-x: 0.5rem; --control-padding-y: 0.25rem;
+  --pad-card: 0.75rem; --gap-grid: 0.5rem; --leading-body: 1.4; --leading-tight: 1.2; --measure-body: 60ch;
+}
+[data-density="comfortable"] {
+  --control-height: 3rem; --control-padding-x: 1rem; --control-padding-y: 0.625rem;
+  --pad-card: 1.75rem; --gap-grid: 1.5rem; --leading-body: 1.75; --leading-tight: 1.3; --measure-body: 70ch;
+}
+}
