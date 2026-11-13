@@ -1,0 +1,25 @@
+include _generated.pug
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    title PyroCarbon spec
+    link(rel="stylesheet" href="./pyrocarbon.css")
+  body
+    main#main
+      h1 PyroCarbon spec
+      +spec-tokens()
+      section
+        h2 Theme and density matrix
+        each theme in ['light', 'dark']
+          each density in ['compact', 'default', 'comfortable']
+            div.combo(data-theme=theme data-density=density)
+              h3 #{theme} / #{density}
+              p Body sample with #[a(href="#main") link] and #[code code].
+              p
+                button.btn(type="button") Primary
+                button.btn.btn--secondary(type="button") Secondary
+              label(for=`field-${theme}-${density}`) Label
+              input.form-control(id=`field-${theme}-${density}` type="text")
+    script(src="./pyrocarbon.js" defer)
