@@ -1,0 +1,20 @@
+@layer components {
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2);
+  min-height: var(--control-height); padding: var(--control-padding-y) var(--control-padding-x);
+  border: var(--border-hairline) solid var(--accent); border-radius: var(--radius-sm);
+  background: var(--accent); color: var(--text-on-brand);
+  font-family: var(--font-body); font-size: var(--text-base); line-height: var(--leading-tight);
+  text-decoration: none; cursor: pointer;
+  transition: background-color 120ms ease, border-color 120ms ease, color 120ms ease;
+}
+.btn:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
+.btn:active { background: var(--accent-active); border-color: var(--accent-active); }
+.btn:focus-visible { outline: var(--border-width-strong) solid var(--focus-ring); outline-offset: 0.125rem; }
+.btn:disabled { opacity: 0.55; cursor: not-allowed; }
+.btn--secondary { background: transparent; border-color: var(--border-default); color: var(--text-primary); }
+.btn--secondary:hover { background: var(--surface-sunken); }
+.btn--ghost { background: transparent; border-color: transparent; color: var(--text-accent); }
+.btn--ghost:hover { background: var(--accent-subtle); }
+.btn--sm { min-height: calc(var(--control-height) - var(--space-2)); padding: var(--space-1) var(--space-2); font-size: var(--text-sm); }
+}
